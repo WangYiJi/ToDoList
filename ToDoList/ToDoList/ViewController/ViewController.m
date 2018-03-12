@@ -16,7 +16,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIBarButtonItem *rightBar = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                              target:self action:@selector(addToDo)];
+    
+    self.navigationItem.rightBarButtonItem = rightBar;
+    
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+-(void)addToDo
+{
+    
 }
 
 
