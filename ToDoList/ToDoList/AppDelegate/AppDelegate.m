@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MainViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    
+    MainViewController *mainVC = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
+    //UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mainVC];
+    self.window.rootViewController = mainVC;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
@@ -80,6 +90,16 @@
     }
     
     return _persistentContainer;
+}
+
+-(NSManagedObjectContext*)managedObjectContext
+{
+    return self.persistentContainer.viewContext;
+}
+
+-(NSManagedObjectModel*)managedObjectModel
+{
+    return self.persistentContainer.managedObjectModel;
 }
 
 #pragma mark - Core Data Saving support

@@ -10,4 +10,6 @@
 
 @interface UITableView (Extend)
 
+-(UITableViewCell *)customdq:(NSString *)identifier;
+
 @end

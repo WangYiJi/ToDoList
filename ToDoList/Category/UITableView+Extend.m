@@ -10,4 +10,23 @@
 
 @implementation UITableView (Extend)
 
+-(UITableViewCell *)customdq:(NSString *)identifier
+{
+    UITableViewCell* cell = (UITableViewCell*)[self dequeueReusableCellWithIdentifier:identifier];
+    
+    if (!cell)
+    {
+        NSArray* nibs = [[NSBundle mainBundle] loadNibNamed:identifier owner:self options:nil];
+        
+        for (id oneObject in nibs)
+        {
+            if ([oneObject isKindOfClass:NSClassFromString(identifier)])
+            {
+                cell = oneObject;
+            }
+        }
+    }
+    return cell;
+}
+
 @end
