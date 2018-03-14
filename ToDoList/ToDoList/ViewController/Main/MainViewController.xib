@@ -80,8 +80,15 @@
             </constraints>
             <point key="canvasLocation" x="-100.5" y="15.5"/>
         </view>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="J8P-Yj-W5k">
+            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" image="dayIcon"/>
+            <point key="canvasLocation" x="320" y="311"/>
+        </button>
     </objects>
     <resources>
         <image name="add" width="200" height="200"/>
+        <image name="dayIcon" width="40" height="40"/>
     </resources>
 </document>

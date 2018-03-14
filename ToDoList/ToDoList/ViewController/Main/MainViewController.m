@@ -33,13 +33,13 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
 
 -(void)createBaseView
 {
-    UIBarButtonItem *rightBar = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(pushToCalendarViewController)];
+    UIBarButtonItem *rightBar = [[UIBarButtonItem alloc] initWithCustomView:self.btnCalendar];
     self.navigationItem.rightBarButtonItem = rightBar;
     
     [self initKeyBoardEvent];
 }
 
--(void)pushToCalendarViewController
+-(IBAction)didPressedCalendar:(id)sender
 {
     CalendarViewController *calednarVC = [[CalendarViewController alloc] initWithNibName:@"CalendarViewController"
                                                                                   bundle:nil];

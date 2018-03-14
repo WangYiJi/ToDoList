@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainViewController : UIViewController 
+@interface MainViewController : UIViewController
+
+@property (nonatomic,strong) IBOutlet UIButton *btnCalendar;
+
 @property (nonatomic,weak) IBOutlet UITableView *mainTableview;
 @property (nonatomic,weak) IBOutlet UIImageView *imgAdd;
 @property (nonatomic,weak) IBOutlet UIView *buttonView;
@@ -18,5 +21,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *buttomSpan;
 
 -(IBAction)didPressedDone:(id)sender;
+
+-(IBAction)didPressedCalendar:(id)sender;
 
 @end
