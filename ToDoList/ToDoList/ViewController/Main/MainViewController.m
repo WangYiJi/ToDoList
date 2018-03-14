@@ -35,6 +35,8 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
 {
     UIBarButtonItem *rightBar = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(pushToCalendarViewController)];
     self.navigationItem.rightBarButtonItem = rightBar;
+    
+    [self initKeyBoardEvent];
 }
 
 -(void)pushToCalendarViewController
@@ -44,29 +46,15 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
     [self.navigationController pushViewController:calednarVC animated:YES];
 }
 
--(void)initDataSource
-{
-    NSMutableArray *sourceArray = [DBhelper searchBy:@"Event"];
-    if (sourceArray.count <= 0) {
-        for (int i = 0; i<6; i++) {
-            NSString *sTitle = [NSString stringWithFormat:@"Event %d",i];
-            Event *e = [DBhelper insertWithEntity:@"Event"];
-            e.title = sTitle;
-        }
-        [DBhelper Save];
-    }
-}
-
 -(void)loadDefaultData
 {
-    [self initDataSource];
     self.sourceArray = [DBhelper searchBy:@"Event"];
     
     self.cellAdapt = [[MainCellAdapt alloc] initWithDataSource:self.sourceArray
                                                               identifier:MainEventCellIdentifier
                                                              cellDisplay:^(MainEventCell *cell, Event *item) {
                                                                  cell.lblName.text = item.title;
-                                                             }];
+                                                             } viewController:self];
     self.mainTableview.dataSource = self.cellAdapt;
 
     [self.mainTableview registerNib:[MainEventCell nib] forCellReuseIdentifier:MainEventCellIdentifier];
@@ -77,10 +65,72 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
     
 }
 
+-(void)addEvent:(NSString*)sEventTitle
+{
+    Event *e = [DBhelper insertWithEntity:@"Event"];
+    e.title = sEventTitle;
+    [DBhelper Save];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(IBAction)didPressedDone:(id)sender
+{
+    [sender resignFirstResponder];
+}
+
+-(void)initKeyBoardEvent
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+
+}
+
+-(void)removeKeyboardEvent
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
+
+-(void)keyBoardWillShow:(NSNotification *)aNotification
+{
+//走多次可解决
+//    CGFloat keyBoardHeight = 0.0;
+//    CGRect begin = [[[aNotification userInfo] objectForKey:@"UIKeyboardFrameBeginUserInfoKey"] CGRectValue];
+//    CGRect end = [[[aNotification userInfo] objectForKey:@"UIKeyboardFrameEndUserInfoKey"] CGRectValue];
+
+//    // 第三方键盘回调三次问题，监听仅执行最后一次
+//    if(begin.size.height>0 && (begin.origin.y-end.origin.y>0)){
+//        keyBoardHeight = fBoardHeight;
+//
+//    }
+    CGFloat fBoardHeight = [[[aNotification userInfo] objectForKey:@"UIKeyboardBoundsUserInfoKey"] CGRectValue].size.height;
+
+    
+    [UIView animateWithDuration:0.3f animations:^{
+        self.buttomSpan.constant = fBoardHeight;
+    }];
+    [self.view layoutIfNeeded];
+}
+
+-(void)keyBoardWillHide:(NSNotification *)aNotification
+{
+    [UIView animateWithDuration:0.3f animations:^{
+        self.buttomSpan.constant = 0;
+    }];
+    [self.view layoutIfNeeded];
+}
+
+-(void)keyBoardWillChangeFrame:(NSNotification *)aNotification
+{
+    
+}
+
+
 
 
 @end

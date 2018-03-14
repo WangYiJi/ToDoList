@@ -17,6 +17,7 @@ typedef void (^cellDisplay)(MainEventCell *cell,Event *item);
 
 -(instancetype)initWithDataSource:(NSMutableArray*)source
                        identifier:(NSString*)sIdentifier
-                      cellDisplay:(cellDisplay)displayBlock;
+                      cellDisplay:(cellDisplay)displayBlock
+                   viewController:(id)viewController;
 
 @end

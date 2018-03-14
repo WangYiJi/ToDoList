@@ -8,10 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0183073008FB3333A361BBBA /* libPods-ToDoList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76014DB5807C83711E7D05E3 /* libPods-ToDoList.a */; };
-		FC1907EA2057BFF2000E8C97 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1907E92057BFF2000E8C97 /* NotificationCenter.framework */; };
-		FC1907EE2057BFF2000E8C97 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1907ED2057BFF2000E8C97 /* TodayViewController.m */; };
-		FC1907F12057BFF2000E8C97 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC1907EF2057BFF2000E8C97 /* MainInterface.storyboard */; };
-		FC1907F52057BFF2000E8C97 /* ToDoListToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FC1907E82057BFF2000E8C97 /* ToDoListToday.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FC19080A2057D3A8000E8C97 /* DAYNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1907FF2057D3A8000E8C97 /* DAYNavigationBar.m */; };
 		FC19080B2057D3A8000E8C97 /* DAYComponentView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1908002057D3A8000E8C97 /* DAYComponentView.m */; };
 		FC19080C2057D3A8000E8C97 /* DAYUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1908052057D3A8000E8C97 /* DAYUtils.m */; };
@@ -26,10 +22,10 @@
 		FCCF79412056829A0033C401 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCCF79402056829A0033C401 /* Assets.xcassets */; };
 		FCCF79442056829A0033C401 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCCF79422056829A0033C401 /* LaunchScreen.storyboard */; };
 		FCCF79472056829A0033C401 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCF79462056829A0033C401 /* main.m */; };
-		FCCF7950205682DA0033C401 /* UITableView+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCF794F205682DA0033C401 /* UITableView+Extend.m */; };
 		FCCF7958205688CA0033C401 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCF7954205688CA0033C401 /* AppDelegate.m */; };
 		FCCF795D205688FA0033C401 /* AddToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCF795B205688FA0033C401 /* AddToDoViewController.m */; };
 		FCCF795E205688FA0033C401 /* AddToDoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCCF795C205688FA0033C401 /* AddToDoViewController.xib */; };
+		FCDF66A02058FD16009ECAAC /* UIAlertController+swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDF669F2058FD16009ECAAC /* UIAlertController+swift.swift */; };
 		FCEC3ED920576856002A1A1D /* Event+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEC3ED620576856002A1A1D /* Event+CoreDataClass.m */; };
 		FCEC3EDA20576856002A1A1D /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEC3ED820576856002A1A1D /* Event+CoreDataProperties.m */; };
 		FCEC3EE920577300002A1A1D /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCEC3EE420577300002A1A1D /* MainViewController.xib */; };
@@ -38,17 +34,8 @@
 		FCEC3EEF2057738A002A1A1D /* MainEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEC3EED2057738A002A1A1D /* MainEventCell.m */; };
 		FCEC3EF02057738A002A1A1D /* MainEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCEC3EEE2057738A002A1A1D /* MainEventCell.xib */; };
 		FCEC3EF2205776AE002A1A1D /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCEC3EF1205776AE002A1A1D /* Media.xcassets */; };
+		FCF68DD42058F96200B20407 /* UITableView+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF68DD12058F96200B20407 /* UITableView+Extend.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		FC1907F32057BFF2000E8C97 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FCCF7929205682990033C401 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FC1907E72057BFF2000E8C97;
-			remoteInfo = ToDoListToday;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		FC1907F92057BFF2000E8C97 /* Embed App Extensions */ = {
@@ -57,7 +44,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				FC1907F52057BFF2000E8C97 /* ToDoListToday.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,13 +54,7 @@
 		0624C7AE250101B12A1A57EF /* Pods-ToDoList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToDoList/Pods-ToDoList.release.xcconfig"; sourceTree = "<group>"; };
 		76014DB5807C83711E7D05E3 /* libPods-ToDoList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ToDoList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F0C4CA0ECC28575F13C298 /* Pods-ToDoList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToDoList/Pods-ToDoList.debug.xcconfig"; sourceTree = "<group>"; };
-		FC1907E82057BFF2000E8C97 /* ToDoListToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ToDoListToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC1907E92057BFF2000E8C97 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		FC1907EC2057BFF2000E8C97 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
-		FC1907ED2057BFF2000E8C97 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
-		FC1907F02057BFF2000E8C97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		FC1907F22057BFF2000E8C97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FC1907FA2057C419000E8C97 /* ToDoListToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ToDoListToday.entitlements; sourceTree = "<group>"; };
 		FC1907FC2057D3A8000E8C97 /* Daysquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Daysquare.h; sourceTree = "<group>"; };
 		FC1907FD2057D3A8000E8C97 /* DAYCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAYCalendarView.h; sourceTree = "<group>"; };
 		FC1907FF2057D3A8000E8C97 /* DAYNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAYNavigationBar.m; sourceTree = "<group>"; };
@@ -102,13 +82,12 @@
 		FCCF79432056829A0033C401 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCCF79452056829A0033C401 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCCF79462056829A0033C401 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FCCF794E205682DA0033C401 /* UITableView+Extend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+Extend.h"; sourceTree = "<group>"; };
-		FCCF794F205682DA0033C401 /* UITableView+Extend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Extend.m"; sourceTree = "<group>"; };
 		FCCF7953205688CA0033C401 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FCCF7954205688CA0033C401 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FCCF795A205688FA0033C401 /* AddToDoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddToDoViewController.h; sourceTree = "<group>"; };
 		FCCF795B205688FA0033C401 /* AddToDoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddToDoViewController.m; sourceTree = "<group>"; };
 		FCCF795C205688FA0033C401 /* AddToDoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddToDoViewController.xib; sourceTree = "<group>"; };
+		FCDF669F2058FD16009ECAAC /* UIAlertController+swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+swift.swift"; sourceTree = "<group>"; };
 		FCEC3ED520576856002A1A1D /* Event+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+CoreDataClass.h"; sourceTree = "<group>"; };
 		FCEC3ED620576856002A1A1D /* Event+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Event+CoreDataClass.m"; sourceTree = "<group>"; };
 		FCEC3ED720576856002A1A1D /* Event+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -122,17 +101,12 @@
 		FCEC3EED2057738A002A1A1D /* MainEventCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainEventCell.m; sourceTree = "<group>"; };
 		FCEC3EEE2057738A002A1A1D /* MainEventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainEventCell.xib; sourceTree = "<group>"; };
 		FCEC3EF1205776AE002A1A1D /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		FCF68DCD2058B66E00B20407 /* ToDoList.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ToDoList.entitlements; sourceTree = "<group>"; };
+		FCF68DD12058F96200B20407 /* UITableView+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Extend.m"; sourceTree = "<group>"; };
+		FCF68DD22058F96200B20407 /* UITableView+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Extend.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		FC1907E52057BFF2000E8C97 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FC1907EA2057BFF2000E8C97 /* NotificationCenter.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FCCF792E205682990033C401 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -162,26 +136,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FC1907EB2057BFF2000E8C97 /* ToDoListToday */ = {
-			isa = PBXGroup;
-			children = (
-				FC1907FA2057C419000E8C97 /* ToDoListToday.entitlements */,
-				FC1907EC2057BFF2000E8C97 /* TodayViewController.h */,
-				FC1907ED2057BFF2000E8C97 /* TodayViewController.m */,
-				FC1907EF2057BFF2000E8C97 /* MainInterface.storyboard */,
-				FC1907F22057BFF2000E8C97 /* Info.plist */,
-			);
-			path = ToDoListToday;
-			sourceTree = "<group>";
-		};
 		FC1907FB2057D3A8000E8C97 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				FC1907FC2057D3A8000E8C97 /* Daysquare.h */,
 				FC1907FD2057D3A8000E8C97 /* DAYCalendarView.h */,
+				FC1908082057D3A8000E8C97 /* DAYCalendarView.m */,
+				FC1907FC2057D3A8000E8C97 /* Daysquare.h */,
 				FC1907FE2057D3A8000E8C97 /* Internal */,
 				FC1908072057D3A8000E8C97 /* Lib.h */,
-				FC1908082057D3A8000E8C97 /* DAYCalendarView.m */,
 				FC1908092057D3A8000E8C97 /* Info.plist */,
 			);
 			path = Calendar;
@@ -270,7 +232,6 @@
 				FC92E1E220575DA00036C153 /* Utility */,
 				FCCF794D205682B90033C401 /* Category */,
 				FCCF7933205682990033C401 /* ToDoList */,
-				FC1907EB2057BFF2000E8C97 /* ToDoListToday */,
 				FCCF7932205682990033C401 /* Products */,
 				FC92E1F020575E490036C153 /* CoreData */,
 				8EB336CFBB5D696A9425982A /* Pods */,
@@ -282,7 +243,6 @@
 			isa = PBXGroup;
 			children = (
 				FCCF7931205682990033C401 /* ToDoList.app */,
-				FC1907E82057BFF2000E8C97 /* ToDoListToday.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -290,6 +250,7 @@
 		FCCF7933205682990033C401 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				FCF68DCD2058B66E00B20407 /* ToDoList.entitlements */,
 				FCCF79402056829A0033C401 /* Assets.xcassets */,
 				FCCF79422056829A0033C401 /* LaunchScreen.storyboard */,
 				FCCF79452056829A0033C401 /* Info.plist */,
@@ -301,8 +262,8 @@
 		FCCF794D205682B90033C401 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				FCCF794E205682DA0033C401 /* UITableView+Extend.h */,
-				FCCF794F205682DA0033C401 /* UITableView+Extend.m */,
+				FCF68DCE2058F96200B20407 /* UIAlertController+ */,
+				FCF68DD02058F96200B20407 /* UITableView+ */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -345,26 +306,26 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		FCF68DCE2058F96200B20407 /* UIAlertController+ */ = {
+			isa = PBXGroup;
+			children = (
+				FCDF669F2058FD16009ECAAC /* UIAlertController+swift.swift */,
+			);
+			path = "UIAlertController+";
+			sourceTree = "<group>";
+		};
+		FCF68DD02058F96200B20407 /* UITableView+ */ = {
+			isa = PBXGroup;
+			children = (
+				FCF68DD22058F96200B20407 /* UITableView+Extend.h */,
+				FCF68DD12058F96200B20407 /* UITableView+Extend.m */,
+			);
+			path = "UITableView+";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FC1907E72057BFF2000E8C97 /* ToDoListToday */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FC1907F82057BFF2000E8C97 /* Build configuration list for PBXNativeTarget "ToDoListToday" */;
-			buildPhases = (
-				FC1907E42057BFF2000E8C97 /* Sources */,
-				FC1907E52057BFF2000E8C97 /* Frameworks */,
-				FC1907E62057BFF2000E8C97 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ToDoListToday;
-			productName = ToDoListToday;
-			productReference = FC1907E82057BFF2000E8C97 /* ToDoListToday.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		FCCF7930205682990033C401 /* ToDoList */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FCCF794A2056829A0033C401 /* Build configuration list for PBXNativeTarget "ToDoList" */;
@@ -380,7 +341,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				FC1907F42057BFF2000E8C97 /* PBXTargetDependency */,
 			);
 			name = ToDoList;
 			productName = ToDoList;
@@ -396,19 +356,15 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = company;
 				TargetAttributes = {
-					FC1907E72057BFF2000E8C97 = {
+					FCCF7930205682990033C401 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
 						};
-					};
-					FCCF7930205682990033C401 = {
-						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 0920;
-						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -426,20 +382,11 @@
 			projectRoot = "";
 			targets = (
 				FCCF7930205682990033C401 /* ToDoList */,
-				FC1907E72057BFF2000E8C97 /* ToDoListToday */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		FC1907E62057BFF2000E8C97 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FC1907F12057BFF2000E8C97 /* MainInterface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FCCF792F205682990033C401 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -509,14 +456,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		FC1907E42057BFF2000E8C97 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FC1907EE2057BFF2000E8C97 /* TodayViewController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FCCF792D205682990033C401 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -527,40 +466,25 @@
 				FC19080D2057D3A8000E8C97 /* DAYIndicatorView.m in Sources */,
 				FCCF7958205688CA0033C401 /* AppDelegate.m in Sources */,
 				FCEC3EEA20577300002A1A1D /* MainViewController.m in Sources */,
-				FCCF7950205682DA0033C401 /* UITableView+Extend.m in Sources */,
 				FCEC3EDA20576856002A1A1D /* Event+CoreDataProperties.m in Sources */,
 				FC92E1EB20575DA00036C153 /* DBhelper.m in Sources */,
 				FCEC3ED920576856002A1A1D /* Event+CoreDataClass.m in Sources */,
 				FC1908142057D461000E8C97 /* CalendarViewController.m in Sources */,
 				FC19080E2057D3A8000E8C97 /* DAYCalendarView.m in Sources */,
 				FCCF79472056829A0033C401 /* main.m in Sources */,
+				FCF68DD42058F96200B20407 /* UITableView+Extend.m in Sources */,
 				FCEC3EEF2057738A002A1A1D /* MainEventCell.m in Sources */,
 				FCEC3EEB20577300002A1A1D /* MainCellAdapt.m in Sources */,
 				FC19080C2057D3A8000E8C97 /* DAYUtils.m in Sources */,
 				FC19080A2057D3A8000E8C97 /* DAYNavigationBar.m in Sources */,
+				FCDF66A02058FD16009ECAAC /* UIAlertController+swift.swift in Sources */,
 				FC92E1F320575E490036C153 /* ToDoList.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		FC1907F42057BFF2000E8C97 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FC1907E72057BFF2000E8C97 /* ToDoListToday */;
-			targetProxy = FC1907F32057BFF2000E8C97 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		FC1907EF2057BFF2000E8C97 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FC1907F02057BFF2000E8C97 /* Base */,
-			);
-			name = MainInterface.storyboard;
-			sourceTree = "<group>";
-		};
 		FCCF79422056829A0033C401 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -572,36 +496,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		FC1907F62057BFF2000E8C97 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = ToDoListToday/ToDoListToday.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 77274K7C27;
-				INFOPLIST_FILE = ToDoListToday/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.todolist.iphone.ToDoListToday;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		FC1907F72057BFF2000E8C97 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = ToDoListToday/ToDoListToday.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 77274K7C27;
-				INFOPLIST_FILE = ToDoListToday/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.todolist.iphone.ToDoListToday;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		FCCF79482056829A0033C401 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -712,6 +606,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ToDoList/ToDoList.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77274K7C27;
 				INFOPLIST_FILE = ToDoList/Info.plist;
@@ -731,6 +626,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ToDoList/ToDoList.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77274K7C27;
 				INFOPLIST_FILE = ToDoList/Info.plist;
@@ -746,15 +642,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FC1907F82057BFF2000E8C97 /* Build configuration list for PBXNativeTarget "ToDoListToday" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FC1907F62057BFF2000E8C97 /* Debug */,
-				FC1907F72057BFF2000E8C97 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		FCCF792C205682990033C401 /* Build configuration list for PBXProject "ToDoList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

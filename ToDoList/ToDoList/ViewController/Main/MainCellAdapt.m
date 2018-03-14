@@ -8,11 +8,13 @@
 
 #import "MainCellAdapt.h"
 #import "UITableView+Extend.h"
+#import "ToDoList-Swift.h"
 
 @interface MainCellAdapt ()
 @property (nonatomic,copy) NSString *sIdentifier;
 @property (nonatomic,copy) NSMutableArray *dataResource;
 @property (nonatomic,copy) cellDisplay cellDisplayBlock;
+@property (nonatomic,weak) id vc;
 @end
 
 @implementation MainCellAdapt
@@ -20,12 +22,15 @@
 -(instancetype)initWithDataSource:(NSMutableArray*)source
                        identifier:(NSString*)sIdentifier
                       cellDisplay:(cellDisplay)displayBlock
+                   viewController:(id)viewController
+
 {
     self = [super init];
     if (self) {
         self.sIdentifier = sIdentifier;
         self.dataResource = [[NSMutableArray alloc] initWithArray:source];
         self.cellDisplayBlock = [displayBlock copy];
+        self.vc = viewController;
     }
     return self;
 }
@@ -55,9 +60,34 @@
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+-(BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    return YES;
 }
+
+//return YES show editing mode
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+//Delete action
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView setEditing:NO animated:YES];
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        //insure delete
+        [UIAlertController alertInstanceWithTitleWithSTitle:@"Delete?" sMessage:@""
+                                                    confrim:@"OK" cancel:@"Cancel"
+                                                         vc:self.vc okSel:^{
+                                                             
+                                                         } cancelSel:^{
+                                                             
+                                                         }];
+    }
+}
+
+
+
 
 @end
