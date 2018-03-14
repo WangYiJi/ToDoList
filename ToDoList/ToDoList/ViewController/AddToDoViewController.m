@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //[self.calendarView addTarget:self action:@selector(calendarViewDidChange:) forControlEvents:UIControlEventValueChanged];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -23,6 +25,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+//- (void)calendarViewDidChange:(id)sender {
+//    self.datePicker.date = self.calendarView.selectedDate;
+//
+//    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+//    formatter.dateFormat = @"YYYY-MM-dd";
+//    NSLog(@"%@", [formatter stringFromDate:self.calendarView.selectedDate]);
+//}
 
 /*
 #pragma mark - Navigation

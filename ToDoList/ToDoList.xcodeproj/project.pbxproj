@@ -14,8 +14,6 @@
 		FC19080D2057D3A8000E8C97 /* DAYIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1908062057D3A8000E8C97 /* DAYIndicatorView.m */; };
 		FC19080E2057D3A8000E8C97 /* DAYCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1908082057D3A8000E8C97 /* DAYCalendarView.m */; };
 		FC19080F2057D3A8000E8C97 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC1908092057D3A8000E8C97 /* Info.plist */; };
-		FC1908142057D461000E8C97 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1908122057D461000E8C97 /* CalendarViewController.m */; };
-		FC1908152057D461000E8C97 /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC1908132057D461000E8C97 /* CalendarViewController.xib */; };
 		FC92E1EB20575DA00036C153 /* DBhelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FC92E1E420575DA00036C153 /* DBhelper.m */; };
 		FC92E1F320575E490036C153 /* ToDoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FC92E1F120575E490036C153 /* ToDoList.xcdatamodeld */; };
 		FC92E1F620575F210036C153 /* SLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC92E1F520575F210036C153 /* SLocationManager.swift */; };
@@ -26,6 +24,8 @@
 		FCCF795D205688FA0033C401 /* AddToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCF795B205688FA0033C401 /* AddToDoViewController.m */; };
 		FCCF795E205688FA0033C401 /* AddToDoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCCF795C205688FA0033C401 /* AddToDoViewController.xib */; };
 		FCDF66A02058FD16009ECAAC /* UIAlertController+swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDF669F2058FD16009ECAAC /* UIAlertController+swift.swift */; };
+		FCDF66A3205903FF009ECAAC /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDF66A1205903FF009ECAAC /* CalendarViewController.swift */; };
+		FCDF66A4205903FF009ECAAC /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCDF66A2205903FF009ECAAC /* CalendarViewController.xib */; };
 		FCEC3ED920576856002A1A1D /* Event+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEC3ED620576856002A1A1D /* Event+CoreDataClass.m */; };
 		FCEC3EDA20576856002A1A1D /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEC3ED820576856002A1A1D /* Event+CoreDataProperties.m */; };
 		FCEC3EE920577300002A1A1D /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCEC3EE420577300002A1A1D /* MainViewController.xib */; };
@@ -68,9 +68,6 @@
 		FC1908072057D3A8000E8C97 /* Lib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lib.h; sourceTree = "<group>"; };
 		FC1908082057D3A8000E8C97 /* DAYCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAYCalendarView.m; sourceTree = "<group>"; };
 		FC1908092057D3A8000E8C97 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FC1908112057D461000E8C97 /* CalendarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
-		FC1908122057D461000E8C97 /* CalendarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
-		FC1908132057D461000E8C97 /* CalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
 		FC92E1E420575DA00036C153 /* DBhelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBhelper.m; sourceTree = "<group>"; };
 		FC92E1E520575DA00036C153 /* DBhelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBhelper.h; sourceTree = "<group>"; };
 		FC92E1EF20575DF90036C153 /* Global.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
@@ -88,6 +85,8 @@
 		FCCF795B205688FA0033C401 /* AddToDoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddToDoViewController.m; sourceTree = "<group>"; };
 		FCCF795C205688FA0033C401 /* AddToDoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddToDoViewController.xib; sourceTree = "<group>"; };
 		FCDF669F2058FD16009ECAAC /* UIAlertController+swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+swift.swift"; sourceTree = "<group>"; };
+		FCDF66A1205903FF009ECAAC /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		FCDF66A2205903FF009ECAAC /* CalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
 		FCEC3ED520576856002A1A1D /* Event+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+CoreDataClass.h"; sourceTree = "<group>"; };
 		FCEC3ED620576856002A1A1D /* Event+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Event+CoreDataClass.m"; sourceTree = "<group>"; };
 		FCEC3ED720576856002A1A1D /* Event+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -167,9 +166,8 @@
 		FC1908102057D451000E8C97 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				FC1908112057D461000E8C97 /* CalendarViewController.h */,
-				FC1908122057D461000E8C97 /* CalendarViewController.m */,
-				FC1908132057D461000E8C97 /* CalendarViewController.xib */,
+				FCDF66A1205903FF009ECAAC /* CalendarViewController.swift */,
+				FCDF66A2205903FF009ECAAC /* CalendarViewController.xib */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -395,7 +393,7 @@
 				FCCF79442056829A0033C401 /* LaunchScreen.storyboard in Resources */,
 				FCEC3EF02057738A002A1A1D /* MainEventCell.xib in Resources */,
 				FCCF79412056829A0033C401 /* Assets.xcassets in Resources */,
-				FC1908152057D461000E8C97 /* CalendarViewController.xib in Resources */,
+				FCDF66A4205903FF009ECAAC /* CalendarViewController.xib in Resources */,
 				FCEC3EF2205776AE002A1A1D /* Media.xcassets in Resources */,
 				FCEC3EE920577300002A1A1D /* MainViewController.xib in Resources */,
 				FC19080F2057D3A8000E8C97 /* Info.plist in Resources */,
@@ -469,8 +467,8 @@
 				FCEC3EDA20576856002A1A1D /* Event+CoreDataProperties.m in Sources */,
 				FC92E1EB20575DA00036C153 /* DBhelper.m in Sources */,
 				FCEC3ED920576856002A1A1D /* Event+CoreDataClass.m in Sources */,
-				FC1908142057D461000E8C97 /* CalendarViewController.m in Sources */,
 				FC19080E2057D3A8000E8C97 /* DAYCalendarView.m in Sources */,
+				FCDF66A3205903FF009ECAAC /* CalendarViewController.swift in Sources */,
 				FCCF79472056829A0033C401 /* main.m in Sources */,
 				FCF68DD42058F96200B20407 /* UITableView+Extend.m in Sources */,
 				FCEC3EEF2057738A002A1A1D /* MainEventCell.m in Sources */,
