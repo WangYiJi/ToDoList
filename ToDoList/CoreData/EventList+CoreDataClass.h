@@ -1,5 +1,5 @@
 //
-//  Event+CoreDataClass.h
+//  EventList+CoreDataClass.h
 //  
 //
 //  Created by Alex on 15/03/2018.
@@ -9,14 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class EventList;
+@class Event;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Event : NSManagedObject
+@interface EventList : NSManagedObject
 
 @end
 
 NS_ASSUME_NONNULL_END
 
-#import "Event+CoreDataProperties.h"
+#import "EventList+CoreDataProperties.h"

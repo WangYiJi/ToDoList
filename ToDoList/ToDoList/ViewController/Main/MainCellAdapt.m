@@ -60,6 +60,8 @@
     return cell;
 }
 
+#pragma mark - Edit
+
 -(BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return YES;
@@ -70,6 +72,7 @@
 {
     return YES;
 }
+
 
 //Delete action
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath

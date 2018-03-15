@@ -12,13 +12,17 @@
 #import "MainEventCell.h"
 #import "Event+CoreDataClass.h"
 #import "UITableView+Extend.h"
+#import "MenuView.h"
+#import "LeftMenuViewDemo.h"
 #import "ToDoList-Swift.h"
+#import "Global.h"
 
 static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
 
-@interface MainViewController () <UITableViewDelegate>
+@interface MainViewController () <UITableViewDelegate,HomeMenuViewDelegate>
 @property (nonatomic,strong) NSMutableArray *sourceArray;
 @property (nonatomic,strong) MainCellAdapt *cellAdapt;
+@property (nonatomic,strong) MenuView *menu;
 @end
 
 @implementation MainViewController
@@ -33,10 +37,34 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
 
 -(void)createBaseView
 {
+    UIBarButtonItem *leftBar = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(showLeftMenu)];
+    self.navigationItem.leftBarButtonItem = leftBar;
+    
     UIBarButtonItem *rightBar = [[UIBarButtonItem alloc] initWithCustomView:self.btnCalendar];
     self.navigationItem.rightBarButtonItem = rightBar;
     
     [self initKeyBoardEvent];
+    [self initLeftMenu];
+}
+
+-(void)initLeftMenu
+{
+    LeftMenuViewDemo *demo = [[LeftMenuViewDemo alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH*0.8, SCREEN_HEIGHT)];
+    demo.customDelegate = self;
+    
+    MenuView *menu = [MenuView MenuViewWithDependencyView:self.view MenuView:demo isShowCoverView:YES];
+    self.menu = menu;
+}
+
+-(void)LeftMenuViewClick:(NSInteger)tag
+{
+    [self.menu hidenWithAnimation];
+    NSLog(@"%ld",tag);
+}
+
+-(void)showLeftMenu
+{
+    [self.menu show];
 }
 
 -(IBAction)didPressedCalendar:(id)sender

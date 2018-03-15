@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
             <connections>
+                <outlet property="btnCalendar" destination="J8P-Yj-W5k" id="OaR-am-709"/>
                 <outlet property="buttomSpan" destination="Z2i-zZ-Aaf" id="qCQ-7r-Jlt"/>
                 <outlet property="buttonView" destination="lOT-eA-T14" id="y0J-pr-ZME"/>
                 <outlet property="imgAdd" destination="R2A-wX-F2w" id="1Uf-g6-gcV"/>
@@ -81,9 +82,12 @@
             <point key="canvasLocation" x="-100.5" y="15.5"/>
         </view>
         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="J8P-Yj-W5k">
-            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <state key="normal" image="dayIcon"/>
+            <connections>
+                <action selector="didPressedCalendar:" destination="-1" eventType="touchUpInside" id="S4F-pi-3W4"/>
+            </connections>
             <point key="canvasLocation" x="320" y="311"/>
         </button>
     </objects>

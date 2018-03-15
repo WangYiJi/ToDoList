@@ -26,8 +26,12 @@
 		FCDF66A02058FD16009ECAAC /* UIAlertController+swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDF669F2058FD16009ECAAC /* UIAlertController+swift.swift */; };
 		FCDF66A3205903FF009ECAAC /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDF66A1205903FF009ECAAC /* CalendarViewController.swift */; };
 		FCDF66A4205903FF009ECAAC /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCDF66A2205903FF009ECAAC /* CalendarViewController.xib */; };
-		FCEC3ED920576856002A1A1D /* Event+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEC3ED620576856002A1A1D /* Event+CoreDataClass.m */; };
-		FCEC3EDA20576856002A1A1D /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEC3ED820576856002A1A1D /* Event+CoreDataProperties.m */; };
+		FCE34104205A199D005E49EA /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE34100205A199D005E49EA /* Event+CoreDataProperties.m */; };
+		FCE34105205A199D005E49EA /* Event+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE34101205A199D005E49EA /* Event+CoreDataClass.m */; };
+		FCE34106205A199D005E49EA /* EventList+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE34102205A199D005E49EA /* EventList+CoreDataProperties.m */; };
+		FCE34107205A199D005E49EA /* EventList+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE34103205A199D005E49EA /* EventList+CoreDataClass.m */; };
+		FCE34110205A1C87005E49EA /* LeftMenuViewDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE3410D205A1C87005E49EA /* LeftMenuViewDemo.m */; };
+		FCE34111205A1C87005E49EA /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE3410F205A1C87005E49EA /* MenuView.m */; };
 		FCEC3EE920577300002A1A1D /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCEC3EE420577300002A1A1D /* MainViewController.xib */; };
 		FCEC3EEA20577300002A1A1D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEC3EE620577300002A1A1D /* MainViewController.m */; };
 		FCEC3EEB20577300002A1A1D /* MainCellAdapt.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEC3EE720577300002A1A1D /* MainCellAdapt.m */; };
@@ -87,10 +91,18 @@
 		FCDF669F2058FD16009ECAAC /* UIAlertController+swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+swift.swift"; sourceTree = "<group>"; };
 		FCDF66A1205903FF009ECAAC /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		FCDF66A2205903FF009ECAAC /* CalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
-		FCEC3ED520576856002A1A1D /* Event+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+CoreDataClass.h"; sourceTree = "<group>"; };
-		FCEC3ED620576856002A1A1D /* Event+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Event+CoreDataClass.m"; sourceTree = "<group>"; };
-		FCEC3ED720576856002A1A1D /* Event+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+CoreDataProperties.h"; sourceTree = "<group>"; };
-		FCEC3ED820576856002A1A1D /* Event+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Event+CoreDataProperties.m"; sourceTree = "<group>"; };
+		FCE340FC205A199C005E49EA /* Event+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+CoreDataClass.h"; sourceTree = "<group>"; };
+		FCE340FD205A199C005E49EA /* Event+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+CoreDataProperties.h"; sourceTree = "<group>"; };
+		FCE340FE205A199C005E49EA /* EventList+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EventList+CoreDataProperties.h"; sourceTree = "<group>"; };
+		FCE340FF205A199D005E49EA /* EventList+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EventList+CoreDataClass.h"; sourceTree = "<group>"; };
+		FCE34100205A199D005E49EA /* Event+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Event+CoreDataProperties.m"; sourceTree = "<group>"; };
+		FCE34101205A199D005E49EA /* Event+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Event+CoreDataClass.m"; sourceTree = "<group>"; };
+		FCE34102205A199D005E49EA /* EventList+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EventList+CoreDataProperties.m"; sourceTree = "<group>"; };
+		FCE34103205A199D005E49EA /* EventList+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EventList+CoreDataClass.m"; sourceTree = "<group>"; };
+		FCE3410C205A1C87005E49EA /* LeftMenuViewDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuViewDemo.h; sourceTree = "<group>"; };
+		FCE3410D205A1C87005E49EA /* LeftMenuViewDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuViewDemo.m; sourceTree = "<group>"; };
+		FCE3410E205A1C87005E49EA /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
+		FCE3410F205A1C87005E49EA /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuView.m; sourceTree = "<group>"; };
 		FCEC3EE420577300002A1A1D /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		FCEC3EE520577300002A1A1D /* MainCellAdapt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainCellAdapt.h; sourceTree = "<group>"; };
 		FCEC3EE620577300002A1A1D /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
@@ -175,6 +187,7 @@
 		FC92E1E220575DA00036C153 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				FCE34108205A1AEE005E49EA /* LeftMenu */,
 				FC1907FB2057D3A8000E8C97 /* Calendar */,
 				FC92E1E320575DA00036C153 /* DBHelper */,
 				FC92E1E620575DA00036C153 /* LocationHelper */,
@@ -211,10 +224,14 @@
 		FC92E1F020575E490036C153 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				FCEC3ED520576856002A1A1D /* Event+CoreDataClass.h */,
-				FCEC3ED620576856002A1A1D /* Event+CoreDataClass.m */,
-				FCEC3ED720576856002A1A1D /* Event+CoreDataProperties.h */,
-				FCEC3ED820576856002A1A1D /* Event+CoreDataProperties.m */,
+				FCE340FC205A199C005E49EA /* Event+CoreDataClass.h */,
+				FCE34101205A199D005E49EA /* Event+CoreDataClass.m */,
+				FCE340FD205A199C005E49EA /* Event+CoreDataProperties.h */,
+				FCE34100205A199D005E49EA /* Event+CoreDataProperties.m */,
+				FCE340FF205A199D005E49EA /* EventList+CoreDataClass.h */,
+				FCE34103205A199D005E49EA /* EventList+CoreDataClass.m */,
+				FCE340FE205A199C005E49EA /* EventList+CoreDataProperties.h */,
+				FCE34102205A199D005E49EA /* EventList+CoreDataProperties.m */,
 				FC92E1F120575E490036C153 /* ToDoList.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -260,6 +277,7 @@
 		FCCF794D205682B90033C401 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				FCE340FB205A179A005E49EA /* NSDateFormatter+ */,
 				FCF68DCE2058F96200B20407 /* UIAlertController+ */,
 				FCF68DD02058F96200B20407 /* UITableView+ */,
 			);
@@ -287,6 +305,24 @@
 			);
 			name = ViewController;
 			path = ToDoList/ViewController;
+			sourceTree = "<group>";
+		};
+		FCE340FB205A179A005E49EA /* NSDateFormatter+ */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "NSDateFormatter+";
+			sourceTree = "<group>";
+		};
+		FCE34108205A1AEE005E49EA /* LeftMenu */ = {
+			isa = PBXGroup;
+			children = (
+				FCE3410C205A1C87005E49EA /* LeftMenuViewDemo.h */,
+				FCE3410D205A1C87005E49EA /* LeftMenuViewDemo.m */,
+				FCE3410E205A1C87005E49EA /* MenuView.h */,
+				FCE3410F205A1C87005E49EA /* MenuView.m */,
+			);
+			path = LeftMenu;
 			sourceTree = "<group>";
 		};
 		FCEC3EE320577300002A1A1D /* Main */ = {
@@ -459,22 +495,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC92E1F620575F210036C153 /* SLocationManager.swift in Sources */,
+				FCE34107205A199D005E49EA /* EventList+CoreDataClass.m in Sources */,
 				FC19080B2057D3A8000E8C97 /* DAYComponentView.m in Sources */,
+				FCE34104205A199D005E49EA /* Event+CoreDataProperties.m in Sources */,
 				FCCF795D205688FA0033C401 /* AddToDoViewController.m in Sources */,
 				FC19080D2057D3A8000E8C97 /* DAYIndicatorView.m in Sources */,
 				FCCF7958205688CA0033C401 /* AppDelegate.m in Sources */,
+				FCE34106205A199D005E49EA /* EventList+CoreDataProperties.m in Sources */,
 				FCEC3EEA20577300002A1A1D /* MainViewController.m in Sources */,
-				FCEC3EDA20576856002A1A1D /* Event+CoreDataProperties.m in Sources */,
 				FC92E1EB20575DA00036C153 /* DBhelper.m in Sources */,
-				FCEC3ED920576856002A1A1D /* Event+CoreDataClass.m in Sources */,
 				FC19080E2057D3A8000E8C97 /* DAYCalendarView.m in Sources */,
 				FCDF66A3205903FF009ECAAC /* CalendarViewController.swift in Sources */,
 				FCCF79472056829A0033C401 /* main.m in Sources */,
+				FCE34105205A199D005E49EA /* Event+CoreDataClass.m in Sources */,
 				FCF68DD42058F96200B20407 /* UITableView+Extend.m in Sources */,
 				FCEC3EEF2057738A002A1A1D /* MainEventCell.m in Sources */,
 				FCEC3EEB20577300002A1A1D /* MainCellAdapt.m in Sources */,
+				FCE34110205A1C87005E49EA /* LeftMenuViewDemo.m in Sources */,
 				FC19080C2057D3A8000E8C97 /* DAYUtils.m in Sources */,
 				FC19080A2057D3A8000E8C97 /* DAYNavigationBar.m in Sources */,
+				FCE34111205A1C87005E49EA /* MenuView.m in Sources */,
 				FCDF66A02058FD16009ECAAC /* UIAlertController+swift.swift in Sources */,
 				FC92E1F320575E490036C153 /* ToDoList.xcdatamodeld in Sources */,
 			);

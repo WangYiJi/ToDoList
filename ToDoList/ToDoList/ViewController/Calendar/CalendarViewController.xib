@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalendarViewController" customModule="ToDoList" customModuleProvider="target">
             <connections>
+                <outlet property="calendarView" destination="Flh-RD-Egy" id="ay1-os-bMs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,13 +20,29 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Flh-RD-Egy" customClass="DAYCalendarView">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="265"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Flh-RD-Egy" customClass="DAYCalendarView">
+                    <rect key="frame" x="20" y="90" width="335" height="260"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="260" id="bKr-I9-b9Q"/>
+                    </constraints>
                 </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Axj-fc-QCv">
+                    <rect key="frame" x="0.0" y="350" width="375" height="317"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Axj-fc-QCv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6sM-HR-MAT"/>
+                <constraint firstItem="Axj-fc-QCv" firstAttribute="top" secondItem="Flh-RD-Egy" secondAttribute="bottom" id="Ji6-ju-fTQ"/>
+                <constraint firstAttribute="trailing" secondItem="Axj-fc-QCv" secondAttribute="trailing" id="MxQ-hL-RSm"/>
+                <constraint firstItem="Flh-RD-Egy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="90" id="aC1-tR-Vvk"/>
+                <constraint firstAttribute="trailing" secondItem="Flh-RD-Egy" secondAttribute="trailing" constant="20" id="fGg-Fc-kYh"/>
+                <constraint firstItem="Flh-RD-Egy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="joV-I8-hfF"/>
+                <constraint firstAttribute="bottom" secondItem="Axj-fc-QCv" secondAttribute="bottom" id="wlV-et-Mdy"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <point key="canvasLocation" x="-297.5" y="24.5"/>
         </view>
     </objects>

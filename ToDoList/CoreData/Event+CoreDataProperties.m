@@ -2,7 +2,7 @@
 //  Event+CoreDataProperties.m
 //  
 //
-//  Created by Alex on 13/03/2018.
+//  Created by Alex on 15/03/2018.
 //
 //
 
@@ -18,5 +18,10 @@
 @dynamic isDelete;
 @dynamic isFinish;
 @dynamic title;
+@dynamic createDate;
+@dynamic priorityLevel;
+@dynamic needAlerm;
+@dynamic remark;
+@dynamic listship;
 
 @end
