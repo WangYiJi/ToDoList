@@ -12,12 +12,16 @@
 #import "Event+CoreDataClass.h"
 
 typedef void (^cellDisplay)(MainEventCell *cell,Event *item);
+typedef void (^cellDelete)(NSInteger iIndex);
 
-@interface MainCellAdapt : NSObject <UITableViewDataSource,UITableViewDelegate>
+@interface MainCellAdapt : NSObject <UITableViewDataSource>
 
 -(instancetype)initWithDataSource:(NSMutableArray*)source
                        identifier:(NSString*)sIdentifier
                       cellDisplay:(cellDisplay)displayBlock
+                       cellDelete:(cellDelete)deleteBlock
                    viewController:(id)viewController;
+
+-(void)addEvent:(Event*)event;
 
 @end

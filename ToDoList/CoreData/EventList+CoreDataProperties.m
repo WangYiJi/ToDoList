@@ -14,8 +14,8 @@
 	return [[NSFetchRequest alloc] initWithEntityName:@"EventList"];
 }
 
-@dynamic listName;
 @dynamic isEnable;
+@dynamic listName;
 @dynamic markIcon;
 @dynamic eventShip;
 

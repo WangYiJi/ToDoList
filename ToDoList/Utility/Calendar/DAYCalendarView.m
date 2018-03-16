@@ -280,14 +280,14 @@
     __block int currentColumn = 0;
     __block UIStackView *currentRowView;
     
-    void (^makeRow)() = ^{
+    void (^makeRow)(void) = ^{
         currentRowView = [[UIStackView alloc] init];
         currentRowView.axis = UILayoutConstraintAxisHorizontal;
         currentRowView.distribution = UIStackViewDistributionFillEqually;
         currentRowView.alignment = UIStackViewAlignmentFill;
     };
     
-    void (^submitRowIfNecessary)() = ^{
+    void (^submitRowIfNecessary)(void) = ^{
         if (currentColumn >= 7) {
             [self.contentView addArrangedSubview:currentRowView];
             currentColumn = 0;

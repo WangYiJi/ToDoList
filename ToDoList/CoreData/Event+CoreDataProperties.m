@@ -14,14 +14,14 @@
 	return [[NSFetchRequest alloc] initWithEntityName:@"Event"];
 }
 
-@dynamic createTime;
+@dynamic createDate;
+@dynamic endDate;
 @dynamic isDelete;
 @dynamic isFinish;
-@dynamic title;
-@dynamic createDate;
-@dynamic priorityLevel;
 @dynamic needAlerm;
+@dynamic priorityLevel;
 @dynamic remark;
+@dynamic title;
 @dynamic listship;
 
 @end

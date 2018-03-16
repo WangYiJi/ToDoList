@@ -15,14 +15,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<Event *> *)fetchRequest;
 
-@property (nullable, nonatomic, copy) NSDate *createTime;
+@property (nullable, nonatomic, copy) NSDate *createDate;
+@property (nullable, nonatomic, copy) NSDate *endDate;
 @property (nonatomic) BOOL isDelete;
 @property (nonatomic) BOOL isFinish;
-@property (nullable, nonatomic, copy) NSString *title;
-@property (nullable, nonatomic, copy) NSDate *createDate;
-@property (nonatomic) int32_t priorityLevel;
 @property (nonatomic) BOOL needAlerm;
+@property (nonatomic) int32_t priorityLevel;
 @property (nullable, nonatomic, copy) NSString *remark;
+@property (nullable, nonatomic, copy) NSString *title;
 @property (nullable, nonatomic, retain) EventList *listship;
 
 @end

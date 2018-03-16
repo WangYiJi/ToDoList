@@ -15,8 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<EventList *> *)fetchRequest;
 
-@property (nullable, nonatomic, copy) NSString *listName;
 @property (nonatomic) BOOL isEnable;
+@property (nullable, nonatomic, copy) NSString *listName;
 @property (nullable, nonatomic, copy) NSString *markIcon;
 @property (nullable, nonatomic, retain) NSSet<Event *> *eventShip;
 

@@ -11,6 +11,8 @@
 #define SCREEN_WIDTH  [[UIScreen mainScreen] bounds].size.width
 #define SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
 
+#define df_YearMonthDay_DF                  = @"yyyy-MM-dd";
+#define df_HourMinuteSecond_DF              = @"HH:mm:ss";
 
 #ifndef Global_h
 #define Global_h
