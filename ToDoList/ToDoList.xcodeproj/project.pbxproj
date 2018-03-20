@@ -27,6 +27,7 @@
 		FC19080D2057D3A8000E8C97 /* DAYIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1908062057D3A8000E8C97 /* DAYIndicatorView.m */; };
 		FC19080E2057D3A8000E8C97 /* DAYCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1908082057D3A8000E8C97 /* DAYCalendarView.m */; };
 		FC19080F2057D3A8000E8C97 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC1908092057D3A8000E8C97 /* Info.plist */; };
+		FC923AB72061111700E42FCF /* DateFormatterInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC923AB62061111700E42FCF /* DateFormatterInstance.swift */; };
 		FC92E1EB20575DA00036C153 /* DBhelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FC92E1E420575DA00036C153 /* DBhelper.m */; };
 		FC92E1F320575E490036C153 /* ToDoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FC92E1F120575E490036C153 /* ToDoList.xcdatamodeld */; };
 		FC92E1F620575F210036C153 /* SLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC92E1F520575F210036C153 /* SLocationManager.swift */; };
@@ -92,6 +93,7 @@
 		FC1908072057D3A8000E8C97 /* Lib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lib.h; sourceTree = "<group>"; };
 		FC1908082057D3A8000E8C97 /* DAYCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAYCalendarView.m; sourceTree = "<group>"; };
 		FC1908092057D3A8000E8C97 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC923AB62061111700E42FCF /* DateFormatterInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterInstance.swift; sourceTree = "<group>"; };
 		FC92E1E420575DA00036C153 /* DBhelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBhelper.m; sourceTree = "<group>"; };
 		FC92E1E520575DA00036C153 /* DBhelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBhelper.h; sourceTree = "<group>"; };
 		FC92E1EF20575DF90036C153 /* Global.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 		FCE340FB205A179A005E49EA /* NSDateFormatter+ */ = {
 			isa = PBXGroup;
 			children = (
+				FC923AB62061111700E42FCF /* DateFormatterInstance.swift */,
 			);
 			path = "NSDateFormatter+";
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				FC19080C2057D3A8000E8C97 /* DAYUtils.m in Sources */,
 				FC19080A2057D3A8000E8C97 /* DAYNavigationBar.m in Sources */,
 				FCAC8976205A5397008A5848 /* Event+CoreDataProperties.m in Sources */,
+				FC923AB72061111700E42FCF /* DateFormatterInstance.swift in Sources */,
 				FCE34111205A1C87005E49EA /* MenuView.m in Sources */,
 				FCAC8978205A5397008A5848 /* EventList+CoreDataProperties.m in Sources */,
 				FC17EFBF205BB780007ED755 /* AppDelegate.m in Sources */,

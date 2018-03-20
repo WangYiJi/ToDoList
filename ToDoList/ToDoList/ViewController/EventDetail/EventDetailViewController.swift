@@ -64,10 +64,10 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     }
     
     func createBaseView() ->Void {
-        let rightBar:UIBarButtonItem = UIBarButtonItem.init(title: "Done", style: .done, target: self, action: #selector("didPressedDone_:"));
+        let rightBar:UIBarButtonItem = UIBarButtonItem.init(title: "Done", style: .done, target: self, action: #selector(EventDetailViewController.calendarDidSelect(_:)));
         self.navigationItem.rightBarButtonItem = rightBar;
         
-        self.calendarView.addTarget(self, action: #selector("calendarDidSelect"), for: .valueChanged);
+        self.calendarView.addTarget(self, action: #selector(EventDetailViewController.didPressedDone(_:)), for: .valueChanged);
     }
     
     func loadDefaultData() -> Void {
@@ -103,7 +103,9 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         
     }
     
-    @objc func calendarDidSelect() -> Void {
+    @objc func calendarDidSelect(_ sender:Any) -> Void {
+        var selectDate:Date = self.calendarView.selectedDate;
+        let dateFormatter = DateFormatter();
         
     }
     
