@@ -71,7 +71,7 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8;
+        return 7;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -90,8 +90,6 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
             return cellTimePicker;
         case 6:
             return cellMark;
-        case 7:
-            return cellDelete;
             
         default:
             return UITableViewCell();
@@ -130,8 +128,6 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
             }
         case 6:
             return 216;
-        case 7:
-            return 44;
             
         default:
             return 44;

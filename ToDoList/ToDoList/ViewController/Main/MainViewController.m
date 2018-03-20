@@ -41,6 +41,7 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
     UIBarButtonItem *leftBar = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(showLeftMenu)];
     self.navigationItem.leftBarButtonItem = leftBar;
     
+    [self.btnCalendar setFrame:CGRectMake(0, 0, 30, 30)];
     UIBarButtonItem *rightBar = [[UIBarButtonItem alloc] initWithCustomView:self.btnCalendar];
     self.navigationItem.rightBarButtonItem = rightBar;
     

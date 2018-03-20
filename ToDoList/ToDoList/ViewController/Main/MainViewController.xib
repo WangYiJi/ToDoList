@@ -84,7 +84,7 @@
         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="J8P-Yj-W5k">
             <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <state key="normal" image="dayIcon"/>
+            <state key="normal" image="day1"/>
             <connections>
                 <action selector="didPressedCalendar:" destination="-1" eventType="touchUpInside" id="S4F-pi-3W4"/>
             </connections>
@@ -93,6 +93,6 @@
     </objects>
     <resources>
         <image name="add" width="200" height="200"/>
-        <image name="dayIcon" width="40" height="40"/>
+        <image name="day1" width="60" height="60"/>
     </resources>
 </document>

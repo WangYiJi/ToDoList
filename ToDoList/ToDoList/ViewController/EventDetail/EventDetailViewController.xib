@@ -39,18 +39,26 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ncQ-qD-SYO">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="604"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="283-kb-fLy"/>
                         <outlet property="delegate" destination="-1" id="MRN-Lf-khR"/>
                     </connections>
                 </tableView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X5e-Xf-Eq8">
+                    <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Xze-ce-Eby"/>
+                        <barButtonItem systemItem="trash" id="9Cf-QA-5of"/>
+                    </items>
+                </toolbar>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="ncQ-qD-SYO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0QM-WG-AjR"/>
-                <constraint firstItem="ncQ-qD-SYO" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" constant="-63" id="4QB-vE-0eh"/>
+                <constraint firstItem="ncQ-qD-SYO" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" constant="-44" id="4QB-vE-0eh"/>
                 <constraint firstItem="ncQ-qD-SYO" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="Ayk-MR-9tL"/>
                 <constraint firstItem="ncQ-qD-SYO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yFQ-eq-UMp"/>
             </constraints>
@@ -114,15 +122,22 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmL-kY-3Df">
-                        <rect key="frame" x="323" y="7" width="45" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Delete"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmL-kY-3Df">
+                        <rect key="frame" x="325" y="6" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="W1f-DQ-hAS"/>
+                            <constraint firstAttribute="height" constant="30" id="eMm-YV-TW8"/>
+                        </constraints>
+                        <state key="normal" image="delete_empty"/>
                         <connections>
                             <action selector="didPressedDelete:" destination="-1" eventType="touchUpInside" id="avE-1f-Yie"/>
                         </connections>
                     </button>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="kmL-kY-3Df" firstAttribute="top" secondItem="jVW-Hq-ALJ" secondAttribute="top" constant="6" id="Tst-Li-cZe"/>
+                    <constraint firstAttribute="trailing" secondItem="kmL-kY-3Df" secondAttribute="trailing" constant="20" id="bJl-O4-UKU"/>
+                </constraints>
             </tableViewCellContentView>
             <point key="canvasLocation" x="25" y="1532"/>
         </tableViewCell>
@@ -272,6 +287,7 @@
         </view>
     </objects>
     <resources>
+        <image name="delete_empty" width="60" height="60"/>
         <image name="iconFinishGray" width="60" height="60"/>
     </resources>
 </document>
