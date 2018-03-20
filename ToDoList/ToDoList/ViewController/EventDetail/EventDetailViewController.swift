@@ -58,8 +58,16 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        createBaseView();
         loadDefaultData();
         // Do any additional setup after loading the view.
+    }
+    
+    func createBaseView() ->Void {
+        let rightBar:UIBarButtonItem = UIBarButtonItem.init(title: "Done", style: .done, target: self, action: #selector("didPressedDone_:"));
+        self.navigationItem.rightBarButtonItem = rightBar;
+        
+        self.calendarView.addTarget(self, action: #selector("calendarDidSelect"), for: .valueChanged);
     }
     
     func loadDefaultData() -> Void {
@@ -74,10 +82,14 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         self.eventNameLaycontent.constant = finalRect.size.height;
         
         //note
-        self.lblMark.text = self.event!.remark;
-        let markRect = CGRect(origin: .zero,size:CGSize(width:self.lblMark.frame.size.width,height:CGFloat.greatestFiniteMagnitude));
-        let lblMarkRect = (self.event.remark! as NSString).boundingRect(with: markRect.size, options: .usesLineFragmentOrigin, attributes: nil, context: nil);
-        self.markLayconstantHeight.constant = lblMarkRect.size.height;
+        if self.event.remark != nil {
+            self.lblMark.text = self.event!.remark;
+            let markRect = CGRect(origin: .zero,size:CGSize(width:self.lblMark.frame.size.width,height:CGFloat.greatestFiniteMagnitude));
+            let lblMarkRect = (self.event.remark! as NSString).boundingRect(with: markRect.size, options: .usesLineFragmentOrigin, attributes: nil, context: nil);
+            self.markLayconstantHeight.constant = lblMarkRect.size.height;
+        } else {
+            self.lblMark.text = "Add a note";
+        }
         
         //needAlerm
         self.swiAlertMe.setOn(self.event!.needAlerm ? true:false, animated: true);
@@ -90,10 +102,13 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         self.lblCreateTime.text = "Created on " + dateFormatter.string(from: self.event!.createDate!);
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @objc func calendarDidSelect() -> Void {
+        
+    }
+    
+    @objc func didPressedDone(_ sender:Any) -> Void {
+        self.navigationController?.popViewController(animated: true);
     }
     
     // MARK: - Tableview delegate
@@ -239,6 +254,11 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     @IBAction func didAlertChange(_ sender: Any) {
         self.bAlertMode = !self.bAlertMode;
         self.mainTableview.reloadData();
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
 }
