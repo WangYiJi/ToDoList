@@ -87,11 +87,8 @@
         [UIAlertController alertInstanceWithTitleWithSTitle:@"Delete?" sMessage:@""
                                                     confrim:@"OK" cancel:@"Cancel"
                                                          vc:self.vc okSel:^{
-                                                             weakSelf.cellDeleteBlock(indexPath.row);
-                                                             [weakSelf.dataResource removeObjectAtIndex:indexPath.row];
-                                                             [tableView beginUpdates];
-                                                             [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
-                                                             [tableView endUpdates];
+                                                             
+                                                             weakSelf.cellDeleteBlock(indexPath);
                                                              
                                                          } cancelSel:^{
                                                              

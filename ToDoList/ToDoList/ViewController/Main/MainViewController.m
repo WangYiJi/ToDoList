@@ -10,7 +10,6 @@
 #import "MainCellAdapt.h"
 #import "DBhelper.h"
 #import "MainEventCell.h"
-#import "Event+CoreDataClass.h"
 #import "UITableView+Extend.h"
 #import "MenuView.h"
 #import "LeftMenuViewDemo.h"
@@ -24,6 +23,9 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
 
 @property (nonatomic,strong) MainCellAdapt *cellAdapt;
 @property (nonatomic,strong) MenuView *menu;
+
+-(void)refreshButtomStyle:(BOOL)bInput;
+
 @end
 
 @implementation MainViewController
@@ -38,28 +40,42 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
 
 -(void)createBaseView
 {
+    //Go to Calendar
     UIBarButtonItem *leftBar = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(showLeftMenu)];
     self.navigationItem.leftBarButtonItem = leftBar;
     
-    [self.btnCalendar setFrame:CGRectMake(0, 0, 30, 30)];
+    //[self.btnCalendar setFrame:CGRectMake(0, 0, 30, 30)];
     UIBarButtonItem *rightBar = [[UIBarButtonItem alloc] initWithCustomView:self.btnCalendar];
     self.navigationItem.rightBarButtonItem = rightBar;
     
-    //mainview gestureRecognizer
+    //add mainview gestureRecognizer
     UITapGestureRecognizer *touch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide)];
     touch.delegate = self;
     [self.mainTableview addGestureRecognizer:touch];
+    
+    /*
+    //Add swipe gesture
+    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeAction:)];
+    swipe.delegate = self;
+    swipe.direction = UISwipeGestureRecognizerDirectionDown;
+    [self.mainTableview addGestureRecognizer:swipe];
+    */
+     
+    //init buttom textfield & label
+    [self refreshButtomStyle:NO];
+    UITapGestureRecognizer *lblTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addTextFieldBecomeResponder)];
+    [self.lblAddEventTopic addGestureRecognizer:lblTouch];
+    
+    UITapGestureRecognizer *imgTouch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addTextFieldBecomeResponder)];
+    [self.imgAdd addGestureRecognizer:imgTouch];
     
     [self initKeyBoardEvent];
     [self initLeftMenu];
 }
 
-#pragma mark-手势代理，解决和tableview点击发生的冲突
--(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
-    if ([NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"]) {//判断如果点击的是tableView的cell，就把手势给关闭了
-        return NO;//关闭手势
-    }//否则手势存在
-    return YES;
+-(void)swipeAction:(UISwipeGestureRecognizer*)swipe
+{
+    [self.txtEventTitle resignFirstResponder];
 }
 
 -(IBAction)didPressedCalendar:(id)sender
@@ -74,8 +90,8 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
     NSMutableArray *sourceArray = [DBhelper searchBy:@"Event"];
     
     __weak typeof(self) weakSelf = self;
-    cellDelete deleteBlock = ^(NSInteger iIndex){
-        [weakSelf deleteEvent:iIndex];
+    cellDelete deleteBlock = ^(NSIndexPath *delIndexPath){
+        [weakSelf deleteEvent:delIndexPath.row];
     };
     
     cellDisplay displayBlock = ^(MainEventCell *cell,Event *item){
@@ -94,11 +110,16 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
     [self.mainTableview registerNib:[MainEventCell nib] forCellReuseIdentifier:MainEventCellIdentifier];
 }
 
+#pragma mark - tableview Delegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    __weak typeof(self) weakSelf = self;
     Event *tempEvent = [self.cellAdapt.dataResource objectAtIndex:indexPath.row];
     EventDetailViewController *eventDetailVC = [[EventDetailViewController alloc] initWithNibName:@"EventDetailViewController" bundle:nil];
     eventDetailVC.event = tempEvent;
+    eventDetailVC.delBlock = ^(Event * _Nonnull delEvent) {
+        [weakSelf deleteEvent:[self.cellAdapt.dataResource indexOfObject:delEvent]];
+    };
     [self.navigationController pushViewController:eventDetailVC animated:YES];
 }
 
@@ -107,29 +128,19 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
     return 44;
 }
 
--(void)addEvent:(NSString*)sEventTitle
-{
-    Event *e = [DBhelper insertWithEntity:@"Event"];
-    e.title = sEventTitle;
-    e.createDate = [NSDate date];
-    [DBhelper Save];
-    
-    [self.cellAdapt addEvent:e];
+-(void)fadeInTableview {
+    [self.mainTableview beginUpdates];
+    NSArray *insertArray = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:self.cellAdapt.dataResource.count - 1 inSection:0]];
+    [self.mainTableview insertRowsAtIndexPaths:insertArray withRowAnimation:UITableViewRowAnimationBottom];
+    [self.mainTableview endUpdates];
 }
 
--(void)deleteEvent:(NSInteger)iIndex
-{
-    Event *e = [self.cellAdapt.dataResource objectAtIndex:iIndex];
-    
-    [DBhelper deleteBy:e];
-    
-    [self.cellAdapt.dataResource removeObject:e];
-    
-}
+#pragma mark - Textfield func
 
--(IBAction)didPressedDone:(id)sender
+-(void)addTextFieldBecomeResponder
 {
-
+    [self refreshButtomStyle:YES];
+    [self.txtEventTitle becomeFirstResponder];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -141,24 +152,43 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
         return NO;
     } else {
         [textField resignFirstResponder];
+        [self refreshButtomStyle:NO];
         return YES;
     }
 }
 
-//touch background to hide keyboard
-- (void)keyboardHide {
-    // 发送resignFirstResponder.
-    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
+-(void)refreshButtomStyle:(BOOL)bInput
+{
+    self.lblAddEventTopic.hidden = bInput;
+    self.txtEventTitle.hidden = !bInput;
 }
 
--(void)fadeInTableview {
+#pragma mark - CoreData func
+-(void)addEvent:(NSString*)sEventTitle
+{
+    Event *e = [DBhelper insertWithEntity:@"Event"];
+    e.title = sEventTitle;
+    e.createDate = [NSDate date];
+    e.isDelete = NO;
+    e.isFinish = NO;
+    e.needAlerm = NO;
+    
+    [DBhelper Save];
+    
+    [self.cellAdapt addEvent:e];
+}
+
+-(void)deleteEvent:(NSInteger)delIndex
+{
+    Event *event = [self.cellAdapt.dataResource objectAtIndex:delIndex];
+    [self.cellAdapt.dataResource removeObject:event];
     [self.mainTableview beginUpdates];
-    NSArray *insertArray = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:self.cellAdapt.dataResource.count - 1 inSection:0]];
-    [self.mainTableview insertRowsAtIndexPaths:insertArray withRowAnimation:UITableViewRowAnimationBottom];
+    [self.mainTableview deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:delIndex inSection:0]] withRowAnimation:UITableViewRowAnimationRight];
     [self.mainTableview endUpdates];
+    [DBhelper deleteBy:event];
 }
 
-#pragma mark - Menu
+#pragma mark - Menu func
 -(void)initLeftMenu
 {
     LeftMenuViewDemo *demo = [[LeftMenuViewDemo alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH*0.8, SCREEN_HEIGHT)];
@@ -180,6 +210,27 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
 }
 
 #pragma mark - Keyboard event
+//Use Gesture to solve the conflict between tableviewcell & keyboard hide
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    if ([gestureRecognizer isKindOfClass:[UISwipeGestureRecognizer class]]) {
+        return YES;
+    } else if ([gestureRecognizer isKindOfClass:[UITapGestureRecognizer class]]) {
+        if ([NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"]) {//touch cell
+            return NO;//Close gesture
+        } else {
+            return YES;//Open gesture
+        }
+    } else {
+        return YES;
+    }
+}
+
+//touch background to hide keyboard
+- (void)keyboardHide {
+    // Send resignFirstResponder.
+    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
+}
+
 -(void)initKeyBoardEvent
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillShow:) name:UIKeyboardWillShowNotification object:nil];
@@ -196,18 +247,22 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
 {
     CGFloat fBoardHeight = [[[aNotification userInfo] objectForKey:@"UIKeyboardBoundsUserInfoKey"] CGRectValue].size.height;
 
+    __weak typeof(self) weakSelf = self;
     [UIView animateWithDuration:0.3f animations:^{
-        self.buttomSpan.constant = fBoardHeight;
+        weakSelf.buttomSpan.constant = fBoardHeight;
     }];
     [self.view layoutIfNeeded];
+    [self refreshButtomStyle:YES];
 }
 
 -(void)keyBoardWillHide:(NSNotification *)aNotification
 {
+    __weak typeof(self) weakSelf = self;
     [UIView animateWithDuration:0.3f animations:^{
-        self.buttomSpan.constant = 0;
+        weakSelf.buttomSpan.constant = 0;
     }];
     [self.view layoutIfNeeded];
+    [self refreshButtomStyle:NO];
 }
 
 - (void)didReceiveMemoryWarning {

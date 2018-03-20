@@ -2,8 +2,8 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "delete_full.png",
-      "scale" : "1x"
+      "filename" : "iconDelete_empty@2x.png",
+      "scale" : "2x"
     }
   ],
   "info" : {

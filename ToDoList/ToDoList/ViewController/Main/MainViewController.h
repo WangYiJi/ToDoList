@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Event+CoreDataClass.h"
+
+//typedef void(^deleteEventBlock)(Event *delEvent);
 
 @interface MainViewController : UIViewController
 
@@ -16,11 +19,10 @@
 @property (nonatomic,weak) IBOutlet UIImageView *imgAdd;
 @property (nonatomic,weak) IBOutlet UIView *buttonView;
 @property (nonatomic,weak) IBOutlet UITextField *txtEventTitle;
+
 @property (nonatomic,weak) IBOutlet UILabel *lblAddEventTopic;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *buttomSpan;
-
--(IBAction)didPressedDone:(id)sender;
 
 -(IBAction)didPressedCalendar:(id)sender;
 

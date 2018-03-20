@@ -13,16 +13,20 @@ import CoreData
 let FINISHIMAGENAME = "iconFinishGreen"
 let UNFINISHIMAGENAME = "iconFinishGray"
 
+typealias deleteEventBlock = (Event) -> ()
+
 class EventDetailViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var mainTableview: UITableView!
     
     @IBOutlet var cellEventName: UITableViewCell!
     @IBOutlet weak var lblEventName: UILabel!
+    @IBOutlet weak var eventNameLaycontent: NSLayoutConstraint!
     @IBOutlet weak var btnFinishEvent: UIButton!
     
     @IBOutlet var cellAlerm: UITableViewCell!
     @IBOutlet weak var lblAlermMe: UILabel!
+    @IBOutlet weak var swiAlertMe: UISwitch!
     
     @IBOutlet var cellDate: UITableViewCell!
     @IBOutlet weak var lblData: UILabel!
@@ -40,24 +44,51 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     
     @IBOutlet var cellMark: UITableViewCell!
     @IBOutlet weak var lblMark: UILabel!
+    @IBOutlet weak var markLayconstantHeight: NSLayoutConstraint!
     
-    @IBOutlet var cellDelete: UITableViewCell!
     @IBOutlet weak var lblCreateTime: UILabel!
-    @IBOutlet weak var btnDelete: UIButton!
     
-    var bFinish:Bool = false;
     var bAlertMode:Bool = false;
     var bShowCalendar:Bool = false;
     var bShowDatePicker:Bool = false;
     
-    var event:Event?
+    var event:Event!
     
-    
+    var delBlock:deleteEventBlock!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loadDefaultData();
         // Do any additional setup after loading the view.
+    }
+    
+    func loadDefaultData() -> Void {
+        //isfinish
+        self.btnFinishEvent.setImage(UIImage(named:self.event!.isFinish ? FINISHIMAGENAME:UNFINISHIMAGENAME), for: .normal);
+        //title
+        self.lblEventName.text = self.event!.title;
+        
+        //title frame
+        let rect = CGRect(origin: .zero,size:CGSize(width:self.lblEventName.frame.size.width,height:CGFloat.greatestFiniteMagnitude));
+        let finalRect = (self.event!.title! as NSString).boundingRect(with: rect.size, options: .usesLineFragmentOrigin, attributes: nil, context: nil);
+        self.eventNameLaycontent.constant = finalRect.size.height;
+        
+        //note
+        self.lblMark.text = self.event!.remark;
+        let markRect = CGRect(origin: .zero,size:CGSize(width:self.lblMark.frame.size.width,height:CGFloat.greatestFiniteMagnitude));
+        let lblMarkRect = (self.event.remark! as NSString).boundingRect(with: markRect.size, options: .usesLineFragmentOrigin, attributes: nil, context: nil);
+        self.markLayconstantHeight.constant = lblMarkRect.size.height;
+        
+        //needAlerm
+        self.swiAlertMe.setOn(self.event!.needAlerm ? true:false, animated: true);
+        
+        //createTime
+        let dateFormatter = DateFormatter();
+        
+        // Aug 19, 2016
+        dateFormatter.dateStyle = DateFormatter.Style.medium;
+        self.lblCreateTime.text = "Created on " + dateFormatter.string(from: self.event!.createDate!);
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -142,17 +173,20 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
             break;
         case 2:
             self.bShowCalendar = !self.bShowCalendar;
-            let indexPathArray: [IndexPath] = [IndexPath(row:3,section:0)]
-            tableView.reloadRows(at: indexPathArray, with: .none);
-            //tableView.reloadData();
+            tableView.beginUpdates();
+            tableView.endUpdates();
+            //let indexPathArray: [IndexPath] = [IndexPath(row:3,section:0)]
+            //tableView.reloadRows(at: indexPathArray, with: .none);
             break;
         case 3:
             
             break;
         case 4:
             self.bShowDatePicker = !self.bShowDatePicker;
-            let indexPathArray: [IndexPath] = [IndexPath(row:5,section:0)]
-            tableView.reloadRows(at: indexPathArray, with: .none);
+            tableView.beginUpdates();
+            tableView.endUpdates();
+            //let indexPathArray: [IndexPath] = [IndexPath(row:5,section:0)]
+            //tableView.reloadRows(at: indexPathArray, with: .none);
             break;
         case 5:
             break;
@@ -175,25 +209,27 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     // MARK: - IBAction
     
     @IBAction func didPressedFinish(_ sender:Any){
-        self.bFinish = !self.bFinish;
+        
+        self.event!.isFinish = !self.event!.isFinish;
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-        let sImageName = self.bFinish ? FINISHIMAGENAME:UNFINISHIMAGENAME
+        let sImageName = self.event!.isFinish ? FINISHIMAGENAME:UNFINISHIMAGENAME
         self.btnFinishEvent.setImage(UIImage(named:sImageName), for: .normal);
     }
     
     @IBAction func didPressedDelete(_ sender: Any) {
-        UIAlertController.alertInstanceWithTitle(sTitle: "Are you sure delete this event?",
+        UIAlertController.alertInstanceWithTitle(sTitle: "Are you sure want to delete this event forever?",
                                                  sMessage: "",
-                                                 confrim: "YES",
-                                                 cancel: "NO",
+                                                 confrim: "Delete",
+                                                 cancel: "Cancel",
                                                  vc: self,
-                                                 okSel: {
+                                                 okSel: { [weak self] in
                                                     //delete
+                                                    self!.delBlock(self!.event);
+                                                    self?.navigationController?.popViewController(animated: true);
                                                 }, cancelSel: {
                                                     //nothing to do
                                                 });
     }
-    
     
     
     @IBAction func datePickerChange(_ sender: Any) {
@@ -204,15 +240,5 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         self.bAlertMode = !self.bAlertMode;
         self.mainTableview.reloadData();
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

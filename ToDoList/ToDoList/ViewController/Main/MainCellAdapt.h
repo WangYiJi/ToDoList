@@ -12,7 +12,7 @@
 #import "Event+CoreDataClass.h"
 
 typedef void (^cellDisplay)(MainEventCell *cell,Event *item);
-typedef void (^cellDelete)(NSInteger iIndex);
+typedef void (^cellDelete)(NSIndexPath *delIndexPath);
 
 @interface MainCellAdapt : NSObject <UITableViewDataSource>
 
