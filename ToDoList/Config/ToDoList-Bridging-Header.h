@@ -4,3 +4,5 @@
 
 #import "DAYCalendarView.h"
 #import "MainEventCell.h"
+#import "DBhelper.h"
+#import "Event+CoreDataClass.h"

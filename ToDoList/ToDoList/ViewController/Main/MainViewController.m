@@ -20,8 +20,8 @@
 
 static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
 
-@interface MainViewController () <UITableViewDelegate,HomeMenuViewDelegate,UITextFieldDelegate>
-@property (nonatomic,strong) NSMutableArray *sourceArray;
+@interface MainViewController () <UITableViewDelegate,HomeMenuViewDelegate,UITextFieldDelegate,UIGestureRecognizerDelegate>
+
 @property (nonatomic,strong) MainCellAdapt *cellAdapt;
 @property (nonatomic,strong) MenuView *menu;
 @end
@@ -44,11 +44,21 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
     UIBarButtonItem *rightBar = [[UIBarButtonItem alloc] initWithCustomView:self.btnCalendar];
     self.navigationItem.rightBarButtonItem = rightBar;
     
+    //mainview gestureRecognizer
     UITapGestureRecognizer *touch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide)];
+    touch.delegate = self;
     [self.mainTableview addGestureRecognizer:touch];
     
     [self initKeyBoardEvent];
     [self initLeftMenu];
+}
+
+#pragma mark-手势代理，解决和tableview点击发生的冲突
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    if ([NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"]) {//判断如果点击的是tableView的cell，就把手势给关闭了
+        return NO;//关闭手势
+    }//否则手势存在
+    return YES;
 }
 
 -(IBAction)didPressedCalendar:(id)sender
@@ -60,7 +70,7 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
 
 -(void)loadDefaultData
 {
-    self.sourceArray = [DBhelper searchBy:@"Event"];
+    NSMutableArray *sourceArray = [DBhelper searchBy:@"Event"];
     
     __weak typeof(self) weakSelf = self;
     cellDelete deleteBlock = ^(NSInteger iIndex){
@@ -71,20 +81,24 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
         cell.lblName.text = item.title;
     };
     
-    self.cellAdapt = [[MainCellAdapt alloc] initWithDataSource:self.sourceArray
+    self.cellAdapt = [[MainCellAdapt alloc] initWithDataSource:sourceArray
                                                     identifier:MainEventCellIdentifier
                                                    cellDisplay:displayBlock
                                                     cellDelete:deleteBlock
                                                 viewController:self];
     
     self.mainTableview.dataSource = self.cellAdapt;
+    self.mainTableview.delegate = self;
 
     [self.mainTableview registerNib:[MainEventCell nib] forCellReuseIdentifier:MainEventCellIdentifier];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    Event *tempEvent = [self.cellAdapt.dataResource objectAtIndex:indexPath.row];
+    EventDetailViewController *eventDetailVC = [[EventDetailViewController alloc] initWithNibName:@"EventDetailViewController" bundle:nil];
+    eventDetailVC.event = tempEvent;
+    [self.navigationController pushViewController:eventDetailVC animated:YES];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -98,15 +112,18 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
     e.title = sEventTitle;
     e.createDate = [NSDate date];
     [DBhelper Save];
-    [self.sourceArray addObject:e];
+    
     [self.cellAdapt addEvent:e];
 }
 
 -(void)deleteEvent:(NSInteger)iIndex
 {
-    Event *e = [self.sourceArray objectAtIndex:iIndex];
+    Event *e = [self.cellAdapt.dataResource objectAtIndex:iIndex];
+    
     [DBhelper deleteBy:e];
-    [self.sourceArray removeObject:e];
+    
+    [self.cellAdapt.dataResource removeObject:e];
+    
 }
 
 -(IBAction)didPressedDone:(id)sender
@@ -135,7 +152,7 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
 
 -(void)fadeInTableview {
     [self.mainTableview beginUpdates];
-    NSArray *insertArray = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:self.sourceArray.count - 1 inSection:0]];
+    NSArray *insertArray = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:self.cellAdapt.dataResource.count - 1 inSection:0]];
     [self.mainTableview insertRowsAtIndexPaths:insertArray withRowAnimation:UITableViewRowAnimationBottom];
     [self.mainTableview endUpdates];
 }

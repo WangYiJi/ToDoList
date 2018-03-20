@@ -11,11 +11,7 @@
 #import "ToDoList-Swift.h"
 
 @interface MainCellAdapt ()
-@property (nonatomic,copy) NSString *sIdentifier;
-@property (nonatomic,strong) NSMutableArray *dataResource;
-@property (nonatomic,copy) cellDisplay cellDisplayBlock;
-@property (nonatomic,copy) cellDelete cellDeleteBlock;
-@property (nonatomic,weak) id vc;
+
 @end
 
 @implementation MainCellAdapt
@@ -41,6 +37,11 @@
 -(void)addEvent:(Event*)event
 {
     [self.dataResource addObject:event];
+}
+
+-(void)deleteEvent:(Event *)event
+{
+    [self.dataResource removeObject:event];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

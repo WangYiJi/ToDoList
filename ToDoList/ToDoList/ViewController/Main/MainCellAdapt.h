@@ -16,6 +16,12 @@ typedef void (^cellDelete)(NSInteger iIndex);
 
 @interface MainCellAdapt : NSObject <UITableViewDataSource>
 
+@property (nonatomic,copy) NSString *sIdentifier;
+@property (nonatomic,strong) NSMutableArray *dataResource;
+@property (nonatomic,copy) cellDisplay cellDisplayBlock;
+@property (nonatomic,copy) cellDelete cellDeleteBlock;
+@property (nonatomic,weak) id vc;
+
 -(instancetype)initWithDataSource:(NSMutableArray*)source
                        identifier:(NSString*)sIdentifier
                       cellDisplay:(cellDisplay)displayBlock
@@ -23,5 +29,6 @@ typedef void (^cellDelete)(NSInteger iIndex);
                    viewController:(id)viewController;
 
 -(void)addEvent:(Event*)event;
+-(void)deleteEvent:(Event*)event;
 
 @end
