@@ -21,7 +21,7 @@
                 <outlet property="cellTime" destination="OGo-DQ-iQe" id="VsS-i1-KQ6"/>
                 <outlet property="cellTimePicker" destination="4fi-Cl-ppA" id="8vW-N6-WZI"/>
                 <outlet property="datePicker" destination="Sjn-48-FYf" id="ciR-gp-Hew"/>
-                <outlet property="eventNameLaycontent" destination="SE4-8u-bmi" id="SrA-hW-trY"/>
+                <outlet property="eventNameLaycontent" destination="AlW-CR-hR7" id="uy0-ie-vhy"/>
                 <outlet property="lblAlermMe" destination="wa4-kd-rXm" id="evE-wG-LkE"/>
                 <outlet property="lblCreateTime" destination="UP9-lk-7RK" id="nBY-kl-Yv1"/>
                 <outlet property="lblData" destination="h3G-0v-FTl" id="VXF-OU-qfH"/>
@@ -208,7 +208,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="215.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Sjn-48-FYf">
+                    <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Sjn-48-FYf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                         <date key="date" timeIntervalSinceReferenceDate="543137993.79688799">
@@ -248,8 +248,8 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qrt-lC-xJz">
                         <rect key="frame" x="15" y="7" width="28" height="28"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="28" id="LgW-Nr-ebO"/>
-                            <constraint firstAttribute="height" constant="28" id="SvD-8d-Co8"/>
+                            <constraint firstAttribute="height" constant="28" id="UCp-cV-1BK"/>
+                            <constraint firstAttribute="width" constant="28" id="pbr-1k-QYh"/>
                         </constraints>
                         <state key="normal" image="iconFinishGray"/>
                         <connections>
@@ -257,9 +257,9 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wev-Ub-9Cv">
-                        <rect key="frame" x="60" y="13" width="299" height="21"/>
+                        <rect key="frame" x="58" y="11.5" width="302" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="SE4-8u-bmi"/>
+                            <constraint firstAttribute="height" constant="21" id="AlW-CR-hR7"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
@@ -267,11 +267,11 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="qrt-lC-xJz" firstAttribute="top" secondItem="AP0-iF-MY2" secondAttribute="top" constant="7" id="J4F-vK-oOD"/>
-                    <constraint firstItem="wev-Ub-9Cv" firstAttribute="top" secondItem="AP0-iF-MY2" secondAttribute="top" constant="13" id="JVa-ip-WeS"/>
-                    <constraint firstItem="qrt-lC-xJz" firstAttribute="leading" secondItem="AP0-iF-MY2" secondAttribute="leading" constant="15" id="O1U-hy-TbZ"/>
-                    <constraint firstItem="wev-Ub-9Cv" firstAttribute="leading" secondItem="qrt-lC-xJz" secondAttribute="trailing" constant="17" id="fD2-Um-7Hr"/>
-                    <constraint firstAttribute="trailing" secondItem="wev-Ub-9Cv" secondAttribute="trailing" constant="16" id="hY7-4e-xx6"/>
+                    <constraint firstItem="qrt-lC-xJz" firstAttribute="leading" secondItem="AP0-iF-MY2" secondAttribute="leading" constant="15" id="FNC-M0-COU"/>
+                    <constraint firstItem="wev-Ub-9Cv" firstAttribute="centerY" secondItem="AP0-iF-MY2" secondAttribute="centerY" id="FlV-N3-xiY"/>
+                    <constraint firstItem="qrt-lC-xJz" firstAttribute="centerY" secondItem="AP0-iF-MY2" secondAttribute="centerY" id="JAk-gB-oqS"/>
+                    <constraint firstAttribute="trailing" secondItem="wev-Ub-9Cv" secondAttribute="trailing" constant="15" id="nNb-8m-Yd0"/>
+                    <constraint firstItem="wev-Ub-9Cv" firstAttribute="leading" secondItem="AP0-iF-MY2" secondAttribute="leading" constant="58" id="wDB-Jm-PAG"/>
                 </constraints>
             </tableViewCellContentView>
             <point key="canvasLocation" x="25.5" y="177"/>

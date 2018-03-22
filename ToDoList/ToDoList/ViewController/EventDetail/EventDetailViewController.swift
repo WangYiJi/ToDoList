@@ -12,6 +12,14 @@ import CoreData
 
 let FINISHIMAGENAME = "iconFinishGreen"
 let UNFINISHIMAGENAME = "iconFinishGray"
+let sDateFormatter = "MM dd yyyy"
+
+// 屏幕的宽
+let SWIFT_SCREEN_WIDTH = UIScreen.main.bounds.size.width
+
+// 屏幕的高
+let SWIFT_SCREEN_HEIGHT = UIScreen.main.bounds.size.height
+
 
 typealias deleteEventBlock = (Event) -> ()
 
@@ -52,7 +60,11 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     var bShowCalendar:Bool = false;
     var bShowDatePicker:Bool = false;
     
+    var dateFormatter:DateFormatter!
+    var timeFormatter:DateFormatter!
+    
     var event:Event!
+    var tempAlertDate:Date?
     
     var delBlock:deleteEventBlock!
     
@@ -64,10 +76,16 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     }
     
     func createBaseView() ->Void {
-        let rightBar:UIBarButtonItem = UIBarButtonItem.init(title: "Done", style: .done, target: self, action: #selector(EventDetailViewController.calendarDidSelect(_:)));
+        let rightBar:UIBarButtonItem = UIBarButtonItem.init(title: "Done", style: .done, target: self, action: #selector(EventDetailViewController.didPressedDone(_:)));
         self.navigationItem.rightBarButtonItem = rightBar;
         
-        self.calendarView.addTarget(self, action: #selector(EventDetailViewController.didPressedDone(_:)), for: .valueChanged);
+        self.calendarView.addTarget(self, action: #selector(EventDetailViewController.calendarDidSelect(_:)), for: .valueChanged);
+        
+        self.dateFormatter = DateFormatter();
+        self.dateFormatter.dateFormat = "MM dd,yyyy";
+        
+        self.timeFormatter = DateFormatter();
+        self.timeFormatter.dateFormat = "HH:mm";
     }
     
     func loadDefaultData() -> Void {
@@ -77,9 +95,7 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         self.lblEventName.text = self.event!.title;
         
         //title frame
-        let rect = CGRect(origin: .zero,size:CGSize(width:self.lblEventName.frame.size.width,height:CGFloat.greatestFiniteMagnitude));
-        let finalRect = (self.event!.title! as NSString).boundingRect(with: rect.size, options: .usesLineFragmentOrigin, attributes: nil, context: nil);
-        self.eventNameLaycontent.constant = finalRect.size.height;
+        self.eventNameLaycontent.constant = getEventNameHeight();
         
         //note
         if self.event.remark != nil {
@@ -91,22 +107,27 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
             self.lblMark.text = "Add a note";
         }
         
-        //needAlerm
-        self.swiAlertMe.setOn(self.event!.needAlerm ? true:false, animated: true);
+        self.lblCreateTime.text = "Created on " + self.dateFormatter.string(from: self.event!.createDate!);
         
-        //createTime
-        let dateFormatter = DateFormatter();
-        
-        // Aug 19, 2016
-        dateFormatter.dateStyle = DateFormatter.Style.medium;
-        self.lblCreateTime.text = "Created on " + dateFormatter.string(from: self.event!.createDate!);
-        
+        //Alerm
+        if self.event.needAlerm {
+            self.swiAlertMe.setOn(true, animated: true);
+            self.bAlertMode = true;
+            self.bShowCalendar = true;
+            self.bShowDatePicker = true;
+            self.lblData.text = self.dateFormatter.string(from: self.event.endDate!);
+            self.lblTime.text = self.timeFormatter.string(from: self.event.endDate!);
+        } else {
+            self.swiAlertMe.setOn(false, animated: false);
+            self.bAlertMode = false;
+        }
     }
     
     @objc func calendarDidSelect(_ sender:Any) -> Void {
-        var selectDate:Date = self.calendarView.selectedDate;
-        let dateFormatter = DateFormatter();
-        
+        let selectDate:Date = self.calendarView.selectedDate;
+        let df = DateFormatter();
+        df.dateStyle = DateFormatter.Style.medium;
+        self.lblData.text = df.string(from: selectDate);
     }
     
     @objc func didPressedDone(_ sender:Any) -> Void {
@@ -147,7 +168,7 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
-            return 44;
+            return getEventNameHeight()+20;
         case 1:
             return 44;
         case 2:
@@ -217,6 +238,22 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         }
     }
     
+    func initTempAlertDate() -> Void {
+        if self.tempAlertDate == nil {
+            self.tempAlertDate = Date().getBeginDate();
+            //today zero AM
+            self.lblData.text = self.dateFormatter.string(from: self.tempAlertDate!);
+            //after 1 hour
+            self.lblTime.text = self.timeFormatter.string(from: self.tempAlertDate!);
+        }
+    }
+    
+    func getEventNameHeight() -> CGFloat {
+        let rect = CGRect(origin: .zero,size:CGSize(width:SWIFT_SCREEN_WIDTH-58-25 ,height:CGFloat.greatestFiniteMagnitude));
+        let finalRect = (self.event!.title! as NSString).boundingRect(with: rect.size, options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 18)], context: nil);
+        return finalRect.size.height;
+    }
+    
     func presentMarkNote() -> Void {
         let markNoteVC:MarkNoteViewController = MarkNoteViewController(nibName:"MarkNoteViewController", bundle:nil);
         self.present(markNoteVC, animated: true, completion: nil);
@@ -224,13 +261,16 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     
     
     // MARK: - IBAction
-    
     @IBAction func didPressedFinish(_ sender:Any){
-        
         self.event!.isFinish = !self.event!.isFinish;
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
         let sImageName = self.event!.isFinish ? FINISHIMAGENAME:UNFINISHIMAGENAME
         self.btnFinishEvent.setImage(UIImage(named:sImageName), for: .normal);
+        if self.event.isFinish {
+            self.lblEventName.addMiddleLine()
+        } else {
+            self.lblEventName.removeMiddleLine()
+        }
     }
     
     @IBAction func didPressedDelete(_ sender: Any) {
@@ -250,11 +290,15 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     
     
     @IBAction func datePickerChange(_ sender: Any) {
-        
+        var tempD = self.datePicker.date;
+        NSLog("%@", tempD);
     }
     
     @IBAction func didAlertChange(_ sender: Any) {
         self.bAlertMode = !self.bAlertMode;
+        if self.bAlertMode {
+            initTempAlertDate();
+        }
         self.mainTableview.reloadData();
     }
     

@@ -6,3 +6,4 @@
 #import "MainEventCell.h"
 #import "DBhelper.h"
 #import "Event+CoreDataClass.h"
+#import "Global.h"

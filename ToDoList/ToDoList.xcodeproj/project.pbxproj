@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0183073008FB3333A361BBBA /* libPods-ToDoList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76014DB5807C83711E7D05E3 /* libPods-ToDoList.a */; };
 		FC07E47F205FBD1B00BD39B3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC07E47E205FBD1B00BD39B3 /* AudioToolbox.framework */; };
+		FC1757602063877A001A6333 /* Date+Extend.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC17575F2063877A001A6333 /* Date+Extend.swift */; };
+		FC17576320639626001A6333 /* UILabel+Extend.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC17576220639626001A6333 /* UILabel+Extend.swift */; };
+		FC17576520639A76001A6333 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC17576420639A75001A6333 /* CoreText.framework */; };
 		FC17EFB1205BB75E007ED755 /* MarkNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC17EFA0205BB75E007ED755 /* MarkNoteViewController.xib */; };
 		FC17EFB2205BB75E007ED755 /* MarkNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC17EFA1205BB75E007ED755 /* MarkNoteViewController.swift */; };
 		FC17EFB3205BB75E007ED755 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC17EFA3205BB75E007ED755 /* CalendarViewController.swift */; };
@@ -31,7 +34,6 @@
 		FC92E1EB20575DA00036C153 /* DBhelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FC92E1E420575DA00036C153 /* DBhelper.m */; };
 		FC92E1F320575E490036C153 /* ToDoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FC92E1F120575E490036C153 /* ToDoList.xcdatamodeld */; };
 		FC92E1F620575F210036C153 /* SLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC92E1F520575F210036C153 /* SLocationManager.swift */; };
-		FCAC896D205A4EA5008A5848 /* NSDate+Extend.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC896C205A4EA5008A5848 /* NSDate+Extend.swift */; };
 		FCAC8976205A5397008A5848 /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAC8972205A5397008A5848 /* Event+CoreDataProperties.m */; };
 		FCAC8977205A5397008A5848 /* Event+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAC8973205A5397008A5848 /* Event+CoreDataClass.m */; };
 		FCAC8978205A5397008A5848 /* EventList+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAC8974205A5397008A5848 /* EventList+CoreDataProperties.m */; };
@@ -63,6 +65,9 @@
 		76014DB5807C83711E7D05E3 /* libPods-ToDoList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ToDoList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F0C4CA0ECC28575F13C298 /* Pods-ToDoList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToDoList/Pods-ToDoList.debug.xcconfig"; sourceTree = "<group>"; };
 		FC07E47E205FBD1B00BD39B3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		FC17575F2063877A001A6333 /* Date+Extend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extend.swift"; sourceTree = "<group>"; };
+		FC17576220639626001A6333 /* UILabel+Extend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extend.swift"; sourceTree = "<group>"; };
+		FC17576420639A75001A6333 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		FC17EFA0205BB75E007ED755 /* MarkNoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarkNoteViewController.xib; sourceTree = "<group>"; };
 		FC17EFA1205BB75E007ED755 /* MarkNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkNoteViewController.swift; sourceTree = "<group>"; };
 		FC17EFA3205BB75E007ED755 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -100,7 +105,6 @@
 		FC92E1F220575E490036C153 /* ToDoList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoList.xcdatamodel; sourceTree = "<group>"; };
 		FC92E1F420575F200036C153 /* ToDoList-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ToDoList-Bridging-Header.h"; sourceTree = "<group>"; };
 		FC92E1F520575F210036C153 /* SLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLocationManager.swift; sourceTree = "<group>"; };
-		FCAC896C205A4EA5008A5848 /* NSDate+Extend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDate+Extend.swift"; sourceTree = "<group>"; };
 		FCAC896E205A5396008A5848 /* Event+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+CoreDataClass.h"; sourceTree = "<group>"; };
 		FCAC896F205A5396008A5848 /* Event+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+CoreDataProperties.h"; sourceTree = "<group>"; };
 		FCAC8970205A5397008A5848 /* EventList+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EventList+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC17576520639A76001A6333 /* CoreText.framework in Frameworks */,
 				FC07E47F205FBD1B00BD39B3 /* AudioToolbox.framework in Frameworks */,
 				0183073008FB3333A361BBBA /* libPods-ToDoList.a in Frameworks */,
 			);
@@ -148,11 +153,20 @@
 		CEFD287CC2295C9B2CDD96D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FC17576420639A75001A6333 /* CoreText.framework */,
 				FC07E47E205FBD1B00BD39B3 /* AudioToolbox.framework */,
 				76014DB5807C83711E7D05E3 /* libPods-ToDoList.a */,
 				FC1907E92057BFF2000E8C97 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC17576120639616001A6333 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				FC17576220639626001A6333 /* UILabel+Extend.swift */,
+			);
+			path = UILabel;
 			sourceTree = "<group>";
 		};
 		FC17EF9E205BB75E007ED755 /* ViewController */ = {
@@ -301,7 +315,7 @@
 		FCAC896B205A4E84008A5848 /* NSDate+ */ = {
 			isa = PBXGroup;
 			children = (
-				FCAC896C205A4EA5008A5848 /* NSDate+Extend.swift */,
+				FC17575F2063877A001A6333 /* Date+Extend.swift */,
 			);
 			path = "NSDate+";
 			sourceTree = "<group>";
@@ -344,6 +358,7 @@
 		FCCF794D205682B90033C401 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				FC17576120639616001A6333 /* UILabel */,
 				FCAC896B205A4E84008A5848 /* NSDate+ */,
 				FCE340FB205A179A005E49EA /* NSDateFormatter+ */,
 				FCF68DCE2058F96200B20407 /* UIAlertController+ */,
@@ -534,7 +549,6 @@
 				FC19080E2057D3A8000E8C97 /* DAYCalendarView.m in Sources */,
 				FCCF79472056829A0033C401 /* main.m in Sources */,
 				FCF68DD42058F96200B20407 /* UITableView+Extend.m in Sources */,
-				FCAC896D205A4EA5008A5848 /* NSDate+Extend.swift in Sources */,
 				FC17EFBB205BB75E007ED755 /* MainCellAdapt.m in Sources */,
 				FCE34110205A1C87005E49EA /* LeftMenuViewDemo.m in Sources */,
 				FC17EFB3205BB75E007ED755 /* CalendarViewController.swift in Sources */,
@@ -547,10 +561,12 @@
 				FCAC8978205A5397008A5848 /* EventList+CoreDataProperties.m in Sources */,
 				FC17EFBF205BB780007ED755 /* AppDelegate.m in Sources */,
 				FC17EFBA205BB75E007ED755 /* MainViewController.m in Sources */,
+				FC17576320639626001A6333 /* UILabel+Extend.swift in Sources */,
 				FCDF66A02058FD16009ECAAC /* UIAlertController+swift.swift in Sources */,
 				FCAC8979205A5397008A5848 /* EventList+CoreDataClass.m in Sources */,
 				FC17EFB6205BB75E007ED755 /* EventDetailViewController.swift in Sources */,
 				FC92E1F320575E490036C153 /* ToDoList.xcdatamodeld in Sources */,
+				FC1757602063877A001A6333 /* Date+Extend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
