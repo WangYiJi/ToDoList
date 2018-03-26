@@ -66,6 +66,13 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
     [self initLeftMenu];    
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.cellAdapt.dataResource = [DBhelper searchBy:@"Event"];
+    [self.mainTableview reloadData];
+}
+
 -(void)swipeAction:(UISwipeGestureRecognizer*)swipe
 {
     [self.txtEventTitle resignFirstResponder];

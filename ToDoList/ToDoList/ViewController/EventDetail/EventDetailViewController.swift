@@ -20,6 +20,9 @@ let SWIFT_SCREEN_WIDTH = UIScreen.main.bounds.size.width
 // 屏幕的高
 let SWIFT_SCREEN_HEIGHT = UIScreen.main.bounds.size.height
 
+let DEF_EVENT_NAME_WIDTH = SWIFT_SCREEN_WIDTH - 50 - 15
+let DEF_EVENT_NOTE_WIDTH = SWIFT_SCREEN_WIDTH - 20
+
 
 typealias deleteEventBlock = (Event) -> ()
 
@@ -59,6 +62,8 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     var bAlertMode:Bool = false;
     var bShowCalendar:Bool = false;
     var bShowDatePicker:Bool = false;
+    var fNameHeightBefore:CGFloat = 0.0;
+    
     
     var dateFormatter:DateFormatter!
     var timeFormatter:DateFormatter!
@@ -81,6 +86,7 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     }
     
     func createBaseView() ->Void {
+        self.title = "Detail";
         let rightBar:UIBarButtonItem = UIBarButtonItem.init(title: "Done", style: .done, target: self, action: #selector(EventDetailViewController.didPressedDone(_:)));
         self.navigationItem.rightBarButtonItem = rightBar;
         
@@ -155,6 +161,7 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         case 0:
             //title frame
             self.eventNameLaycontent.constant = getEventNameHeight();
+            self.txtEventName.layoutIfNeeded()
             return cellEventName;
         case 1:
             return cellAlerm;
@@ -269,14 +276,12 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     }
     
     func getEventNameHeight() -> CGFloat {
-        let fWidth:CGFloat = SWIFT_SCREEN_WIDTH-58-25;
-        let fHeight:CGFloat = (self.event.title! as NSString).getHeightByWightAndFont(fWight: fWidth, font: UIFont.systemFont(ofSize: 18))
+        let fHeight:CGFloat = (self.event.title! as NSString).getHeightByWightAndFont(fWight: DEF_EVENT_NAME_WIDTH, font: UIFont.systemFont(ofSize: 18))
         return fHeight;
     }
     
     func getNoteHeight() -> CGFloat {
-        let fWidth:CGFloat = SWIFT_SCREEN_WIDTH-20;
-        let fHeight:CGFloat = (self.event.note! as NSString).getHeightByWightAndFont(fWight: fWidth, font: UIFont.systemFont(ofSize: 18));
+        let fHeight:CGFloat = (self.event.note! as NSString).getHeightByWightAndFont(fWight: DEF_EVENT_NOTE_WIDTH, font: UIFont.systemFont(ofSize: 18));
         return fHeight;
     }
     
@@ -288,14 +293,26 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
             self.event.title = textView.text
             DBhelper.save()
             
-            self.mainTableview.beginUpdates()
-            self.mainTableview.endUpdates()
-            
             return false;
+        } else {
+            let sTitle:String = textView.text + text
+            self.event.title = sTitle;
+            let fHeight:CGFloat = (sTitle as NSString).getHeightByWightAndFont(fWight: DEF_EVENT_NAME_WIDTH, font: UIFont.systemFont(ofSize: 17));
+            print("%f",fHeight)
+            if fHeight > self.fNameHeightBefore {
+                //Need fade
+                self.mainTableview.beginUpdates()
+                self.mainTableview.endUpdates()
+                self.fNameHeightBefore = fHeight
+            }
+            return true;
         }
-        return true;
     }
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        let fHeight:CGFloat = (self.event.title! as NSString).getHeightByWightAndFont(fWight: DEF_EVENT_NAME_WIDTH, font: UIFont.systemFont(ofSize: 17));
+        self.fNameHeightBefore = fHeight;
+    }
 
     // MARK: - IBAction
     @IBAction func didPressedFinish(_ sender:Any){
