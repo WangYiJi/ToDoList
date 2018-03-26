@@ -10,6 +10,11 @@
 
 @interface MainEventCell : UITableViewCell
 @property (nonatomic,weak) IBOutlet UILabel *lblName;
+@property (nonatomic,weak) IBOutlet UIButton *btnFinish;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *eventNameCon;
 
 + (UINib *)nib;
+
+- (void)autoresizingNameLabel:(NSInteger)iConstant;
+
 @end

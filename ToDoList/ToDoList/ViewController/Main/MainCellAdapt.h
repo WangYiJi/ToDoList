@@ -11,8 +11,9 @@
 #import "MainEventCell.h"
 #import "Event+CoreDataClass.h"
 
-typedef void (^cellDisplay)(MainEventCell *cell,Event *item);
+typedef void (^cellDisplay)(MainEventCell *cell,NSInteger index);
 typedef void (^cellDelete)(NSIndexPath *delIndexPath);
+typedef void (^cellDidFinish)(NSInteger *finishIndex);
 
 @interface MainCellAdapt : NSObject <UITableViewDataSource>
 

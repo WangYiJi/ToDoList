@@ -1,15 +1,15 @@
 //
-//  UILabel+Extend.swift
+//  UITextView+Extend.swift
 //  ToDoList
 //
-//  Created by Alex on 22/03/2018.
+//  Created by Alex on 26/03/2018.
 //  Copyright © 2018 company. All rights reserved.
 //
 
 import Foundation
-import CoreText
 
-extension UILabel {
+extension UITextView {
+    
     func addMiddleLine() -> Void {
         let middleLine = NSMutableAttributedString.init(string: self.text!)
         
@@ -23,5 +23,6 @@ extension UILabel {
         
         self.attributedText = textAtt;
     }
+    
     
 }

@@ -15,6 +15,11 @@
     return [UINib nibWithNibName:@"MainEventCell" bundle:nil];
 }
 
+-(void)autoresizingNameLabel:(NSInteger)iConstant
+{
+    self.eventNameCon.constant = iConstant;
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code

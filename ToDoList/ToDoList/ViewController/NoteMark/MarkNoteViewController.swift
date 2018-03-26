@@ -8,13 +8,17 @@
 
 import UIKit
 
-class MarkNoteViewController: UIViewController,UITextViewDelegate {
+typealias noteEditDone = (Event) -> ()
+
+class MarkNoteViewController: BasicViewController,UITextViewDelegate {
 
     @IBOutlet weak var txtNote: UITextView!
+    var event:Event!
+    var noteEditDoneBlock:noteEditDone!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        createBaseView()
         // Do any additional setup after loading the view.
     }
     
@@ -25,6 +29,8 @@ class MarkNoteViewController: UIViewController,UITextViewDelegate {
         self.navigationItem.leftBarButtonItem = leftBar;
         self.navigationItem.rightBarButtonItem = rightBar;
         
+        self.txtNote.text = self.event.note
+        
         self.txtNote.becomeFirstResponder();
     }
 
@@ -34,11 +40,16 @@ class MarkNoteViewController: UIViewController,UITextViewDelegate {
     }
     
     func didPressedCancel() -> Void {
-        self.dismiss(animated: true, completion: nil);
+        self.navigationController?.popViewController(animated: true)
     }
     
     func didPressdeDone() -> Void {
-        self.dismiss(animated: true, completion: nil);
+        self.event.note = self.txtNote.text
+        DBhelper.save()
+        if self.noteEditDoneBlock != nil {
+            self.noteEditDoneBlock(self.event)
+        }
+        self.navigationController?.popViewController(animated: true)
     }
     
 

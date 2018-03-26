@@ -17,4 +17,10 @@ extension Date {
         let dateZeroAM = calendar.date(from: com);
         return dateZeroAM!;
     }
+    
+    func getTomorrow() -> Date {
+        let calendar:Calendar = Calendar.current
+        let dateTomorrow = calendar.date(byAdding: .day, value: 1, to: self);
+        return dateTomorrow!;
+    }
 }

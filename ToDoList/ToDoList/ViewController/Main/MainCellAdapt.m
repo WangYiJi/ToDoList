@@ -9,6 +9,7 @@
 #import "MainCellAdapt.h"
 #import "UITableView+Extend.h"
 #import "ToDoList-Swift.h"
+#import "Global.h"
 
 @interface MainCellAdapt ()
 
@@ -57,9 +58,12 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MainEventCell *cell = (MainEventCell*)[tableView customdq:@"MainEventCell"];
-    id item = [self.dataResource objectAtIndex:indexPath.row];
+    Event *item = [self.dataResource objectAtIndex:indexPath.row];
+    
+    [cell autoresizingNameLabel:[item.title getHeightByWightAndFontWithFWight:SCREEN_WIDTH - 60 - 15 font:[UIFont systemFontOfSize:18]]];
+    
     if (self.cellDisplayBlock) {
-        self.cellDisplayBlock(cell, item);
+        self.cellDisplayBlock(cell, indexPath.row);
     }
     return cell;
 }
@@ -87,9 +91,9 @@
         [UIAlertController alertInstanceWithTitleWithSTitle:@"Delete?" sMessage:@""
                                                     confrim:@"OK" cancel:@"Cancel"
                                                          vc:self.vc okSel:^{
-                                                             
-                                                             weakSelf.cellDeleteBlock(indexPath);
-                                                             
+                                                             if (weakSelf.cellDeleteBlock) {
+                                                                 weakSelf.cellDeleteBlock(indexPath);
+                                                             }
                                                          } cancelSel:^{
                                                              
                                                          }];

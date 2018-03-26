@@ -34,10 +34,15 @@
 		FC92E1EB20575DA00036C153 /* DBhelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FC92E1E420575DA00036C153 /* DBhelper.m */; };
 		FC92E1F320575E490036C153 /* ToDoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FC92E1F120575E490036C153 /* ToDoList.xcdatamodeld */; };
 		FC92E1F620575F210036C153 /* SLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC92E1F520575F210036C153 /* SLocationManager.swift */; };
-		FCAC8976205A5397008A5848 /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAC8972205A5397008A5848 /* Event+CoreDataProperties.m */; };
-		FCAC8977205A5397008A5848 /* Event+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAC8973205A5397008A5848 /* Event+CoreDataClass.m */; };
-		FCAC8978205A5397008A5848 /* EventList+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAC8974205A5397008A5848 /* EventList+CoreDataProperties.m */; };
-		FCAC8979205A5397008A5848 /* EventList+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAC8975205A5397008A5848 /* EventList+CoreDataClass.m */; };
+		FCBE0F9E20688BD80072B1CE /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBE0F9D20688BD80072B1CE /* BasicViewController.swift */; };
+		FCBE0FA82068C2880072B1CE /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FCBE0FA42068C2880072B1CE /* Event+CoreDataProperties.m */; };
+		FCBE0FA92068C2880072B1CE /* Event+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FCBE0FA52068C2880072B1CE /* Event+CoreDataClass.m */; };
+		FCBE0FAA2068C2880072B1CE /* EventList+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FCBE0FA62068C2880072B1CE /* EventList+CoreDataProperties.m */; };
+		FCBE0FAB2068C2880072B1CE /* EventList+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FCBE0FA72068C2880072B1CE /* EventList+CoreDataClass.m */; };
+		FCBE0FAD2068C68D0072B1CE /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCBE0FAC2068C68D0072B1CE /* UserNotificationsUI.framework */; };
+		FCBE0FAF2068C6990072B1CE /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCBE0FAE2068C6990072B1CE /* UserNotifications.framework */; };
+		FCBE0FB22068D68A0072B1CE /* NSString+Extend.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBE0FB12068D68A0072B1CE /* NSString+Extend.swift */; };
+		FCBE0FB52068E8510072B1CE /* UITextView+Extend.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBE0FB42068E8510072B1CE /* UITextView+Extend.swift */; };
 		FCCF79442056829A0033C401 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCCF79422056829A0033C401 /* LaunchScreen.storyboard */; };
 		FCCF79472056829A0033C401 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCF79462056829A0033C401 /* main.m */; };
 		FCDF66A02058FD16009ECAAC /* UIAlertController+swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDF669F2058FD16009ECAAC /* UIAlertController+swift.swift */; };
@@ -105,14 +110,19 @@
 		FC92E1F220575E490036C153 /* ToDoList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoList.xcdatamodel; sourceTree = "<group>"; };
 		FC92E1F420575F200036C153 /* ToDoList-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ToDoList-Bridging-Header.h"; sourceTree = "<group>"; };
 		FC92E1F520575F210036C153 /* SLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLocationManager.swift; sourceTree = "<group>"; };
-		FCAC896E205A5396008A5848 /* Event+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+CoreDataClass.h"; sourceTree = "<group>"; };
-		FCAC896F205A5396008A5848 /* Event+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+CoreDataProperties.h"; sourceTree = "<group>"; };
-		FCAC8970205A5397008A5848 /* EventList+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EventList+CoreDataProperties.h"; sourceTree = "<group>"; };
-		FCAC8971205A5397008A5848 /* EventList+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EventList+CoreDataClass.h"; sourceTree = "<group>"; };
-		FCAC8972205A5397008A5848 /* Event+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Event+CoreDataProperties.m"; sourceTree = "<group>"; };
-		FCAC8973205A5397008A5848 /* Event+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Event+CoreDataClass.m"; sourceTree = "<group>"; };
-		FCAC8974205A5397008A5848 /* EventList+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EventList+CoreDataProperties.m"; sourceTree = "<group>"; };
-		FCAC8975205A5397008A5848 /* EventList+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EventList+CoreDataClass.m"; sourceTree = "<group>"; };
+		FCBE0F9D20688BD80072B1CE /* BasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
+		FCBE0FA02068C2880072B1CE /* Event+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+CoreDataClass.h"; sourceTree = "<group>"; };
+		FCBE0FA12068C2880072B1CE /* Event+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+CoreDataProperties.h"; sourceTree = "<group>"; };
+		FCBE0FA22068C2880072B1CE /* EventList+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EventList+CoreDataProperties.h"; sourceTree = "<group>"; };
+		FCBE0FA32068C2880072B1CE /* EventList+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EventList+CoreDataClass.h"; sourceTree = "<group>"; };
+		FCBE0FA42068C2880072B1CE /* Event+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Event+CoreDataProperties.m"; sourceTree = "<group>"; };
+		FCBE0FA52068C2880072B1CE /* Event+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Event+CoreDataClass.m"; sourceTree = "<group>"; };
+		FCBE0FA62068C2880072B1CE /* EventList+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EventList+CoreDataProperties.m"; sourceTree = "<group>"; };
+		FCBE0FA72068C2880072B1CE /* EventList+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EventList+CoreDataClass.m"; sourceTree = "<group>"; };
+		FCBE0FAC2068C68D0072B1CE /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		FCBE0FAE2068C6990072B1CE /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		FCBE0FB12068D68A0072B1CE /* NSString+Extend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSString+Extend.swift"; sourceTree = "<group>"; };
+		FCBE0FB42068E8510072B1CE /* UITextView+Extend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extend.swift"; sourceTree = "<group>"; };
 		FCCF7931205682990033C401 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCCF79432056829A0033C401 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCCF79452056829A0033C401 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -132,6 +142,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCBE0FAF2068C6990072B1CE /* UserNotifications.framework in Frameworks */,
+				FCBE0FAD2068C68D0072B1CE /* UserNotificationsUI.framework in Frameworks */,
 				FC17576520639A76001A6333 /* CoreText.framework in Frameworks */,
 				FC07E47F205FBD1B00BD39B3 /* AudioToolbox.framework in Frameworks */,
 				0183073008FB3333A361BBBA /* libPods-ToDoList.a in Frameworks */,
@@ -153,6 +165,8 @@
 		CEFD287CC2295C9B2CDD96D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FCBE0FAE2068C6990072B1CE /* UserNotifications.framework */,
+				FCBE0FAC2068C68D0072B1CE /* UserNotificationsUI.framework */,
 				FC17576420639A75001A6333 /* CoreText.framework */,
 				FC07E47E205FBD1B00BD39B3 /* AudioToolbox.framework */,
 				76014DB5807C83711E7D05E3 /* libPods-ToDoList.a */,
@@ -172,6 +186,7 @@
 		FC17EF9E205BB75E007ED755 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				FCBE0F9C20688B970072B1CE /* BaseSwiftVC */,
 				FC17EF9F205BB75E007ED755 /* NoteMark */,
 				FC17EFA2205BB75E007ED755 /* Calendar */,
 				FC17EFA5205BB75E007ED755 /* EventDetail */,
@@ -183,8 +198,8 @@
 		FC17EF9F205BB75E007ED755 /* NoteMark */ = {
 			isa = PBXGroup;
 			children = (
-				FC17EFA0205BB75E007ED755 /* MarkNoteViewController.xib */,
 				FC17EFA1205BB75E007ED755 /* MarkNoteViewController.swift */,
+				FC17EFA0205BB75E007ED755 /* MarkNoteViewController.xib */,
 			);
 			path = NoteMark;
 			sourceTree = "<group>";
@@ -215,8 +230,8 @@
 				FC17EFA9205BB75E007ED755 /* MainViewController.xib */,
 				FC17EFAA205BB75E007ED755 /* MainCellAdapt.h */,
 				FC17EFAE205BB75E007ED755 /* MainCellAdapt.m */,
-				FC17EFAC205BB75E007ED755 /* MainEventCell.m */,
 				FC17EFB0205BB75E007ED755 /* MainEventCell.h */,
+				FC17EFAC205BB75E007ED755 /* MainEventCell.m */,
 				FC17EFAB205BB75E007ED755 /* MainEventCell.xib */,
 			);
 			path = Main;
@@ -299,14 +314,14 @@
 		FC92E1F020575E490036C153 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				FCAC896E205A5396008A5848 /* Event+CoreDataClass.h */,
-				FCAC8973205A5397008A5848 /* Event+CoreDataClass.m */,
-				FCAC896F205A5396008A5848 /* Event+CoreDataProperties.h */,
-				FCAC8972205A5397008A5848 /* Event+CoreDataProperties.m */,
-				FCAC8971205A5397008A5848 /* EventList+CoreDataClass.h */,
-				FCAC8975205A5397008A5848 /* EventList+CoreDataClass.m */,
-				FCAC8970205A5397008A5848 /* EventList+CoreDataProperties.h */,
-				FCAC8974205A5397008A5848 /* EventList+CoreDataProperties.m */,
+				FCBE0FA02068C2880072B1CE /* Event+CoreDataClass.h */,
+				FCBE0FA52068C2880072B1CE /* Event+CoreDataClass.m */,
+				FCBE0FA12068C2880072B1CE /* Event+CoreDataProperties.h */,
+				FCBE0FA42068C2880072B1CE /* Event+CoreDataProperties.m */,
+				FCBE0FA32068C2880072B1CE /* EventList+CoreDataClass.h */,
+				FCBE0FA72068C2880072B1CE /* EventList+CoreDataClass.m */,
+				FCBE0FA22068C2880072B1CE /* EventList+CoreDataProperties.h */,
+				FCBE0FA62068C2880072B1CE /* EventList+CoreDataProperties.m */,
 				FC92E1F120575E490036C153 /* ToDoList.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -318,6 +333,30 @@
 				FC17575F2063877A001A6333 /* Date+Extend.swift */,
 			);
 			path = "NSDate+";
+			sourceTree = "<group>";
+		};
+		FCBE0F9C20688B970072B1CE /* BaseSwiftVC */ = {
+			isa = PBXGroup;
+			children = (
+				FCBE0F9D20688BD80072B1CE /* BasicViewController.swift */,
+			);
+			path = BaseSwiftVC;
+			sourceTree = "<group>";
+		};
+		FCBE0FB02068CBD40072B1CE /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				FCBE0FB12068D68A0072B1CE /* NSString+Extend.swift */,
+			);
+			path = NSString;
+			sourceTree = "<group>";
+		};
+		FCBE0FB32068E80D0072B1CE /* UITextView+ */ = {
+			isa = PBXGroup;
+			children = (
+				FCBE0FB42068E8510072B1CE /* UITextView+Extend.swift */,
+			);
+			path = "UITextView+";
 			sourceTree = "<group>";
 		};
 		FCCF7928205682990033C401 = {
@@ -358,6 +397,8 @@
 		FCCF794D205682B90033C401 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				FCBE0FB32068E80D0072B1CE /* UITextView+ */,
+				FCBE0FB02068CBD40072B1CE /* NSString */,
 				FC17576120639616001A6333 /* UILabel */,
 				FCAC896B205A4E84008A5848 /* NSDate+ */,
 				FCE340FB205A179A005E49EA /* NSDateFormatter+ */,
@@ -544,26 +585,29 @@
 				FC19080B2057D3A8000E8C97 /* DAYComponentView.m in Sources */,
 				FC19080D2057D3A8000E8C97 /* DAYIndicatorView.m in Sources */,
 				FC17EFB2205BB75E007ED755 /* MarkNoteViewController.swift in Sources */,
-				FCAC8977205A5397008A5848 /* Event+CoreDataClass.m in Sources */,
+				FCBE0FA92068C2880072B1CE /* Event+CoreDataClass.m in Sources */,
 				FC92E1EB20575DA00036C153 /* DBhelper.m in Sources */,
 				FC19080E2057D3A8000E8C97 /* DAYCalendarView.m in Sources */,
+				FCBE0FAA2068C2880072B1CE /* EventList+CoreDataProperties.m in Sources */,
 				FCCF79472056829A0033C401 /* main.m in Sources */,
 				FCF68DD42058F96200B20407 /* UITableView+Extend.m in Sources */,
 				FC17EFBB205BB75E007ED755 /* MainCellAdapt.m in Sources */,
+				FCBE0FA82068C2880072B1CE /* Event+CoreDataProperties.m in Sources */,
 				FCE34110205A1C87005E49EA /* LeftMenuViewDemo.m in Sources */,
 				FC17EFB3205BB75E007ED755 /* CalendarViewController.swift in Sources */,
 				FC17EFB9205BB75E007ED755 /* MainEventCell.m in Sources */,
+				FCBE0F9E20688BD80072B1CE /* BasicViewController.swift in Sources */,
+				FCBE0FB22068D68A0072B1CE /* NSString+Extend.swift in Sources */,
 				FC19080C2057D3A8000E8C97 /* DAYUtils.m in Sources */,
 				FC19080A2057D3A8000E8C97 /* DAYNavigationBar.m in Sources */,
-				FCAC8976205A5397008A5848 /* Event+CoreDataProperties.m in Sources */,
 				FC923AB72061111700E42FCF /* DateFormatterInstance.swift in Sources */,
 				FCE34111205A1C87005E49EA /* MenuView.m in Sources */,
-				FCAC8978205A5397008A5848 /* EventList+CoreDataProperties.m in Sources */,
+				FCBE0FB52068E8510072B1CE /* UITextView+Extend.swift in Sources */,
 				FC17EFBF205BB780007ED755 /* AppDelegate.m in Sources */,
 				FC17EFBA205BB75E007ED755 /* MainViewController.m in Sources */,
+				FCBE0FAB2068C2880072B1CE /* EventList+CoreDataClass.m in Sources */,
 				FC17576320639626001A6333 /* UILabel+Extend.swift in Sources */,
 				FCDF66A02058FD16009ECAAC /* UIAlertController+swift.swift in Sources */,
-				FCAC8979205A5397008A5848 /* EventList+CoreDataClass.m in Sources */,
 				FC17EFB6205BB75E007ED755 /* EventDetailViewController.swift in Sources */,
 				FC92E1F320575E490036C153 /* ToDoList.xcdatamodeld in Sources */,
 				FC1757602063877A001A6333 /* Date+Extend.swift in Sources */,

@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9xf-Dt-rXB">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="416"/>
+                    <rect key="frame" x="10" y="74" width="355" height="352"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -30,13 +30,13 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="9xf-Dt-rXB" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="V85-m9-lc6"/>
-                <constraint firstAttribute="bottom" secondItem="9xf-Dt-rXB" secondAttribute="bottom" constant="251" id="ewm-3Y-cOc"/>
-                <constraint firstItem="9xf-Dt-rXB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jMW-P5-fMb"/>
-                <constraint firstItem="9xf-Dt-rXB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="oYc-xj-p0L"/>
+                <constraint firstItem="9xf-Dt-rXB" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" constant="-10" id="V85-m9-lc6"/>
+                <constraint firstAttribute="bottom" secondItem="9xf-Dt-rXB" secondAttribute="bottom" constant="241" id="ewm-3Y-cOc"/>
+                <constraint firstItem="9xf-Dt-rXB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="jMW-P5-fMb"/>
+                <constraint firstItem="9xf-Dt-rXB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="74" id="oYc-xj-p0L"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-            <point key="canvasLocation" x="24.5" y="52.5"/>
+            <point key="canvasLocation" x="-76" y="46"/>
         </view>
     </objects>
 </document>

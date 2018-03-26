@@ -24,6 +24,7 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
 @property (nonatomic,strong) MainCellAdapt *cellAdapt;
 @property (nonatomic,strong) MenuView *menu;
 
+
 -(void)refreshButtomStyle:(BOOL)bInput;
 
 @end
@@ -34,7 +35,7 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
     [super viewDidLoad];
     [self createBaseView];
     [self loadDefaultData];
-    
+
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -52,14 +53,6 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
     UITapGestureRecognizer *touch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide)];
     touch.delegate = self;
     [self.mainTableview addGestureRecognizer:touch];
-    
-    /*
-    //Add swipe gesture
-    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeAction:)];
-    swipe.delegate = self;
-    swipe.direction = UISwipeGestureRecognizerDirectionDown;
-    [self.mainTableview addGestureRecognizer:swipe];
-    */
      
     //init buttom textfield & label
     [self refreshButtomStyle:NO];
@@ -70,7 +63,7 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
     [self.imgAdd addGestureRecognizer:imgTouch];
     
     [self initKeyBoardEvent];
-    [self initLeftMenu];
+    [self initLeftMenu];    
 }
 
 -(void)swipeAction:(UISwipeGestureRecognizer*)swipe
@@ -94,8 +87,24 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
         [weakSelf deleteEvent:delIndexPath.row];
     };
     
-    cellDisplay displayBlock = ^(MainEventCell *cell,Event *item){
-        cell.lblName.text = item.title;
+    //Main Cell Display
+    cellDisplay displayBlock = ^(MainEventCell *cell,NSInteger index){
+        Event *event = [weakSelf.cellAdapt.dataResource objectAtIndex:index];
+        cell.lblName.text = event.title;
+        
+        //mark isFinish
+        if (event.isFinish) {
+            [cell.lblName addMiddleLine];
+            cell.lblName.textColor = RGBA(100, 100, 100, 1);
+            [cell.btnFinish setImage:[UIImage imageNamed:@"iconFinishGreen"] forState:UIControlStateNormal];
+        } else {
+            [cell.lblName removeMiddleLine];
+            cell.lblName.textColor = [UIColor blackColor];
+            [cell.btnFinish setImage:[UIImage imageNamed:@"iconFinishGray"] forState:UIControlStateNormal];
+        }
+        
+        cell.btnFinish.tag = index;
+        [cell.btnFinish addTarget:weakSelf action:@selector(didPressedFinish:) forControlEvents:UIControlEventTouchUpInside];
     };
     
     self.cellAdapt = [[MainCellAdapt alloc] initWithDataSource:sourceArray
@@ -108,6 +117,19 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
     self.mainTableview.delegate = self;
 
     [self.mainTableview registerNib:[MainEventCell nib] forCellReuseIdentifier:MainEventCellIdentifier];
+}
+
+-(void)didPressedFinish:(UIButton*)sender
+{
+    Event *event = [self.cellAdapt.dataResource objectAtIndex:sender.tag];
+    if (event.isFinish) {
+        event.isFinish = NO;
+    } else {
+        event.isFinish = YES;
+    }
+    [DBhelper Save];
+    
+    [self.mainTableview reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:sender.tag inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 #pragma mark - tableview Delegate
@@ -125,7 +147,9 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 44;
+    Event *event = [self.cellAdapt.dataResource objectAtIndex:indexPath.row];
+    CGFloat fHeight = [event.title getHeightByWightAndFontWithFWight:SCREEN_WIDTH-60-15 font:[UIFont systemFontOfSize:18]];
+    return fHeight+20;
 }
 
 -(void)fadeInTableview {

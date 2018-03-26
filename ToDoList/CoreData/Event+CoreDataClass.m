@@ -2,7 +2,7 @@
 //  Event+CoreDataClass.m
 //  
 //
-//  Created by Alex on 15/03/2018.
+//  Created by Alex on 26/03/2018.
 //
 //
 
