@@ -43,6 +43,7 @@
 		FCBE0FAF2068C6990072B1CE /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCBE0FAE2068C6990072B1CE /* UserNotifications.framework */; };
 		FCBE0FB22068D68A0072B1CE /* NSString+Extend.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBE0FB12068D68A0072B1CE /* NSString+Extend.swift */; };
 		FCBE0FB52068E8510072B1CE /* UITextView+Extend.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBE0FB42068E8510072B1CE /* UITextView+Extend.swift */; };
+		FCC5617B2069E2DB0018FE81 /* Swift_Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC5617A2069E2DB0018FE81 /* Swift_Global.swift */; };
 		FCCF79442056829A0033C401 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCCF79422056829A0033C401 /* LaunchScreen.storyboard */; };
 		FCCF79472056829A0033C401 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCF79462056829A0033C401 /* main.m */; };
 		FCDF66A02058FD16009ECAAC /* UIAlertController+swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDF669F2058FD16009ECAAC /* UIAlertController+swift.swift */; };
@@ -123,6 +124,7 @@
 		FCBE0FAE2068C6990072B1CE /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		FCBE0FB12068D68A0072B1CE /* NSString+Extend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSString+Extend.swift"; sourceTree = "<group>"; };
 		FCBE0FB42068E8510072B1CE /* UITextView+Extend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extend.swift"; sourceTree = "<group>"; };
+		FCC5617A2069E2DB0018FE81 /* Swift_Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_Global.swift; sourceTree = "<group>"; };
 		FCCF7931205682990033C401 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCCF79432056829A0033C401 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCCF79452056829A0033C401 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 			children = (
 				FC92E1F420575F200036C153 /* ToDoList-Bridging-Header.h */,
 				FC92E1EF20575DF90036C153 /* Global.h */,
+				FCC5617A2069E2DB0018FE81 /* Swift_Global.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				FCDF66A02058FD16009ECAAC /* UIAlertController+swift.swift in Sources */,
 				FC17EFB6205BB75E007ED755 /* EventDetailViewController.swift in Sources */,
 				FC92E1F320575E490036C153 /* ToDoList.xcdatamodeld in Sources */,
+				FCC5617B2069E2DB0018FE81 /* Swift_Global.swift in Sources */,
 				FC1757602063877A001A6333 /* Date+Extend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

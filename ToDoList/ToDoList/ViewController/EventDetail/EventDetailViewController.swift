@@ -10,19 +10,10 @@ import UIKit
 import AudioToolbox
 import CoreData
 
-let FINISHIMAGENAME = "iconFinishGreen"
-let UNFINISHIMAGENAME = "iconFinishGray"
-let sDateFormatter = "MM dd yyyy"
-
-// 屏幕的宽
-let SWIFT_SCREEN_WIDTH = UIScreen.main.bounds.size.width
-
-// 屏幕的高
-let SWIFT_SCREEN_HEIGHT = UIScreen.main.bounds.size.height
-
+//Event name label width
 let DEF_EVENT_NAME_WIDTH = SWIFT_SCREEN_WIDTH - 50 - 15
+//Event note label width
 let DEF_EVENT_NOTE_WIDTH = SWIFT_SCREEN_WIDTH - 20
-
 
 typealias deleteEventBlock = (Event) -> ()
 
@@ -69,7 +60,6 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     var timeFormatter:DateFormatter!
     
     var event:Event!
-    var tempAlertDate:Date?
     
     var delBlock:deleteEventBlock!
     
@@ -98,17 +88,15 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         self.timeFormatter = DateFormatter();
         self.timeFormatter.dateFormat = "HH:mm";
         
+        //Minus textView top space
         self.txtEventName.textContainerInset = UIEdgeInsets.zero;
         self.txtEventName.textContainer.lineFragmentPadding = 0;
-        
     }
     
     func loadDefaultData() -> Void {
-        //isfinish
-        self.btnFinishEvent.setImage(UIImage(named:self.event!.isFinish ? FINISHIMAGENAME:UNFINISHIMAGENAME), for: .normal);
-        //title
-        self.txtEventName.text = self.event!.title;
-    
+        //isfinish & title
+        eventFinishDisplay(isFinish: self.event.isFinish)
+        
         //note
         if self.event.note != nil {
             self.lblMark.text = self.event!.note;
@@ -120,12 +108,10 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         
         self.lblCreateTime.text = "Created on " + self.dateFormatter.string(from: self.event!.createDate!);
         
-        //Alerm
+        //Alerm display
         if self.event.needAlerm {
             self.swiAlertMe.setOn(true, animated: true);
             self.bAlertMode = true;
-            self.bShowCalendar = true;
-            self.bShowDatePicker = true;
             self.lblData.text = self.dateFormatter.string(from: self.event.alermDate!);
             self.lblTime.text = self.timeFormatter.string(from: self.event.alermTime!);
             self.calendarView.selectedDate = self.event.alermDate;
@@ -159,9 +145,6 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
-            //title frame
-            self.eventNameLaycontent.constant = getEventNameHeight();
-            self.txtEventName.layoutIfNeeded()
             return cellEventName;
         case 1:
             return cellAlerm;
@@ -252,6 +235,28 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         }
     }
     
+    
+    // MARK: - Custom func
+    // Finish icon display
+    func eventFinishDisplay(isFinish:Bool) -> Void {
+        self.btnFinishEvent.setImage(UIImage(named:isFinish ? FINISHIMAGENAME:UNFINISHIMAGENAME), for: .normal);
+        
+        self.txtEventName.text = self.event!.title;
+        
+        eventNameLabelDisplay(isFinish: isFinish);
+    }
+    
+    // Event name label display
+    func eventNameLabelDisplay(isFinish:Bool) -> Void {
+        if isFinish {
+            self.txtEventName.addMiddleLine()
+            self.txtEventName.textColor = SWIFT_GRAY_COLOR
+        } else {
+            self.txtEventName.removeMiddleLine()
+            self.txtEventName.textColor = SWIFT_BLACK_COLOR
+        }
+    }
+    
     func pushToNoteVC() -> Void {
         
         let noteVC:MarkNoteViewController = MarkNoteViewController(nibName:nil,bundle:nil)
@@ -264,24 +269,28 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     }
     
     func initTempAlertDate() -> Void {
-        if self.tempAlertDate == nil {
-            self.tempAlertDate = Date().getTomorrow()
+        if self.event.alermDate == nil && self.event.alermTime == nil {
+            //Get tommorrow date & time
+            let tempAlertDate:Date = Date().getTomorrow()
+        
             //today zero AM
-            self.lblData.text = self.dateFormatter.string(from: self.tempAlertDate!);
-            self.calendarView.selectedDate = self.tempAlertDate;
+            self.lblData.text = self.dateFormatter.string(from: tempAlertDate);
+            self.calendarView.selectedDate = tempAlertDate;
+            self.event.alermDate = self.calendarView.selectedDate;
             //after 1 hour
-            self.lblTime.text = self.timeFormatter.string(from: self.tempAlertDate!);
-            self.datePicker.setDate(self.tempAlertDate!, animated: false);
+            self.lblTime.text = self.timeFormatter.string(from: tempAlertDate);
+            self.datePicker.setDate(tempAlertDate, animated: false);
+            self.event.alermTime = self.datePicker.date;
         }
     }
     
     func getEventNameHeight() -> CGFloat {
-        let fHeight:CGFloat = (self.event.title! as NSString).getHeightByWightAndFont(fWight: DEF_EVENT_NAME_WIDTH, font: UIFont.systemFont(ofSize: 18))
+        let fHeight:CGFloat = (self.event.title! as NSString).getHeightByWightAndFont(fWight: DEF_EVENT_NAME_WIDTH, font: UIFont.systemFont(ofSize: 17))
         return fHeight;
     }
     
     func getNoteHeight() -> CGFloat {
-        let fHeight:CGFloat = (self.event.note! as NSString).getHeightByWightAndFont(fWight: DEF_EVENT_NOTE_WIDTH, font: UIFont.systemFont(ofSize: 18));
+        let fHeight:CGFloat = (self.event.note! as NSString).getHeightByWightAndFont(fWight: DEF_EVENT_NOTE_WIDTH, font: UIFont.systemFont(ofSize: 17));
         return fHeight;
     }
     
@@ -289,22 +298,41 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     // MARK: - UITextView
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" {
+            //space
             textView.resignFirstResponder()
             self.event.title = textView.text
             DBhelper.save()
             
             return false;
+        } else if text == "" {
+            //back
+            if textView.text.count > 1 {
+                //Mesure event name lenght
+                let index = textView.text.index(textView.text.startIndex, offsetBy: textView.text.count - 1)
+                let sTempName:String = textView.text.substring(to: index)
+                let fHeight:CGFloat = (sTempName as NSString).getHeightByWightAndFont(fWight: DEF_EVENT_NAME_WIDTH, font: UIFont.systemFont(ofSize: 17))
+                
+                self.event.title = sTempName
+                if fHeight < self.fNameHeightBefore {
+                    //Need shrink
+                    self.mainTableview.beginUpdates()
+                    self.mainTableview.endUpdates()
+                    self.fNameHeightBefore = fHeight
+                }
+            }
+            return true;
         } else {
             let sTitle:String = textView.text + text
             self.event.title = sTitle;
             let fHeight:CGFloat = (sTitle as NSString).getHeightByWightAndFont(fWight: DEF_EVENT_NAME_WIDTH, font: UIFont.systemFont(ofSize: 17));
-            print("%f",fHeight)
+            
             if fHeight > self.fNameHeightBefore {
-                //Need fade
+                //Need spread
                 self.mainTableview.beginUpdates()
                 self.mainTableview.endUpdates()
                 self.fNameHeightBefore = fHeight
             }
+            eventNameLabelDisplay(isFinish: self.event.isFinish)
             return true;
         }
     }
@@ -317,16 +345,9 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     // MARK: - IBAction
     @IBAction func didPressedFinish(_ sender:Any){
         self.event!.isFinish = !self.event!.isFinish;
-        
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-        let sImageName = self.event!.isFinish ? FINISHIMAGENAME:UNFINISHIMAGENAME
-        self.btnFinishEvent.setImage(UIImage(named:sImageName), for: .normal);
         
-        if self.event.isFinish {
-            self.txtEventName.addMiddleLine()
-        } else {
-            self.txtEventName.removeMiddleLine()
-        }
+        eventFinishDisplay(isFinish: self.event.isFinish)
     }
     
     @IBAction func didPressedDelete(_ sender: Any) {
@@ -362,27 +383,6 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         }
         self.event.needAlerm = self.bAlertMode
         self.mainTableview.reloadData();
-    }
-    
-    
-    func appandDate(selectDate:Date?,selectTime:Date?){
-        let cal:Calendar = Calendar.current
-        var com:DateComponents = DateComponents()
-        if selectDate != nil {
-            com.year = cal.component(.year, from: selectDate!)
-            com.month = cal.component(.month, from: selectDate!)
-            com.day = cal.component(.day, from: selectDate!)
-            com.hour = cal.component(.hour, from: self.tempAlertDate!)
-            com.minute = cal.component(.minute, from: self.tempAlertDate!)
-        }
-        if selectTime != nil {
-            com.year = cal.component(.year, from: self.tempAlertDate!)
-            com.month = cal.component(.month, from: selectDate!)
-            com.day = cal.component(.day, from: selectDate!)
-            com.hour = cal.component(.hour, from: selectTime!)
-            com.minute = cal.component(.minute, from: selectTime!)
-        }
-        self.tempAlertDate = cal.date(from: com)
     }
     
     override func didReceiveMemoryWarning() {

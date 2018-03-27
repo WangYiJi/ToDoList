@@ -21,7 +21,6 @@
                 <outlet property="cellTime" destination="OGo-DQ-iQe" id="VsS-i1-KQ6"/>
                 <outlet property="cellTimePicker" destination="4fi-Cl-ppA" id="8vW-N6-WZI"/>
                 <outlet property="datePicker" destination="Sjn-48-FYf" id="ciR-gp-Hew"/>
-                <outlet property="eventNameLaycontent" destination="say-Cb-Rwf" id="Nax-DD-Ksz"/>
                 <outlet property="lblAlermMe" destination="wa4-kd-rXm" id="evE-wG-LkE"/>
                 <outlet property="lblCreateTime" destination="UP9-lk-7RK" id="nBY-kl-Yv1"/>
                 <outlet property="lblData" destination="h3G-0v-FTl" id="VXF-OU-qfH"/>
@@ -264,9 +263,6 @@
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lpO-qq-rq3">
                         <rect key="frame" x="50" y="9" width="310" height="26"/>
                         <color key="backgroundColor" red="0.0" green="0.75294117650000003" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="26" id="say-Cb-Rwf"/>
-                        </constraints>
                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
@@ -276,11 +272,12 @@
                     </textView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="lpO-qq-rq3" firstAttribute="top" secondItem="AP0-iF-MY2" secondAttribute="top" constant="9" id="0O0-03-me4"/>
+                    <constraint firstItem="lpO-qq-rq3" firstAttribute="top" secondItem="AP0-iF-MY2" secondAttribute="top" constant="9" id="0ko-J1-qyd"/>
                     <constraint firstItem="qrt-lC-xJz" firstAttribute="leading" secondItem="AP0-iF-MY2" secondAttribute="leading" constant="15" id="FNC-M0-COU"/>
-                    <constraint firstAttribute="trailing" secondItem="lpO-qq-rq3" secondAttribute="trailing" constant="15" id="HXA-mw-LqA"/>
                     <constraint firstItem="qrt-lC-xJz" firstAttribute="centerY" secondItem="AP0-iF-MY2" secondAttribute="centerY" id="JAk-gB-oqS"/>
-                    <constraint firstItem="lpO-qq-rq3" firstAttribute="leading" secondItem="qrt-lC-xJz" secondAttribute="trailing" constant="7" id="Z0R-Sp-SK9"/>
+                    <constraint firstAttribute="bottom" secondItem="lpO-qq-rq3" secondAttribute="bottom" constant="8.5" id="PJR-pw-B7m"/>
+                    <constraint firstAttribute="trailing" secondItem="lpO-qq-rq3" secondAttribute="trailing" constant="15" id="arY-dS-OfB"/>
+                    <constraint firstItem="lpO-qq-rq3" firstAttribute="leading" secondItem="qrt-lC-xJz" secondAttribute="trailing" constant="7" id="taZ-Q7-Y5J"/>
                 </constraints>
             </tableViewCellContentView>
             <point key="canvasLocation" x="25.5" y="177"/>
