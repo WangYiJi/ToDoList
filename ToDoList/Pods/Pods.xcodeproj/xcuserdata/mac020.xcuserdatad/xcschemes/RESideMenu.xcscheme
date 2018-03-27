@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F21376B526F6569687DE52EC1CD2E601"
-               BlueprintName = "Pods-ToDoList"
+               BlueprintIdentifier = "D9D8279F0EADCA6BA645BF253F783706"
+               BlueprintName = "RESideMenu"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libPods-ToDoList.a">
+               BuildableName = "libRESideMenu.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

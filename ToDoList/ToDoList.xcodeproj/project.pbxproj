@@ -30,6 +30,10 @@
 		FC19080D2057D3A8000E8C97 /* DAYIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1908062057D3A8000E8C97 /* DAYIndicatorView.m */; };
 		FC19080E2057D3A8000E8C97 /* DAYCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1908082057D3A8000E8C97 /* DAYCalendarView.m */; };
 		FC19080F2057D3A8000E8C97 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC1908092057D3A8000E8C97 /* Info.plist */; };
+		FC5CBF3F206A263000D17B44 /* UserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5CBF3D206A263000D17B44 /* UserInfoCell.m */; };
+		FC5CBF40206A263000D17B44 /* UserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC5CBF3E206A263000D17B44 /* UserInfoCell.xib */; };
+		FC5CBF45206A26A200D17B44 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5CBF43206A26A200D17B44 /* MenuViewController.swift */; };
+		FC5CBF46206A26A200D17B44 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC5CBF44206A26A200D17B44 /* MenuViewController.xib */; };
 		FC923AB72061111700E42FCF /* DateFormatterInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC923AB62061111700E42FCF /* DateFormatterInstance.swift */; };
 		FC92E1EB20575DA00036C153 /* DBhelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FC92E1E420575DA00036C153 /* DBhelper.m */; };
 		FC92E1F320575E490036C153 /* ToDoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FC92E1F120575E490036C153 /* ToDoList.xcdatamodeld */; };
@@ -104,6 +108,11 @@
 		FC1908072057D3A8000E8C97 /* Lib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lib.h; sourceTree = "<group>"; };
 		FC1908082057D3A8000E8C97 /* DAYCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAYCalendarView.m; sourceTree = "<group>"; };
 		FC1908092057D3A8000E8C97 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC5CBF3C206A263000D17B44 /* UserInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoCell.h; sourceTree = "<group>"; };
+		FC5CBF3D206A263000D17B44 /* UserInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoCell.m; sourceTree = "<group>"; };
+		FC5CBF3E206A263000D17B44 /* UserInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoCell.xib; sourceTree = "<group>"; };
+		FC5CBF43206A26A200D17B44 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		FC5CBF44206A26A200D17B44 /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		FC923AB62061111700E42FCF /* DateFormatterInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterInstance.swift; sourceTree = "<group>"; };
 		FC92E1E420575DA00036C153 /* DBhelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBhelper.m; sourceTree = "<group>"; };
 		FC92E1E520575DA00036C153 /* DBhelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBhelper.h; sourceTree = "<group>"; };
@@ -188,6 +197,10 @@
 		FC17EF9E205BB75E007ED755 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				FC5CBF3C206A263000D17B44 /* UserInfoCell.h */,
+				FC5CBF3D206A263000D17B44 /* UserInfoCell.m */,
+				FC5CBF3E206A263000D17B44 /* UserInfoCell.xib */,
+				FC5CBF35206A234500D17B44 /* Menu */,
 				FCBE0F9C20688B970072B1CE /* BaseSwiftVC */,
 				FC17EF9F205BB75E007ED755 /* NoteMark */,
 				FC17EFA2205BB75E007ED755 /* Calendar */,
@@ -274,6 +287,15 @@
 				FC1908062057D3A8000E8C97 /* DAYIndicatorView.m */,
 			);
 			path = Internal;
+			sourceTree = "<group>";
+		};
+		FC5CBF35206A234500D17B44 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				FC5CBF43206A26A200D17B44 /* MenuViewController.swift */,
+				FC5CBF44206A26A200D17B44 /* MenuViewController.xib */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		FC92E1E220575DA00036C153 /* Utility */ = {
@@ -520,7 +542,9 @@
 				FC17EFB7205BB75E007ED755 /* MainViewController.xib in Resources */,
 				FC17EFB1205BB75E007ED755 /* MarkNoteViewController.xib in Resources */,
 				FCEC3EF2205776AE002A1A1D /* Media.xcassets in Resources */,
+				FC5CBF40206A263000D17B44 /* UserInfoCell.xib in Resources */,
 				FC17EFB8205BB75E007ED755 /* MainEventCell.xib in Resources */,
+				FC5CBF46206A26A200D17B44 /* MenuViewController.xib in Resources */,
 				FC19080F2057D3A8000E8C97 /* Info.plist in Resources */,
 				FC17EFB5205BB75E007ED755 /* EventDetailViewController.xib in Resources */,
 			);
@@ -588,6 +612,7 @@
 				FC19080B2057D3A8000E8C97 /* DAYComponentView.m in Sources */,
 				FC19080D2057D3A8000E8C97 /* DAYIndicatorView.m in Sources */,
 				FC17EFB2205BB75E007ED755 /* MarkNoteViewController.swift in Sources */,
+				FC5CBF45206A26A200D17B44 /* MenuViewController.swift in Sources */,
 				FCBE0FA92068C2880072B1CE /* Event+CoreDataClass.m in Sources */,
 				FC92E1EB20575DA00036C153 /* DBhelper.m in Sources */,
 				FC19080E2057D3A8000E8C97 /* DAYCalendarView.m in Sources */,
@@ -611,6 +636,7 @@
 				FCBE0FAB2068C2880072B1CE /* EventList+CoreDataClass.m in Sources */,
 				FC17576320639626001A6333 /* UILabel+Extend.swift in Sources */,
 				FCDF66A02058FD16009ECAAC /* UIAlertController+swift.swift in Sources */,
+				FC5CBF3F206A263000D17B44 /* UserInfoCell.m in Sources */,
 				FC17EFB6205BB75E007ED755 /* EventDetailViewController.swift in Sources */,
 				FC92E1F320575E490036C153 /* ToDoList.xcdatamodeld in Sources */,
 				FCC5617B2069E2DB0018FE81 /* Swift_Global.swift in Sources */,
@@ -754,6 +780,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Debug;
 		};
@@ -772,6 +799,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Config/ToDoList-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Release;
 		};

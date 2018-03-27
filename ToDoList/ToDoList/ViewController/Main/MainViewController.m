@@ -17,12 +17,12 @@
 #import "Global.h"
 #import <UIKit/NSIndexPath+UIKitAdditions.h>
 
+
 static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
 
-@interface MainViewController () <UITableViewDelegate,HomeMenuViewDelegate,UITextFieldDelegate,UIGestureRecognizerDelegate>
+@interface MainViewController () <UITableViewDelegate,UITextFieldDelegate,UIGestureRecognizerDelegate>
 
 @property (nonatomic,strong) MainCellAdapt *cellAdapt;
-@property (nonatomic,strong) MenuView *menu;
 
 
 -(void)refreshButtomStyle:(BOOL)bInput;
@@ -41,11 +41,12 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
 
 -(void)createBaseView
 {
-    //Go to Calendar
-    UIBarButtonItem *leftBar = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(showLeftMenu)];
+    
+    UIBarButtonItem *leftBar = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                                                             target:self
+                                                                             action:@selector(didPressedMenu)];
     self.navigationItem.leftBarButtonItem = leftBar;
     
-    //[self.btnCalendar setFrame:CGRectMake(0, 0, 30, 30)];
     UIBarButtonItem *rightBar = [[UIBarButtonItem alloc] initWithCustomView:self.btnCalendar];
     self.navigationItem.rightBarButtonItem = rightBar;
     
@@ -63,7 +64,11 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
     [self.imgAdd addGestureRecognizer:imgTouch];
     
     [self initKeyBoardEvent];
-    [self initLeftMenu];    
+}
+
+-(void)didPressedMenu
+{
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -142,6 +147,10 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
 #pragma mark - tableview Delegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    MenuViewController *vc = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
+    [self.navigationController pushViewController:vc animated:YES];
+    /*
+    return
     __weak typeof(self) weakSelf = self;
     Event *tempEvent = [self.cellAdapt.dataResource objectAtIndex:indexPath.row];
     EventDetailViewController *eventDetailVC = [[EventDetailViewController alloc] initWithNibName:@"EventDetailViewController" bundle:nil];
@@ -150,6 +159,7 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
         [weakSelf deleteEvent:[self.cellAdapt.dataResource indexOfObject:delEvent]];
     };
     [self.navigationController pushViewController:eventDetailVC animated:YES];
+     */
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -217,27 +227,6 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
     [self.mainTableview deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:delIndex inSection:0]] withRowAnimation:UITableViewRowAnimationRight];
     [self.mainTableview endUpdates];
     [DBhelper deleteBy:event];
-}
-
-#pragma mark - Menu func
--(void)initLeftMenu
-{
-    LeftMenuViewDemo *demo = [[LeftMenuViewDemo alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH*0.8, SCREEN_HEIGHT)];
-    demo.customDelegate = self;
-    
-    MenuView *menu = [MenuView MenuViewWithDependencyView:self.view MenuView:demo isShowCoverView:YES];
-    self.menu = menu;
-}
-
--(void)LeftMenuViewClick:(NSInteger)tag
-{
-    [self.menu hidenWithAnimation];
-    NSLog(@"%ld",tag);
-}
-
--(void)showLeftMenu
-{
-    [self.menu show];
 }
 
 #pragma mark - Keyboard event

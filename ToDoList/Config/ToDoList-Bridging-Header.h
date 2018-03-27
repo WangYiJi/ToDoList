@@ -7,3 +7,4 @@
 #import "DBhelper.h"
 #import "Event+CoreDataClass.h"
 #import "Global.h"
+#import "UserInfoCell.h"
