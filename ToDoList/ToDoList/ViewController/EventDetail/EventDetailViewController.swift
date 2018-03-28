@@ -55,7 +55,6 @@ class EventDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     var bShowDatePicker:Bool = false;
     var fNameHeightBefore:CGFloat = 0.0;
     
-    
     var dateFormatter:DateFormatter!
     var timeFormatter:DateFormatter!
     

@@ -7,4 +7,5 @@
 #import "DBhelper.h"
 #import "Event+CoreDataClass.h"
 #import "Global.h"
-#import "UserInfoCell.h"
+#import "AMSlideMenuLeftTableViewController.h"
+#import "EventList+CoreDataClass.h"

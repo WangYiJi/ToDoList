@@ -8,32 +8,32 @@
 
 import UIKit
 
-class MenuViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+//class MenuViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2;
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.mainTableview.dequeueReusableCell(withIdentifier: "UserInfoCell", for: indexPath) as! UserInfoCell
-        return cell;
-    }
-    
-
-    @IBOutlet weak var mainTableview: UITableView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let cellNib = UINib(nibName: "UserInfoCell", bundle: nil)
-        //self.mainTableview.registerNib(cellNib, forCellReuseIdentifier: "UserInfoCell")
-        self.mainTableview.register(cellNib, forCellReuseIdentifier: "UserInfoCell")
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 2;
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = self.mainTableview.dequeueReusableCell(withIdentifier: "UserInfoCell", for: indexPath) as! UserInfoCell
+//        return cell;
+//    }
+//
+//
+//    @IBOutlet weak var mainTableview: UITableView!
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        let cellNib = UINib(nibName: "UserInfoCell", bundle: nil)
+//        //self.mainTableview.registerNib(cellNib, forCellReuseIdentifier: "UserInfoCell")
+//        self.mainTableview.register(cellNib, forCellReuseIdentifier: "UserInfoCell")
+//        // Do any additional setup after loading the view.
+//    }
+//
+//    override func didReceiveMemoryWarning() {
+//        super.didReceiveMemoryWarning()
+//        // Dispose of any resources that can be recreated.
+//    }
     
 
     /*
@@ -46,4 +46,4 @@ class MenuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     */
 
-}
+//}

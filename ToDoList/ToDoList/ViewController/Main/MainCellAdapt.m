@@ -57,7 +57,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MainEventCell *cell = (MainEventCell*)[tableView customdq:@"MainEventCell"];
+    MainEventCell *cell = (MainEventCell*)[tableView customdq:self.sIdentifier];
     Event *item = [self.dataResource objectAtIndex:indexPath.row];
     
     [cell autoresizingNameLabel:[item.title getHeightByWightAndFontWithFWight:SCREEN_WIDTH - 60 - 15 font:[UIFont systemFontOfSize:18]]];

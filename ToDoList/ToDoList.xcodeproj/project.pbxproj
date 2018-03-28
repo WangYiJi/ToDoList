@@ -30,10 +30,12 @@
 		FC19080D2057D3A8000E8C97 /* DAYIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1908062057D3A8000E8C97 /* DAYIndicatorView.m */; };
 		FC19080E2057D3A8000E8C97 /* DAYCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1908082057D3A8000E8C97 /* DAYCalendarView.m */; };
 		FC19080F2057D3A8000E8C97 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC1908092057D3A8000E8C97 /* Info.plist */; };
-		FC5CBF3F206A263000D17B44 /* UserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5CBF3D206A263000D17B44 /* UserInfoCell.m */; };
-		FC5CBF40206A263000D17B44 /* UserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC5CBF3E206A263000D17B44 /* UserInfoCell.xib */; };
 		FC5CBF45206A26A200D17B44 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5CBF43206A26A200D17B44 /* MenuViewController.swift */; };
 		FC5CBF46206A26A200D17B44 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC5CBF44206A26A200D17B44 /* MenuViewController.xib */; };
+		FC826B53206A466500114514 /* LeftMenuTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC826B4D206A466500114514 /* LeftMenuTVC.xib */; };
+		FC826B54206A466500114514 /* LeftMenuTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC826B4E206A466500114514 /* LeftMenuTVC.m */; };
+		FC826B55206A466500114514 /* RightMenuTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC826B51206A466500114514 /* RightMenuTVC.m */; };
+		FC826B56206A466500114514 /* RightMenuTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC826B52206A466500114514 /* RightMenuTVC.xib */; };
 		FC923AB72061111700E42FCF /* DateFormatterInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC923AB62061111700E42FCF /* DateFormatterInstance.swift */; };
 		FC92E1EB20575DA00036C153 /* DBhelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FC92E1E420575DA00036C153 /* DBhelper.m */; };
 		FC92E1F320575E490036C153 /* ToDoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FC92E1F120575E490036C153 /* ToDoList.xcdatamodeld */; };
@@ -50,9 +52,21 @@
 		FCC5617B2069E2DB0018FE81 /* Swift_Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC5617A2069E2DB0018FE81 /* Swift_Global.swift */; };
 		FCCF79442056829A0033C401 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCCF79422056829A0033C401 /* LaunchScreen.storyboard */; };
 		FCCF79472056829A0033C401 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCF79462056829A0033C401 /* main.m */; };
+		FCD961BD206B3EE700C3A83E /* ForthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD961AE206B3EE700C3A83E /* ForthVC.m */; };
+		FCD961BE206B3EE700C3A83E /* FiveVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD961B1206B3EE700C3A83E /* FiveVC.xib */; };
+		FCD961BF206B3EE700C3A83E /* ThirdVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD961B2206B3EE700C3A83E /* ThirdVC.xib */; };
+		FCD961C0206B3EE700C3A83E /* ForthVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD961B3206B3EE700C3A83E /* ForthVC.xib */; };
+		FCD961C1206B3EE700C3A83E /* FiveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD961B7206B3EE700C3A83E /* FiveVC.m */; };
+		FCD961C3206B3EE700C3A83E /* SecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD961B9206B3EE700C3A83E /* SecondVC.m */; };
+		FCD961C4206B3EE700C3A83E /* ThirdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD961BA206B3EE700C3A83E /* ThirdVC.m */; };
+		FCD961C5206B3EE700C3A83E /* SecondVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD961BB206B3EE700C3A83E /* SecondVC.xib */; };
+		FCD961CB206B40B100C3A83E /* MainOfMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD961C9206B40B100C3A83E /* MainOfMenuViewController.m */; };
+		FCD961CC206B40B100C3A83E /* MainOfMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD961CA206B40B100C3A83E /* MainOfMenuViewController.xib */; };
+		FCD961D9206B68CD00C3A83E /* EventListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD961D7206B68CD00C3A83E /* EventListCell.swift */; };
+		FCD961DA206B68CD00C3A83E /* EventListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD961D8206B68CD00C3A83E /* EventListCell.xib */; };
+		FCD961EA206B871000C3A83E /* LeftMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD961E8206B871000C3A83E /* LeftMenuTableViewController.m */; };
+		FCD961EB206B871000C3A83E /* LeftMenuTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD961E9206B871000C3A83E /* LeftMenuTableViewController.xib */; };
 		FCDF66A02058FD16009ECAAC /* UIAlertController+swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDF669F2058FD16009ECAAC /* UIAlertController+swift.swift */; };
-		FCE34110205A1C87005E49EA /* LeftMenuViewDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE3410D205A1C87005E49EA /* LeftMenuViewDemo.m */; };
-		FCE34111205A1C87005E49EA /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE3410F205A1C87005E49EA /* MenuView.m */; };
 		FCEC3EF2205776AE002A1A1D /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCEC3EF1205776AE002A1A1D /* Media.xcassets */; };
 		FCF68DD42058F96200B20407 /* UITableView+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF68DD12058F96200B20407 /* UITableView+Extend.m */; };
 /* End PBXBuildFile section */
@@ -108,11 +122,14 @@
 		FC1908072057D3A8000E8C97 /* Lib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lib.h; sourceTree = "<group>"; };
 		FC1908082057D3A8000E8C97 /* DAYCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAYCalendarView.m; sourceTree = "<group>"; };
 		FC1908092057D3A8000E8C97 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FC5CBF3C206A263000D17B44 /* UserInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoCell.h; sourceTree = "<group>"; };
-		FC5CBF3D206A263000D17B44 /* UserInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoCell.m; sourceTree = "<group>"; };
-		FC5CBF3E206A263000D17B44 /* UserInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoCell.xib; sourceTree = "<group>"; };
 		FC5CBF43206A26A200D17B44 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		FC5CBF44206A26A200D17B44 /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		FC826B4C206A466500114514 /* LeftMenuTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuTVC.h; sourceTree = "<group>"; };
+		FC826B4D206A466500114514 /* LeftMenuTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftMenuTVC.xib; sourceTree = "<group>"; };
+		FC826B4E206A466500114514 /* LeftMenuTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuTVC.m; sourceTree = "<group>"; };
+		FC826B50206A466500114514 /* RightMenuTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightMenuTVC.h; sourceTree = "<group>"; };
+		FC826B51206A466500114514 /* RightMenuTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightMenuTVC.m; sourceTree = "<group>"; };
+		FC826B52206A466500114514 /* RightMenuTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RightMenuTVC.xib; sourceTree = "<group>"; };
 		FC923AB62061111700E42FCF /* DateFormatterInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterInstance.swift; sourceTree = "<group>"; };
 		FC92E1E420575DA00036C153 /* DBhelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBhelper.m; sourceTree = "<group>"; };
 		FC92E1E520575DA00036C153 /* DBhelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBhelper.h; sourceTree = "<group>"; };
@@ -138,11 +155,27 @@
 		FCCF79432056829A0033C401 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCCF79452056829A0033C401 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCCF79462056829A0033C401 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FCD961AE206B3EE700C3A83E /* ForthVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForthVC.m; sourceTree = "<group>"; };
+		FCD961AF206B3EE700C3A83E /* SecondVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondVC.h; sourceTree = "<group>"; };
+		FCD961B0206B3EE700C3A83E /* FiveVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiveVC.h; sourceTree = "<group>"; };
+		FCD961B1206B3EE700C3A83E /* FiveVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FiveVC.xib; sourceTree = "<group>"; };
+		FCD961B2206B3EE700C3A83E /* ThirdVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdVC.xib; sourceTree = "<group>"; };
+		FCD961B3206B3EE700C3A83E /* ForthVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForthVC.xib; sourceTree = "<group>"; };
+		FCD961B5206B3EE700C3A83E /* ThirdVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdVC.h; sourceTree = "<group>"; };
+		FCD961B6206B3EE700C3A83E /* ForthVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForthVC.h; sourceTree = "<group>"; };
+		FCD961B7206B3EE700C3A83E /* FiveVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiveVC.m; sourceTree = "<group>"; };
+		FCD961B9206B3EE700C3A83E /* SecondVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondVC.m; sourceTree = "<group>"; };
+		FCD961BA206B3EE700C3A83E /* ThirdVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdVC.m; sourceTree = "<group>"; };
+		FCD961BB206B3EE700C3A83E /* SecondVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondVC.xib; sourceTree = "<group>"; };
+		FCD961C8206B40B100C3A83E /* MainOfMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainOfMenuViewController.h; sourceTree = "<group>"; };
+		FCD961C9206B40B100C3A83E /* MainOfMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainOfMenuViewController.m; sourceTree = "<group>"; };
+		FCD961CA206B40B100C3A83E /* MainOfMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainOfMenuViewController.xib; sourceTree = "<group>"; };
+		FCD961D7206B68CD00C3A83E /* EventListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListCell.swift; sourceTree = "<group>"; };
+		FCD961D8206B68CD00C3A83E /* EventListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventListCell.xib; sourceTree = "<group>"; };
+		FCD961E7206B871000C3A83E /* LeftMenuTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftMenuTableViewController.h; sourceTree = "<group>"; };
+		FCD961E8206B871000C3A83E /* LeftMenuTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeftMenuTableViewController.m; sourceTree = "<group>"; };
+		FCD961E9206B871000C3A83E /* LeftMenuTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeftMenuTableViewController.xib; sourceTree = "<group>"; };
 		FCDF669F2058FD16009ECAAC /* UIAlertController+swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+swift.swift"; sourceTree = "<group>"; };
-		FCE3410C205A1C87005E49EA /* LeftMenuViewDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuViewDemo.h; sourceTree = "<group>"; };
-		FCE3410D205A1C87005E49EA /* LeftMenuViewDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuViewDemo.m; sourceTree = "<group>"; };
-		FCE3410E205A1C87005E49EA /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
-		FCE3410F205A1C87005E49EA /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuView.m; sourceTree = "<group>"; };
 		FCEC3EF1205776AE002A1A1D /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		FCF68DD12058F96200B20407 /* UITableView+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Extend.m"; sourceTree = "<group>"; };
 		FCF68DD22058F96200B20407 /* UITableView+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Extend.h"; sourceTree = "<group>"; };
@@ -197,15 +230,12 @@
 		FC17EF9E205BB75E007ED755 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				FC5CBF3C206A263000D17B44 /* UserInfoCell.h */,
-				FC5CBF3D206A263000D17B44 /* UserInfoCell.m */,
-				FC5CBF3E206A263000D17B44 /* UserInfoCell.xib */,
+				FC17EFA8205BB75E007ED755 /* Main */,
+				FC17EFA5205BB75E007ED755 /* EventDetail */,
 				FC5CBF35206A234500D17B44 /* Menu */,
 				FCBE0F9C20688B970072B1CE /* BaseSwiftVC */,
 				FC17EF9F205BB75E007ED755 /* NoteMark */,
 				FC17EFA2205BB75E007ED755 /* Calendar */,
-				FC17EFA5205BB75E007ED755 /* EventDetail */,
-				FC17EFA8205BB75E007ED755 /* Main */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -292,16 +322,44 @@
 		FC5CBF35206A234500D17B44 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				FCD961C7206B403500C3A83E /* MainMenu */,
+				FCD961AD206B3EE700C3A83E /* ContentVCs */,
+				FC826B4B206A466500114514 /* LeftMenu */,
+				FC826B4F206A466500114514 /* RightMenu */,
 				FC5CBF43206A26A200D17B44 /* MenuViewController.swift */,
 				FC5CBF44206A26A200D17B44 /* MenuViewController.xib */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		FC826B4B206A466500114514 /* LeftMenu */ = {
+			isa = PBXGroup;
+			children = (
+				FC826B4C206A466500114514 /* LeftMenuTVC.h */,
+				FC826B4E206A466500114514 /* LeftMenuTVC.m */,
+				FC826B4D206A466500114514 /* LeftMenuTVC.xib */,
+				FCD961D7206B68CD00C3A83E /* EventListCell.swift */,
+				FCD961D8206B68CD00C3A83E /* EventListCell.xib */,
+				FCD961E7206B871000C3A83E /* LeftMenuTableViewController.h */,
+				FCD961E8206B871000C3A83E /* LeftMenuTableViewController.m */,
+				FCD961E9206B871000C3A83E /* LeftMenuTableViewController.xib */,
+			);
+			path = LeftMenu;
+			sourceTree = "<group>";
+		};
+		FC826B4F206A466500114514 /* RightMenu */ = {
+			isa = PBXGroup;
+			children = (
+				FC826B50206A466500114514 /* RightMenuTVC.h */,
+				FC826B51206A466500114514 /* RightMenuTVC.m */,
+				FC826B52206A466500114514 /* RightMenuTVC.xib */,
+			);
+			path = RightMenu;
+			sourceTree = "<group>";
+		};
 		FC92E1E220575DA00036C153 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				FCE34108205A1AEE005E49EA /* LeftMenu */,
 				FC1907FB2057D3A8000E8C97 /* Calendar */,
 				FC92E1E320575DA00036C153 /* DBHelper */,
 				FC92E1E620575DA00036C153 /* LocationHelper */,
@@ -433,23 +491,41 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		FCD961AD206B3EE700C3A83E /* ContentVCs */ = {
+			isa = PBXGroup;
+			children = (
+				FCD961AF206B3EE700C3A83E /* SecondVC.h */,
+				FCD961B9206B3EE700C3A83E /* SecondVC.m */,
+				FCD961BB206B3EE700C3A83E /* SecondVC.xib */,
+				FCD961B5206B3EE700C3A83E /* ThirdVC.h */,
+				FCD961BA206B3EE700C3A83E /* ThirdVC.m */,
+				FCD961B2206B3EE700C3A83E /* ThirdVC.xib */,
+				FCD961B0206B3EE700C3A83E /* FiveVC.h */,
+				FCD961B7206B3EE700C3A83E /* FiveVC.m */,
+				FCD961B1206B3EE700C3A83E /* FiveVC.xib */,
+				FCD961B6206B3EE700C3A83E /* ForthVC.h */,
+				FCD961AE206B3EE700C3A83E /* ForthVC.m */,
+				FCD961B3206B3EE700C3A83E /* ForthVC.xib */,
+			);
+			path = ContentVCs;
+			sourceTree = "<group>";
+		};
+		FCD961C7206B403500C3A83E /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				FCD961C8206B40B100C3A83E /* MainOfMenuViewController.h */,
+				FCD961C9206B40B100C3A83E /* MainOfMenuViewController.m */,
+				FCD961CA206B40B100C3A83E /* MainOfMenuViewController.xib */,
+			);
+			path = MainMenu;
+			sourceTree = "<group>";
+		};
 		FCE340FB205A179A005E49EA /* NSDateFormatter+ */ = {
 			isa = PBXGroup;
 			children = (
 				FC923AB62061111700E42FCF /* DateFormatterInstance.swift */,
 			);
 			path = "NSDateFormatter+";
-			sourceTree = "<group>";
-		};
-		FCE34108205A1AEE005E49EA /* LeftMenu */ = {
-			isa = PBXGroup;
-			children = (
-				FCE3410C205A1C87005E49EA /* LeftMenuViewDemo.h */,
-				FCE3410D205A1C87005E49EA /* LeftMenuViewDemo.m */,
-				FCE3410E205A1C87005E49EA /* MenuView.h */,
-				FCE3410F205A1C87005E49EA /* MenuView.m */,
-			);
-			path = LeftMenu;
 			sourceTree = "<group>";
 		};
 		FCF68DCE2058F96200B20407 /* UIAlertController+ */ = {
@@ -538,14 +614,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCCF79442056829A0033C401 /* LaunchScreen.storyboard in Resources */,
+				FCD961EB206B871000C3A83E /* LeftMenuTableViewController.xib in Resources */,
 				FC17EFB4205BB75E007ED755 /* CalendarViewController.xib in Resources */,
+				FCD961C5206B3EE700C3A83E /* SecondVC.xib in Resources */,
+				FCD961C0206B3EE700C3A83E /* ForthVC.xib in Resources */,
+				FCD961DA206B68CD00C3A83E /* EventListCell.xib in Resources */,
 				FC17EFB7205BB75E007ED755 /* MainViewController.xib in Resources */,
+				FC826B56206A466500114514 /* RightMenuTVC.xib in Resources */,
 				FC17EFB1205BB75E007ED755 /* MarkNoteViewController.xib in Resources */,
 				FCEC3EF2205776AE002A1A1D /* Media.xcassets in Resources */,
-				FC5CBF40206A263000D17B44 /* UserInfoCell.xib in Resources */,
 				FC17EFB8205BB75E007ED755 /* MainEventCell.xib in Resources */,
 				FC5CBF46206A26A200D17B44 /* MenuViewController.xib in Resources */,
+				FC826B53206A466500114514 /* LeftMenuTVC.xib in Resources */,
+				FCD961CC206B40B100C3A83E /* MainOfMenuViewController.xib in Resources */,
 				FC19080F2057D3A8000E8C97 /* Info.plist in Resources */,
+				FCD961BE206B3EE700C3A83E /* FiveVC.xib in Resources */,
+				FCD961BF206B3EE700C3A83E /* ThirdVC.xib in Resources */,
 				FC17EFB5205BB75E007ED755 /* EventDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -608,7 +692,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCD961C1206B3EE700C3A83E /* FiveVC.m in Sources */,
 				FC92E1F620575F210036C153 /* SLocationManager.swift in Sources */,
+				FCD961C3206B3EE700C3A83E /* SecondVC.m in Sources */,
 				FC19080B2057D3A8000E8C97 /* DAYComponentView.m in Sources */,
 				FC19080D2057D3A8000E8C97 /* DAYIndicatorView.m in Sources */,
 				FC17EFB2205BB75E007ED755 /* MarkNoteViewController.swift in Sources */,
@@ -618,25 +704,29 @@
 				FC19080E2057D3A8000E8C97 /* DAYCalendarView.m in Sources */,
 				FCBE0FAA2068C2880072B1CE /* EventList+CoreDataProperties.m in Sources */,
 				FCCF79472056829A0033C401 /* main.m in Sources */,
+				FC826B54206A466500114514 /* LeftMenuTVC.m in Sources */,
 				FCF68DD42058F96200B20407 /* UITableView+Extend.m in Sources */,
 				FC17EFBB205BB75E007ED755 /* MainCellAdapt.m in Sources */,
+				FC826B55206A466500114514 /* RightMenuTVC.m in Sources */,
 				FCBE0FA82068C2880072B1CE /* Event+CoreDataProperties.m in Sources */,
-				FCE34110205A1C87005E49EA /* LeftMenuViewDemo.m in Sources */,
 				FC17EFB3205BB75E007ED755 /* CalendarViewController.swift in Sources */,
 				FC17EFB9205BB75E007ED755 /* MainEventCell.m in Sources */,
 				FCBE0F9E20688BD80072B1CE /* BasicViewController.swift in Sources */,
+				FCD961BD206B3EE700C3A83E /* ForthVC.m in Sources */,
 				FCBE0FB22068D68A0072B1CE /* NSString+Extend.swift in Sources */,
+				FCD961C4206B3EE700C3A83E /* ThirdVC.m in Sources */,
 				FC19080C2057D3A8000E8C97 /* DAYUtils.m in Sources */,
+				FCD961D9206B68CD00C3A83E /* EventListCell.swift in Sources */,
 				FC19080A2057D3A8000E8C97 /* DAYNavigationBar.m in Sources */,
 				FC923AB72061111700E42FCF /* DateFormatterInstance.swift in Sources */,
-				FCE34111205A1C87005E49EA /* MenuView.m in Sources */,
 				FCBE0FB52068E8510072B1CE /* UITextView+Extend.swift in Sources */,
 				FC17EFBF205BB780007ED755 /* AppDelegate.m in Sources */,
 				FC17EFBA205BB75E007ED755 /* MainViewController.m in Sources */,
 				FCBE0FAB2068C2880072B1CE /* EventList+CoreDataClass.m in Sources */,
+				FCD961EA206B871000C3A83E /* LeftMenuTableViewController.m in Sources */,
+				FCD961CB206B40B100C3A83E /* MainOfMenuViewController.m in Sources */,
 				FC17576320639626001A6333 /* UILabel+Extend.swift in Sources */,
 				FCDF66A02058FD16009ECAAC /* UIAlertController+swift.swift in Sources */,
-				FC5CBF3F206A263000D17B44 /* UserInfoCell.m in Sources */,
 				FC17EFB6205BB75E007ED755 /* EventDetailViewController.swift in Sources */,
 				FC92E1F320575E490036C153 /* ToDoList.xcdatamodeld in Sources */,
 				FCC5617B2069E2DB0018FE81 /* Swift_Global.swift in Sources */,

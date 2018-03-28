@@ -11,14 +11,13 @@
 #import "DBhelper.h"
 #import "MainEventCell.h"
 #import "UITableView+Extend.h"
-#import "MenuView.h"
-#import "LeftMenuViewDemo.h"
 #import "ToDoList-Swift.h"
 #import "Global.h"
 #import <UIKit/NSIndexPath+UIKitAdditions.h>
+#import "LeftMenuTVC.h"
+#import "RightMenuTVC.h"
 
-
-static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
+static NSString * const MainEventCellIdentifier = @"MainEventCell";
 
 @interface MainViewController () <UITableViewDelegate,UITextFieldDelegate,UIGestureRecognizerDelegate>
 
@@ -33,23 +32,14 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self createBaseView];
     [self loadDefaultData];
-
     // Do any additional setup after loading the view from its nib.
 }
 
 -(void)createBaseView
 {
-    
-    UIBarButtonItem *leftBar = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
-                                                                             target:self
-                                                                             action:@selector(didPressedMenu)];
-    self.navigationItem.leftBarButtonItem = leftBar;
-    
-    UIBarButtonItem *rightBar = [[UIBarButtonItem alloc] initWithCustomView:self.btnCalendar];
-    self.navigationItem.rightBarButtonItem = rightBar;
-    
     //add mainview gestureRecognizer
     UITapGestureRecognizer *touch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide)];
     touch.delegate = self;
@@ -66,40 +56,17 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
     [self initKeyBoardEvent];
 }
 
--(void)didPressedMenu
-{
-    
-}
-
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    self.cellAdapt.dataResource = [DBhelper searchBy:@"Event"];
-    [self.mainTableview reloadData];
-}
-
--(void)swipeAction:(UISwipeGestureRecognizer*)swipe
-{
-    [self.txtEventTitle resignFirstResponder];
-}
-
--(IBAction)didPressedCalendar:(id)sender
-{
-    CalendarViewController *calednarVC = [[CalendarViewController alloc] initWithNibName:@"CalendarViewController"
-                                                                                  bundle:nil];
-    [self.navigationController pushViewController:calednarVC animated:YES];
-}
-
 -(void)loadDefaultData
 {
     NSMutableArray *sourceArray = [DBhelper searchBy:@"Event"];
     
     __weak typeof(self) weakSelf = self;
+    //Event delete
     cellDelete deleteBlock = ^(NSIndexPath *delIndexPath){
         [weakSelf deleteEvent:delIndexPath.row];
     };
     
-    //Main Cell Display
+    //Event display in cell
     cellDisplay displayBlock = ^(MainEventCell *cell,NSInteger index){
         Event *event = [weakSelf.cellAdapt.dataResource objectAtIndex:index];
         cell.lblName.text = event.title;
@@ -127,8 +94,27 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
     
     self.mainTableview.dataSource = self.cellAdapt;
     self.mainTableview.delegate = self;
-
+    
     [self.mainTableview registerNib:[MainEventCell nib] forCellReuseIdentifier:MainEventCellIdentifier];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.cellAdapt.dataResource = [DBhelper searchBy:@"Event"];
+    [self.mainTableview reloadData];
+}
+
+-(void)swipeAction:(UISwipeGestureRecognizer*)swipe
+{
+    [self.txtEventTitle resignFirstResponder];
+}
+
+-(IBAction)didPressedCalendar:(id)sender
+{
+    CalendarViewController *calednarVC = [[CalendarViewController alloc] initWithNibName:@"CalendarViewController"
+                                                                                  bundle:nil];
+    [self.navigationController pushViewController:calednarVC animated:YES];
 }
 
 -(void)didPressedFinish:(UIButton*)sender
@@ -147,10 +133,6 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
 #pragma mark - tableview Delegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MenuViewController *vc = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
-    [self.navigationController pushViewController:vc animated:YES];
-    /*
-    return
     __weak typeof(self) weakSelf = self;
     Event *tempEvent = [self.cellAdapt.dataResource objectAtIndex:indexPath.row];
     EventDetailViewController *eventDetailVC = [[EventDetailViewController alloc] initWithNibName:@"EventDetailViewController" bundle:nil];
@@ -159,7 +141,6 @@ static NSString * const MainEventCellIdentifier = @"MainEventCellIdentifier";
         [weakSelf deleteEvent:[self.cellAdapt.dataResource indexOfObject:delEvent]];
     };
     [self.navigationController pushViewController:eventDetailVC animated:YES];
-     */
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

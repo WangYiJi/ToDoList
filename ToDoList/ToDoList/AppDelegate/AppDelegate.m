@@ -7,8 +7,10 @@
 //
 
 #import "AppDelegate.h"
-#import "MainViewController.h"
 #import "RESideMenu.h"
+#import "MainOfMenuViewController.h"
+#import "DBhelper.h"
+#import "EventList+CoreDataClass.h"
 
 @interface AppDelegate ()
 
@@ -19,11 +21,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    NSMutableArray *tempList = [DBhelper searchBy:@"EventList"];
+    if (tempList.count <= 0) {
+        EventList *listItem = [DBhelper insertWithEntity:@"EventList"];
+        listItem.listName = @"Default";
+        [DBhelper Save];
+    }
+    
 
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    MainViewController *mainVC = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
+    MainOfMenuViewController *mainVC = [[MainOfMenuViewController alloc] init];
+    
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mainVC];
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
