@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Event+CoreDataClass.h"
+#import "EventList+CoreDataClass.h"
 
 //typedef void(^deleteEventBlock)(Event *delEvent);
 
@@ -23,6 +24,8 @@
 @property (nonatomic,weak) IBOutlet UILabel *lblAddEventTopic;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *buttomSpan;
+
+@property (nonatomic,strong) EventList *currentEventList;
 
 -(IBAction)didPressedCalendar:(id)sender;
 

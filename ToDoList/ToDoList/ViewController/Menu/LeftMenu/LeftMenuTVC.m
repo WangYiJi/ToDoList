@@ -56,7 +56,6 @@
 #pragma mark - TableView Delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-#warning waitfor push
     UINavigationController *nvc;
     UIViewController *rootVC;
     switch (indexPath.row) {

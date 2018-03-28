@@ -58,6 +58,10 @@ static NSString * const MainEventCellIdentifier = @"MainEventCell";
 
 -(void)loadDefaultData
 {
+    if (self.currentEventList) {
+        NSMutableArray *sourceArray = [[NSMutableArray alloc] initWithArray:[self.currentEventList.eventShip allObjects]];
+        
+    }
     NSMutableArray *sourceArray = [DBhelper searchBy:@"Event"];
     
     __weak typeof(self) weakSelf = self;
