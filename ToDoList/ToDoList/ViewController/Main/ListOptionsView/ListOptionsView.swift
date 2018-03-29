@@ -19,29 +19,35 @@ class ListOptionsView: UIView,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var hideCompleteCell: UITableViewCell!
     @IBOutlet weak var deletecell: UITableViewCell!
     
-    var contentView:UIView!
+    @IBOutlet var view: UIView!
+    
+    //加载xib
+    func initViewFromNib() -> Void {
+        
+        let className = type(of: self)
+        let bundle = Bundle(for: className)
+        let name = NSStringFromClass(className).components(separatedBy: ".").last
+        let nib = UINib(nibName: name!, bundle: bundle)
+        self.view = nib.instantiate(withOwner: self, options: nil).first as! UIView
+        self.view.frame = bounds
+        self.addSubview(view)
+    }
+
     
     //初始化时将xib中的view添加进来
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView = loadViewFromNib()
-        addSubview(contentView)
+        initViewFromNib()
+    }
+    
+    convenience init () {
+        self.init(frame: CGRect.zero)
     }
     
     //初始化时将xib中的view添加进来
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        contentView = loadViewFromNib()
-        addSubview(contentView)
-    }
-    //加载xib
-    func loadViewFromNib() -> UIView {
-        let className = type(of: self)
-        let bundle = Bundle(for: className)
-        let name = NSStringFromClass(className).components(separatedBy: ".").last
-        let nib = UINib(nibName: name!, bundle: bundle)
-        let view = nib.instantiate(withOwner: self, options: nil).first as! UIView
-        return view
+        initViewFromNib()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -55,22 +61,22 @@ class ListOptionsView: UIView,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
-            return renameCell;
+            return self.renameCell;
             
         case 1:
-            return editCell;
+            return self.editCell;
             
         case 2:
-            return sortCell;
+            return self.sortCell;
             
         case 3:
-            return changeIcon;
+            return self.changeIcon;
             
         case 4:
-            return hideCompleteCell;
+            return self.hideCompleteCell;
             
         case 5:
-            return deletecell;
+            return self.deletecell;
             
         default:
             return UITableViewCell()

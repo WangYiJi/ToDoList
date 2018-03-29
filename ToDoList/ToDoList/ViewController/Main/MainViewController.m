@@ -11,7 +11,7 @@
 #import "DBhelper.h"
 #import "MainEventCell.h"
 #import "UITableView+Extend.h"
-#import "ToDoList-Swift.h"
+
 #import "Global.h"
 #import <UIKit/NSIndexPath+UIKitAdditions.h>
 #import "LeftMenuTVC.h"
@@ -42,6 +42,12 @@ static NSString * const MainEventCellIdentifier = @"MainEventCell";
 
 -(void)createBaseView
 {
+    UIBarButtonItem *rightBar = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"more"]
+                                                                 style:UIBarButtonItemStylePlain
+                                                                target:self
+                                                                action:@selector(showListOption)];
+    self.navigationItem.rightBarButtonItem = rightBar;
+    
     //add mainview gestureRecognizer
     UITapGestureRecognizer *touch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide)];
     touch.delegate = self;
@@ -56,6 +62,17 @@ static NSString * const MainEventCellIdentifier = @"MainEventCell";
     [self.imgAdd addGestureRecognizer:imgTouch];
     
     [self initKeyBoardEvent];
+}
+
+-(void)showListOption
+{
+    [self.optionsView setFrame:CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, 360)];
+    [self.view addSubview:self.optionsView];
+    
+    __weak typeof(self) weakSelf = self;
+    [UIView animateWithDuration:0.3f animations:^{
+        weakSelf.optionsView.frame = CGRectMake(0, SCREEN_HEIGHT-360, SCREEN_WIDTH, 360);
+    }];
 }
 
 -(void)loadDefaultData

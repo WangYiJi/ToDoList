@@ -9,9 +9,20 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListOptionsView" customModule="ToDoList" customModuleProvider="target">
+            <connections>
+                <outlet property="changeIcon" destination="RVQ-KU-F7s" id="Hyw-8Y-JPu"/>
+                <outlet property="deletecell" destination="jUQ-CO-DF2" id="yCa-ek-8SM"/>
+                <outlet property="editCell" destination="73F-ab-eJW" id="yAN-Fm-0sa"/>
+                <outlet property="hideCompleteCell" destination="90j-BL-Vm2" id="bh1-QK-aMb"/>
+                <outlet property="mainTableView" destination="Ij4-X1-VA8" id="D2e-Up-vcm"/>
+                <outlet property="renameCell" destination="NXR-3L-NdD" id="pas-XP-HPN"/>
+                <outlet property="sortCell" destination="MdL-bQ-6uF" id="VRx-Y7-L1c"/>
+                <outlet property="view" destination="iN0-l3-epB" id="H8J-gb-5QT"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ListOptionsView" customModule="ToDoList" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="360"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -24,7 +35,7 @@
                         <navigationItem title="List options" id="DYj-hg-Ajl">
                             <barButtonItem key="rightBarButtonItem" title="Done" id="MMZ-4A-PMy">
                                 <connections>
-                                    <action selector="didPressedDone:" destination="iN0-l3-epB" id="ghF-RV-mPh"/>
+                                    <action selector="didPressedDone:" destination="-1" id="Gz4-DT-Zpm"/>
                                 </connections>
                             </barButtonItem>
                         </navigationItem>
@@ -36,10 +47,6 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="316" id="mcm-WD-AV1"/>
                     </constraints>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="Gq2-0M-f5X"/>
-                        <outlet property="delegate" destination="-1" id="eA3-bX-TcI"/>
-                    </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -53,15 +60,6 @@
                 <constraint firstItem="Ij4-X1-VA8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="p4f-eE-cIp"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="changeIcon" destination="RVQ-KU-F7s" id="sut-sn-KS8"/>
-                <outlet property="deletecell" destination="jUQ-CO-DF2" id="KxZ-tC-dfZ"/>
-                <outlet property="editCell" destination="73F-ab-eJW" id="Qr8-T1-1nE"/>
-                <outlet property="hideCompleteCell" destination="90j-BL-Vm2" id="Rlr-G9-qaN"/>
-                <outlet property="mainTableView" destination="Ij4-X1-VA8" id="aax-wJ-JTb"/>
-                <outlet property="renameCell" destination="NXR-3L-NdD" id="UlD-ZJ-TGM"/>
-                <outlet property="sortCell" destination="MdL-bQ-6uF" id="XKb-aU-k09"/>
-            </connections>
             <point key="canvasLocation" x="-231" y="27"/>
         </view>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="NXR-3L-NdD">

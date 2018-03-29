@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Event+CoreDataClass.h"
 #import "EventList+CoreDataClass.h"
+#import "ToDoList-Swift.h"
 
 //typedef void(^deleteEventBlock)(Event *delEvent);
 
@@ -24,6 +25,8 @@
 @property (nonatomic,weak) IBOutlet UILabel *lblAddEventTopic;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *buttomSpan;
+
+@property (strong,nonatomic) IBOutlet ListOptionsView *optionsView;
 
 @property (nonatomic,strong) EventList *currentEventList;
 
