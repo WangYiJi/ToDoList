@@ -40,6 +40,8 @@
 		FC92E1EB20575DA00036C153 /* DBhelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FC92E1E420575DA00036C153 /* DBhelper.m */; };
 		FC92E1F320575E490036C153 /* ToDoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FC92E1F120575E490036C153 /* ToDoList.xcdatamodeld */; };
 		FC92E1F620575F210036C153 /* SLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC92E1F520575F210036C153 /* SLocationManager.swift */; };
+		FCAB9219206C8FCE00F82D63 /* ListOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB9218206C8FCE00F82D63 /* ListOptionsView.swift */; };
+		FCAB921B206C8FFF00F82D63 /* ListOptionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCAB921A206C8FFF00F82D63 /* ListOptionsView.xib */; };
 		FCBE0F9E20688BD80072B1CE /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBE0F9D20688BD80072B1CE /* BasicViewController.swift */; };
 		FCBE0FA82068C2880072B1CE /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FCBE0FA42068C2880072B1CE /* Event+CoreDataProperties.m */; };
 		FCBE0FA92068C2880072B1CE /* Event+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FCBE0FA52068C2880072B1CE /* Event+CoreDataClass.m */; };
@@ -138,6 +140,8 @@
 		FC92E1F220575E490036C153 /* ToDoList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoList.xcdatamodel; sourceTree = "<group>"; };
 		FC92E1F420575F200036C153 /* ToDoList-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ToDoList-Bridging-Header.h"; sourceTree = "<group>"; };
 		FC92E1F520575F210036C153 /* SLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLocationManager.swift; sourceTree = "<group>"; };
+		FCAB9218206C8FCE00F82D63 /* ListOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOptionsView.swift; sourceTree = "<group>"; };
+		FCAB921A206C8FFF00F82D63 /* ListOptionsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListOptionsView.xib; sourceTree = "<group>"; };
 		FCBE0F9D20688BD80072B1CE /* BasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
 		FCBE0FA02068C2880072B1CE /* Event+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+CoreDataClass.h"; sourceTree = "<group>"; };
 		FCBE0FA12068C2880072B1CE /* Event+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -273,6 +277,7 @@
 		FC17EFA8205BB75E007ED755 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FCAB9217206C8F9D00F82D63 /* ListOptionsView */,
 				FC17EFAF205BB75E007ED755 /* MainViewController.h */,
 				FC17EFAD205BB75E007ED755 /* MainViewController.m */,
 				FC17EFA9205BB75E007ED755 /* MainViewController.xib */,
@@ -411,6 +416,15 @@
 				FC92E1F120575E490036C153 /* ToDoList.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		FCAB9217206C8F9D00F82D63 /* ListOptionsView */ = {
+			isa = PBXGroup;
+			children = (
+				FCAB9218206C8FCE00F82D63 /* ListOptionsView.swift */,
+				FCAB921A206C8FFF00F82D63 /* ListOptionsView.xib */,
+			);
+			path = ListOptionsView;
 			sourceTree = "<group>";
 		};
 		FCAC896B205A4E84008A5848 /* NSDate+ */ = {
@@ -642,6 +656,7 @@
 				FCD961CC206B40B100C3A83E /* MainOfMenuViewController.xib in Resources */,
 				FC19080F2057D3A8000E8C97 /* Info.plist in Resources */,
 				FCD961BE206B3EE700C3A83E /* FiveVC.xib in Resources */,
+				FCAB921B206C8FFF00F82D63 /* ListOptionsView.xib in Resources */,
 				FCD961BF206B3EE700C3A83E /* ThirdVC.xib in Resources */,
 				FC17EFB5205BB75E007ED755 /* EventDetailViewController.xib in Resources */,
 			);
@@ -706,6 +721,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCD961C1206B3EE700C3A83E /* FiveVC.m in Sources */,
+				FCAB9219206C8FCE00F82D63 /* ListOptionsView.swift in Sources */,
 				FC92E1F620575F210036C153 /* SLocationManager.swift in Sources */,
 				FCD961C3206B3EE700C3A83E /* SecondVC.m in Sources */,
 				FC19080B2057D3A8000E8C97 /* DAYComponentView.m in Sources */,

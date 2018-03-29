@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/AMSlideMenu/AMSlideMenu/AMSlideMenuMainViewController.m"
-            timestampString = "543922577.772857"
+            filePath = "ToDoList/ViewController/Menu/MainMenu/MainOfMenuViewController.m"
+            timestampString = "543998305.7522039"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "738"
-            endingLineNumber = "738"
-            landmarkName = "-switchCurrentActiveControllerToController:fromMenu:"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "-configureRightMenuButton:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

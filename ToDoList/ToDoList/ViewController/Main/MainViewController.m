@@ -16,6 +16,8 @@
 #import <UIKit/NSIndexPath+UIKitAdditions.h>
 #import "LeftMenuTVC.h"
 #import "RightMenuTVC.h"
+#import "NSMutableArray+Extend.h"
+
 
 static NSString * const MainEventCellIdentifier = @"MainEventCell";
 
@@ -58,11 +60,11 @@ static NSString * const MainEventCellIdentifier = @"MainEventCell";
 
 -(void)loadDefaultData
 {
+    NSMutableArray *sourceArray = nil;
     if (self.currentEventList) {
-        NSMutableArray *sourceArray = [[NSMutableArray alloc] initWithArray:[self.currentEventList.eventShip allObjects]];
-        
+        NSMutableArray *tempSource = [[NSMutableArray alloc] initWithArray:[self.currentEventList.eventShip allObjects]];
+        sourceArray = [tempSource sortWithKey:@"createDate" isAsc:YES];
     }
-    NSMutableArray *sourceArray = [DBhelper searchBy:@"Event"];
     
     __weak typeof(self) weakSelf = self;
     //Event delete

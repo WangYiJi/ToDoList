@@ -8,11 +8,14 @@
 
 #import "NSMutableArray+Extend.h"
 
-@implementation NSMutableArray
+@implementation NSMutableArray (Extend)
 
 -(NSMutableArray*)sortWithKey:(NSString*)sKeyName isAsc:(BOOL)bIsAsc
 {
     NSSortDescriptor *sd = [[NSSortDescriptor alloc] initWithKey:@"displayName" ascending:YES];
+    NSArray *sortArray = [NSArray arrayWithObject:sd];
+    NSMutableArray *result = [[NSMutableArray alloc] initWithArray:[self sortedArrayUsingDescriptors:sortArray]];
+    return result;
 }
 
 @end

@@ -39,7 +39,7 @@
      *     Initializing menus
      *******************************/
     self.leftMenu = [[LeftMenuTVC alloc] initWithNibName:@"LeftMenuTVC" bundle:nil];
-    //self.leftMenu = [[LeftMenuTableViewController alloc] initWithNibName:@"LeftMenuTableViewController" bundle:nil];
+    
     self.rightMenu = [[RightMenuTVC alloc] initWithNibName:@"RightMenuTVC" bundle:nil];
     /*******************************
      *     End Initializing menus
@@ -57,7 +57,7 @@
     frame.size = (CGSize){40,40};
     button.frame = frame;
     
-    [button setImage:[UIImage imageNamed:@"switch"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"menu"] forState:UIControlStateNormal];
 }
 
 - (void)configureRightMenuButton:(UIButton *)button
@@ -67,7 +67,7 @@
     frame.size = (CGSize){40,40};
     button.frame = frame;
     
-    [button setImage:[UIImage imageNamed:@"switch"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"more"] forState:UIControlStateNormal];
 }
 
 - (BOOL)deepnessForLeftMenu
