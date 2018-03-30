@@ -32,6 +32,8 @@
 		FC19080F2057D3A8000E8C97 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC1908092057D3A8000E8C97 /* Info.plist */; };
 		FC5CBF45206A26A200D17B44 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5CBF43206A26A200D17B44 /* MenuViewController.swift */; };
 		FC5CBF46206A26A200D17B44 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC5CBF44206A26A200D17B44 /* MenuViewController.xib */; };
+		FC72DF84206DDA8B0018C6B0 /* UIView+Extend.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC72DF83206DDA8B0018C6B0 /* UIView+Extend.swift */; };
+		FC72DF86206E095E0018C6B0 /* MaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC72DF85206E095E0018C6B0 /* MaskView.swift */; };
 		FC826B53206A466500114514 /* LeftMenuTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC826B4D206A466500114514 /* LeftMenuTVC.xib */; };
 		FC826B54206A466500114514 /* LeftMenuTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC826B4E206A466500114514 /* LeftMenuTVC.m */; };
 		FC826B55206A466500114514 /* RightMenuTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC826B51206A466500114514 /* RightMenuTVC.m */; };
@@ -127,6 +129,8 @@
 		FC1908092057D3A8000E8C97 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC5CBF43206A26A200D17B44 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		FC5CBF44206A26A200D17B44 /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		FC72DF83206DDA8B0018C6B0 /* UIView+Extend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extend.swift"; sourceTree = "<group>"; };
+		FC72DF85206E095E0018C6B0 /* MaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskView.swift; sourceTree = "<group>"; };
 		FC826B4C206A466500114514 /* LeftMenuTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuTVC.h; sourceTree = "<group>"; };
 		FC826B4D206A466500114514 /* LeftMenuTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftMenuTVC.xib; sourceTree = "<group>"; };
 		FC826B4E206A466500114514 /* LeftMenuTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuTVC.m; sourceTree = "<group>"; };
@@ -340,6 +344,15 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		FC72DF82206DDA330018C6B0 /* UIView+ */ = {
+			isa = PBXGroup;
+			children = (
+				FC72DF83206DDA8B0018C6B0 /* UIView+Extend.swift */,
+				FC72DF85206E095E0018C6B0 /* MaskView.swift */,
+			);
+			path = "UIView+";
+			sourceTree = "<group>";
+		};
 		FC826B4B206A466500114514 /* LeftMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -497,6 +510,7 @@
 		FCCF794D205682B90033C401 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				FC72DF82206DDA330018C6B0 /* UIView+ */,
 				FCD961F1206B9EC400C3A83E /* NSMutableArray+ */,
 				FCBE0FB32068E80D0072B1CE /* UITextView+ */,
 				FCBE0FB02068CBD40072B1CE /* NSString */,
@@ -720,6 +734,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC72DF84206DDA8B0018C6B0 /* UIView+Extend.swift in Sources */,
 				FCD961C1206B3EE700C3A83E /* FiveVC.m in Sources */,
 				FCAB9219206C8FCE00F82D63 /* ListOptionsView.swift in Sources */,
 				FC92E1F620575F210036C153 /* SLocationManager.swift in Sources */,
@@ -727,6 +742,7 @@
 				FC19080B2057D3A8000E8C97 /* DAYComponentView.m in Sources */,
 				FC19080D2057D3A8000E8C97 /* DAYIndicatorView.m in Sources */,
 				FC17EFB2205BB75E007ED755 /* MarkNoteViewController.swift in Sources */,
+				FC72DF86206E095E0018C6B0 /* MaskView.swift in Sources */,
 				FC5CBF45206A26A200D17B44 /* MenuViewController.swift in Sources */,
 				FCBE0FA92068C2880072B1CE /* Event+CoreDataClass.m in Sources */,
 				FC92E1EB20575DA00036C153 /* DBhelper.m in Sources */,

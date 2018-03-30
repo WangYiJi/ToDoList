@@ -64,8 +64,15 @@ static NSString * const MainEventCellIdentifier = @"MainEventCell";
     [self initKeyBoardEvent];
 }
 
+-(void)didPressedMaskBack
+{
+    
+}
+
 -(void)showListOption
 {
+    [self.view addBackMaskView];
+    
     [self.optionsView setFrame:CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, 360)];
     [self.view addSubview:self.optionsView];
     
