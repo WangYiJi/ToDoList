@@ -17,6 +17,7 @@
                 <outlet property="imgAdd" destination="R2A-wX-F2w" id="1Uf-g6-gcV"/>
                 <outlet property="lblAddEventTopic" destination="LDG-85-fxV" id="QIk-1V-kol"/>
                 <outlet property="mainTableview" destination="b2y-EH-KT7" id="z2h-N8-CSx"/>
+                <outlet property="optionsContentView" destination="8SF-5e-av0" id="hcU-Iq-qia"/>
                 <outlet property="optionsView" destination="ELo-vT-u7E" id="WIk-s9-vg1"/>
                 <outlet property="txtEventTitle" destination="PIG-Ld-bFY" id="zKx-wz-38C"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -100,12 +101,19 @@
             </connections>
             <point key="canvasLocation" x="320" y="311"/>
         </button>
-        <view contentMode="scaleToFill" id="ELo-vT-u7E" customClass="ListOptionsView" customModule="ToDoList" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="360"/>
+        <view contentMode="scaleToFill" id="8SF-5e-av0" customClass="UIControl">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <point key="canvasLocation" x="-720" y="527"/>
+        </view>
+        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ELo-vT-u7E" customClass="ListOptionsView" customModule="ToDoList" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="360"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-351.5" y="721"/>
+            <constraints>
+                <constraint firstAttribute="height" constant="360" id="ZVw-KR-Sgq"/>
+            </constraints>
+            <point key="canvasLocation" x="-313" y="680"/>
         </view>
     </objects>
     <resources>

@@ -9,5 +9,6 @@
 #import "AMSlideMenuLeftTableViewController.h"
 
 @interface LeftMenuTableViewController : AMSlideMenuLeftTableViewController
+@property (strong, nonatomic) IBOutlet UITableViewCell *addListCell;
 
 @end

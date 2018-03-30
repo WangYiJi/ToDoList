@@ -26,7 +26,8 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *buttomSpan;
 
-@property (strong,nonatomic) IBOutlet ListOptionsView *optionsView;
+@property (strong,nonatomic) IBOutlet UIControl *optionsContentView;
+@property (weak,nonatomic) IBOutlet ListOptionsView *optionsView;
 
 @property (nonatomic,strong) EventList *currentEventList;
 

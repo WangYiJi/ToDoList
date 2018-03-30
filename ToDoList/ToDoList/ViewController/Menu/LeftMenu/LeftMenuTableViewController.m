@@ -39,16 +39,19 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.eventLists.count;
+    return self.eventLists.count+1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    EventList *listItem = [self.eventLists objectAtIndex:indexPath.row];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EventList" forIndexPath:indexPath];
-    cell.textLabel.text = listItem.listName;
-    // Configure the cell...
+    if (indexPath.row <= self.eventLists.count - 1) {
+        EventList *listItem = [self.eventLists objectAtIndex:indexPath.row];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EventList" forIndexPath:indexPath];
+        cell.textLabel.text = listItem.listName;
+        return cell;
+    } else {
+        
+    }
     
-    return cell;
 }
 
 /*

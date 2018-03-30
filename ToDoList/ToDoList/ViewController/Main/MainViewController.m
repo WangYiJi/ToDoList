@@ -25,6 +25,8 @@ static NSString * const MainEventCellIdentifier = @"MainEventCell";
 
 @property (nonatomic,strong) MainCellAdapt *cellAdapt;
 
+@property (nonatomic,strong) MaskView *msView;
+
 
 -(void)refreshButtomStyle:(BOOL)bInput;
 
@@ -42,11 +44,11 @@ static NSString * const MainEventCellIdentifier = @"MainEventCell";
 
 -(void)createBaseView
 {
-    UIBarButtonItem *rightBar = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"more"]
-                                                                 style:UIBarButtonItemStylePlain
-                                                                target:self
-                                                                action:@selector(showListOption)];
-    self.navigationItem.rightBarButtonItem = rightBar;
+//    UIBarButtonItem *rightBar = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"more"]
+//                                                                 style:UIBarButtonItemStylePlain
+//                                                                target:self
+//                                                                action:@selector(showListOption)];
+//    self.navigationItem.rightBarButtonItem = rightBar;
     
     //add mainview gestureRecognizer
     UITapGestureRecognizer *touch = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide)];
@@ -64,22 +66,55 @@ static NSString * const MainEventCellIdentifier = @"MainEventCell";
     [self initKeyBoardEvent];
 }
 
--(void)didPressedMaskBack
+-(IBAction)didPressedMask:(id)sender
 {
-    
+    [UIView animateWithDuration:0.3f
+                     animations:^{
+                         self.optionsContentView.alpha = 0;
+                     } completion:^(BOOL finished) {
+                         [self.optionsContentView removeFromSuperview];
+                     }];
 }
 
 -(void)showListOption
 {
-    [self.view addBackMaskView];
-    
-    [self.optionsView setFrame:CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, 360)];
-    [self.view addSubview:self.optionsView];
+//    self.msView = [[MaskView alloc] init];
+//
+//    __weak typeof(self) weakSelf = self;
+//    [self.msView addDisblockWithDBlock:^{
+//        [weakSelf.msView removeFromSuperview];
+//        [weakSelf hideListOption];
+//    }];
+//
+//    [self.view addSubview:self.msView];
     
     __weak typeof(self) weakSelf = self;
+    [self.optionsContentView setFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    self.optionsContentView.hidden = NO;
+    self.optionsContentView.alpha = 0;
+    
+    [self.view addSubview:self.optionsContentView];
+    
+    [UIView animateWithDuration:0.3f animations:^{
+        self.optionsContentView.alpha = 0.3;
+    }];
+    
+    [self.optionsView setFrame:CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, 360)];
+    [self.optionsContentView addSubview:self.optionsView];
+    
     [UIView animateWithDuration:0.3f animations:^{
         weakSelf.optionsView.frame = CGRectMake(0, SCREEN_HEIGHT-360, SCREEN_WIDTH, 360);
     }];
+}
+
+-(void)hideListOption
+{
+    if (self.optionsView) {
+        __weak typeof(self) weakSelf = self;
+        [UIView animateWithDuration:0.3f animations:^{
+            weakSelf.optionsView.frame = CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, 360);
+        }];
+    }
 }
 
 -(void)loadDefaultData
